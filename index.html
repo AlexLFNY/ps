@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python - Seconde | Variables et Types</title>
+    <title>Programmation Python | Variables et Types</title>
     <style>
         * {
             margin: 0;
@@ -120,32 +120,6 @@
             font-size: 1.3rem;
             opacity: 0.9;
             margin-bottom: 30px;
-        }
-
-        .python-logo {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #3776ab, #ffd343);
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            animation: bounce 2s infinite, rotate 10s linear infinite;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .python-logo:hover {
-            transform: scale(1.2);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
         }
 
         .content-grid {
@@ -535,8 +509,7 @@
 
     <div class="container">
         <div class="hero">
-            <div class="python-logo">🐍</div>
-            <h1>Python Interactive</h1>
+            <h1>Python Seconde</h1>
             <p>Variables, Types & Interactions Utilisateur</p>
         </div>
 
@@ -844,15 +817,6 @@ age_futur = age_int + <span class="code-number">10</span>
             });
         });
 
-        // Python logo click effect
-        const logo = document.querySelector('.python-logo');
-        logo.addEventListener('click', function() {
-            this.style.animation = 'none';
-            setTimeout(() => {
-                this.style.animation = 'bounce 1s ease-out';
-            }, 10);
-        });
-
         // Initialize particles
         createParticles();
 
@@ -879,4 +843,3 @@ age_futur = age_int + <span class="code-number">10</span>
     </script>
 </body>
 </html>
-            
