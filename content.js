@@ -1,5 +1,5 @@
-// Content data for each concept
-const conceptData = {
+// Lesson 1 Content Data
+const lesson1Data = {
     intro: {
         icon: 'icon-intro',
         emoji: '🐍',
@@ -11,12 +11,10 @@ const conceptData = {
                 Cela signifie que sa syntaxe est conçue pour être claire et lisible, 
                 se rapprochant de la logique du langage humain (principalement l'anglais).
             </div>
-
             <div class="highlight-box">
                 <strong>Pourquoi Python pour débuter ?</strong><br>
                 Sa simplicité et sa clarté en font un excellent choix pour apprendre les concepts fondamentaux de la programmation.
             </div>
-
             <div class="section-text">
                 <strong>Utilisations de Python :</strong>
                 <ul style="margin-top: 15px; padding-left: 20px;">
@@ -40,7 +38,6 @@ const conceptData = {
                 Une variable peut être vue comme une <strong>"boîte"</strong> étiquetée dans la mémoire de l'ordinateur, 
                 dans laquelle on place une valeur.
             </div>
-
             <div class="concept-animation">
                 <h3 style="color: #ffd700; margin-bottom: 20px;">💡 Concept : Variables comme boîtes</h3>
                 <div class="variable-demo">
@@ -55,19 +52,16 @@ const conceptData = {
                 </div>
                 <p style="color: #ccc; font-size: 0.9rem;">Une variable est comme une boîte étiquetée qui contient votre valeur</p>
             </div>
-
             <div class="highlight-box">
                 <strong>Syntaxe :</strong><br>
                 <code style="color: #ffd700; font-family: monospace;">nom_de_la_variable = valeur</code>
             </div>
-
             <div class="code-block">
                 <div class="code-content">
 <span class="code-comment"># Exemple : créer des variables</span>
 <span class="code-keyword">nom</span> = <span class="code-string">'Lucas'</span>
 <span class="code-keyword">age</span> = <span class="code-number">16</span>
 <span class="code-keyword">taille</span> = <span class="code-number">1.75</span>
-
 <span class="code-comment"># Utiliser les variables</span>
 <span class="code-keyword">print</span>(<span class="code-string">'Nom:'</span>, nom)
 <span class="code-keyword">print</span>(<span class="code-string">'Âge:'</span>, age)
@@ -84,7 +78,6 @@ const conceptData = {
                     </div>
                 </div>
             </div>
-
             <div class="quiz-container">
                 <div class="quiz-question">🧠 Quiz : Quelle est la bonne syntaxe pour créer une variable ?</div>
                 <div class="quiz-options">
@@ -96,7 +89,6 @@ const conceptData = {
                 <button class="quiz-submit-btn" onclick="checkVariableQuiz()">Vérifier</button>
                 <div class="quiz-feedback" id="variableQuizFeedback"></div>
             </div>
-
             <div class="section-text">
                 Ici, nous avons créé une variable nommée <code>age_utilisateur</code> et nous lui avons affecté la valeur 15. 
                 On peut maintenant utiliser l'étiquette <code>age_utilisateur</code> n'importe où dans notre programme 
@@ -115,37 +107,35 @@ const conceptData = {
                 et les opérations que l'on peut effectuer avec. Python reconnaît automatiquement le type 
                 de la donnée que vous assignez.
             </div>
-
             <div class="concept-animation">
                 <h3 style="color: #ffd700; margin-bottom: 20px;">📚 Les 4 types de base</h3>
                 <div class="type-animation">
                     <div class="type-demo">
-                        <div class="type-icon">42</div>
+                        <div class="type-icon">🔢</div>
                         <div style="font-weight: bold; color: #ffd700;">int</div>
                         <div style="color: #ccc; font-size: 0.9rem;">Entiers</div>
                         <div style="font-family: monospace; color: #4caf50;">42, -17, 0</div>
                     </div>
                     <div class="type-demo">
-                        <div class="type-icon">3.14</div>
+                        <div class="type-icon">💧</div>
                         <div style="font-weight: bold; color: #ffd700;">float</div>
                         <div style="color: #ccc; font-size: 0.9rem;">Décimaux</div>
                         <div style="font-family: monospace; color: #4caf50;">3.14, 1.75</div>
                     </div>
                     <div class="type-demo">
-                        <div class="type-icon">"ABC"</div>
+                        <div class="type-icon">📝</div>
                         <div style="font-weight: bold; color: #ffd700;">str</div>
                         <div style="color: #ccc; font-size: 0.9rem;">Texte</div>
                         <div style="font-family: monospace; color: #4caf50;">"Bonjour"</div>
                     </div>
                     <div class="type-demo">
-                        <div class="type-icon">T/F</div>
+                        <div class="type-icon">✅</div>
                         <div style="font-weight: bold; color: #ffd700;">bool</div>
                         <div style="color: #ccc; font-size: 0.9rem;">Vrai/Faux</div>
                         <div style="font-family: monospace; color: #4caf50;">True, False</div>
                     </div>
                 </div>
             </div>
-
             <div class="code-block">
                 <div class="code-content">
 <span class="code-comment"># Découvrir les types avec type()</span>
@@ -153,21 +143,18 @@ const conceptData = {
 <span class="code-keyword">note</span> = <span class="code-number">15.5</span>
 <span class="code-keyword">nom</span> = <span class="code-string">'Marie'</span>
 <span class="code-keyword">reussite</span> = <span class="code-keyword">True</span>
-
 <span class="code-keyword">print</span>(<span class="code-string">'Type de age:'</span>, <span class="code-keyword">type</span>(age))
 <span class="code-keyword">print</span>(<span class="code-string">'Type de note:'</span>, <span class="code-keyword">type</span>(note))
 <span class="code-keyword">print</span>(<span class="code-string">'Type de nom:'</span>, <span class="code-keyword">type</span>(nom))
 <span class="code-keyword">print</span>(<span class="code-string">'Type de reussite:'</span>, <span class="code-keyword">type</span>(reussite))
                 </div>
             </div>
-
             <div class="console-output">
                 Type de age: &lt;class 'int'&gt;<br>
                 Type de note: &lt;class 'float'&gt;<br>
                 Type de nom: &lt;class 'str'&gt;<br>
                 Type de reussite: &lt;class 'bool'&gt;
             </div>
-
             <div class="variable-showcase">
                 <div class="variable-item">
                     <div class="variable-label">annee_actuelle</div>
@@ -179,7 +166,6 @@ const conceptData = {
                         Entiers (positifs ou négatifs)
                     </div>
                 </div>
-
                 <div class="variable-item">
                     <div class="variable-label">taille_en_metres</div>
                     <div class="variable-content">
@@ -190,7 +176,6 @@ const conceptData = {
                         Nombres à virgule (avec un point)
                     </div>
                 </div>
-
                 <div class="variable-item">
                     <div class="variable-label">prenom</div>
                     <div class="variable-content">
@@ -201,7 +186,6 @@ const conceptData = {
                         Chaînes de caractères (entre guillemets)
                     </div>
                 </div>
-
                 <div class="variable-item">
                     <div class="variable-label">est_majeur</div>
                     <div class="variable-content">
@@ -213,7 +197,6 @@ const conceptData = {
                     </div>
                 </div>
             </div>
-
             <div class="quiz-container">
                 <div class="quiz-question">🧠 Quiz : Quel est le type de la variable <code>score = 18.5</code> ?</div>
                 <div class="quiz-options">
@@ -237,29 +220,24 @@ const conceptData = {
                 Un programme devient vraiment intéressant lorsqu'il peut communiquer avec l'utilisateur. 
                 Pour cela, nous utilisons deux fonctions essentielles.
             </div>
-
             <div class="highlight-box">
                 <strong>print()</strong> : Affiche des informations<br>
                 <strong>input()</strong> : Demande des informations à l'utilisateur
             </div>
-
             <div class="code-block">
                 <div class="code-content">
 <span class="code-comment"># Afficher un message</span>
 <span class="code-keyword">print</span>(<span class="code-string">"Bonjour le monde !"</span>)
-
 <span class="code-comment"># Demander et stocker</span>
 nom = <span class="code-keyword">input</span>(<span class="code-string">"Votre nom ? "</span>)
 <span class="code-keyword">print</span>(<span class="code-string">"Bonjour"</span>, nom)
                 </div>
             </div>
-
             <div class="console-output">
                 Bonjour le monde !<br>
                 Votre nom ? Marie<br>
                 Bonjour Marie
             </div>
-
             <div class="warning-banner">
                 <strong>Attention :</strong> input() renvoie toujours du texte (str) !
             </div>
@@ -275,21 +253,17 @@ nom = <span class="code-keyword">input</span>(<span class="code-string">"Votre n
                 Puisque <code>input()</code> renvoie toujours du texte, si vous demandez un nombre, 
                 vous ne pourrez pas faire de calcul avec directement. Il faudra le convertir.
             </div>
-
             <div class="code-block">
                 <div class="code-content">
 <span class="code-comment"># Demander l'âge</span>
 age_str = <span class="code-keyword">input</span>(<span class="code-string">"Votre âge ? "</span>)  <span class="code-comment"># "15" (str)</span>
-
 <span class="code-comment"># Convertir en entier</span>
 age_int = <span class="code-keyword">int</span>(age_str)           <span class="code-comment"># 15 (int)</span>
-
 <span class="code-comment"># Maintenant on peut calculer</span>
 age_futur = age_int + <span class="code-number">10</span>
 <span class="code-keyword">print</span>(<span class="code-string">"Dans 10 ans:"</span>, age_futur, <span class="code-string">"ans"</span>)
                 </div>
             </div>
-
             <div class="highlight-box">
                 <strong>Fonctions de conversion :</strong><br>
                 • <code>int()</code> pour convertir en entier<br>
@@ -306,7 +280,6 @@ age_futur = age_int + <span class="code-number">10</span>
             <div class="section-text">
                 Pour qu'un programme soit lisible, il faut respecter des règles pour nommer les variables :
             </div>
-
             <div class="rules-list">
                 <ul>
                     <li>Commencer par une lettre ou un tiret bas (_)</li>
@@ -315,7 +288,6 @@ age_futur = age_int + <span class="code-number">10</span>
                     <li>Convention : minuscules + tirets bas (snake_case)</li>
                 </ul>
             </div>
-
             <div class="example-grid">
                 <div class="example-item example-correct">
                     ✅ vitesse_max
@@ -332,13 +304,12 @@ age_futur = age_int + <span class="code-number">10</span>
     exercises: {
         icon: 'icon-exercises',
         emoji: '💻',
-        title: 'Exercices Interactifs',
+        title: 'Exercices Pratiques',
         subtitle: 'Pratiquez et progressez !',
         content: `
             <div class="section-text">
                 Voici 6 exercices progressifs pour mettre en pratique tout ce que vous avez appris. À vous de créer les programmes !
             </div>
-
             <div class="exercises-grid">
                 <div class="exercise-card">
                     <div class="exercise-difficulty">Facile</div>
@@ -355,134 +326,539 @@ age_futur = age_int + <span class="code-number">10</span>
                             <li>Afficher un message personnalisé avec <code>print()</code></li>
                         </ol>
                     </div>
-
                     <div class="highlight-box">
                         <strong>À vous de jouer !</strong><br>
                         Utilisez ce que vous avez appris sur les variables et les fonctions <code>input()</code> et <code>print()</code> pour créer ce programme.
                     </div>
-                </div>
-
-                <div class="exercise-card">
-                    <div class="exercise-difficulty">Facile</div>
-                    <div class="exercise-title">Calcul d'Âge</div>
-                    <div class="exercise-desc">
-                        Demandez l'année de naissance et calculez l'âge approximatif en 2024.
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint1')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
                     </div>
-                    
-                    <div class="exercise-steps">
-                        <strong>Ce qu'il faut faire :</strong>
-                        <ol>
-                            <li>Demander l'année de naissance avec <code>input()</code></li>
-                            <li>⚠️ Convertir en <code>int()</code> pour pouvoir calculer</li>
-                            <li>Calculer : 2024 - année_naissance</li>
-                            <li>Afficher l'âge avec un message</li>
-                        </ol>
+                    <div id="hint1" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Commencez par créer une variable pour stocker le prénom, puis utilisez cette variable dans votre message de salutation.
                     </div>
-
-                    <div class="warning-banner">
-                        N'oubliez pas : <code>input()</code> renvoie toujours du texte ! Il faut convertir avec <code>int()</code> pour faire des calculs.
-                    </div>
-                </div>
-
-                <div class="exercise-card">
-                    <div class="exercise-difficulty">Moyen</div>
-                    <div class="exercise-title">Calculateur TTC</div>
-                    <div class="exercise-desc">
-                        Créez un calculateur de prix TTC avec 20% de TVA. Utilisez des nombres décimaux !
-                    </div>
-                    
-                    <div class="exercise-steps">
-                        <strong>Ce qu'il faut faire :</strong>
-                        <ol>
-                            <li>Demander un prix hors taxe avec <code>input()</code></li>
-                            <li>⚠️ Convertir en <code>float()</code> pour les décimaux</li>
-                            <li>Calculer le TTC : prix_ht × 1.2 (20% de TVA)</li>
-                            <li>Afficher le résultat</li>
-                        </ol>
-                    </div>
-
-                    <div class="highlight-box">
-                        <strong>Indice :</strong><br>
-                        Pour ajouter 20% à un prix, on multiplie par 1.2 (100% + 20% = 120% = 1.2)
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>Exemple d'exécution :</strong><br>
+                        Comment vous appelez-vous ? Marie<br>
+                        Bonjour Marie, ravi de vous rencontrer !
                     </div>
                 </div>
-
-                <div class="exercise-card">
-                    <div class="exercise-difficulty">Avancé</div>
-                    <div class="exercise-title">Distance d'un Éclair</div>
-                    <div class="exercise-desc">
-                        Calculez la distance d'un éclair avec la physique ! Le son voyage à 343 m/s dans l'air.
-                    </div>
-                    
-                    <div class="exercise-steps">
-                        <strong>Ce qu'il faut faire :</strong>
-                        <ol>
-                            <li>Demander le délai éclair-tonnerre en secondes</li>
-                            <li>Convertir en <code>float()</code></li>
-                            <li>Calculer : distance = délai × 343 m/s</li>
-                            <li>Afficher la distance en mètres</li>
-                        </ol>
-                    </div>
-
-                    <div class="highlight-box">
-                        <strong>Physique :</strong><br>
-                        La vitesse du son dans l'air est de 343 m/s. Distance = Vitesse × Temps
-                    </div>
-                </div>
-
-                <div class="exercise-card">
-                    <div class="exercise-difficulty">Expert</div>
-                    <div class="exercise-title">Calculatrice IMC</div>
-                    <div class="exercise-desc">
-                        Nouveau défi ! Calculez l'Indice de Masse Corporelle (IMC = poids / taille²)
-                    </div>
-                    
-                    <div class="exercise-steps">
-                        <strong>Ce qu'il faut faire :</strong>
-                        <ol>
-                            <li>Demander le poids en kg et la taille en mètres</li>
-                            <li>Convertir les deux en <code>float()</code></li>
-                            <li>Calculer : IMC = poids / (taille × taille)</li>
-                            <li>Utiliser <code>round()</code> pour arrondir le résultat</li>
-                        </ol>
-                    </div>
-
-                    <div class="highlight-box">
-                        <strong>Nouveauté :</strong><br>
-                        La fonction <code>round(nombre, 1)</code> arrondit à 1 chiffre après la virgule.
-                    </div>
-                </div>
-
-                <div class="exercise-card">
-                    <div class="exercise-difficulty">Expert</div>
-                    <div class="exercise-title">Défi Créatif</div>
-                    <div class="exercise-desc">
-                        À vous de jouer ! Créez un programme original en combinant tout ce que vous avez appris.
-                    </div>
-                    
-                    <div class="exercise-steps">
-                        <strong>Idées de programmes :</strong>
-                        <ol>
-                            <li>Convertisseur Celsius ↔ Fahrenheit</li>
-                            <li>Calculateur d'aire de triangle</li>
-                            <li>Convertisseur de monnaies</li>
-                            <li>Calculateur de moyenne de notes</li>
-                            <li>Convertisseur secondes → heures/minutes</li>
-                            <li>Calculateur d'âge précis avec mois</li>
-                        </ol>
-                    </div>
-
-                    <div class="highlight-box">
-                        <strong>Laissez libre cours à votre créativité !</strong><br>
-                        Combinez variables, input(), print(), conversions et calculs pour créer quelque chose d'unique.
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 30px; padding: 20px; background: rgba(255, 215, 0, 0.1); border-radius: 12px; border: 2px solid rgba(255, 215, 0, 0.3);">
-                <h3 style="color: #ffd700; margin-bottom: 10px;">🏆 Félicitations !</h3>
-                <p style="color: white;">Vous maîtrisez maintenant les bases de Python ! Variables, types, interactions utilisateur... vous avez tout en main pour créer vos premiers programmes.</p>
             </div>
         `
     }
 };
+
+// Lesson 2 Content Data
+const lesson2Data = {
+    operations: {
+        icon: 'icon-operations',
+        emoji: '🧮',
+        title: 'Opérations Arithmétiques',
+        subtitle: 'Manipuler les nombres',
+        content: `
+            <div class="section-text">
+                Maintenant que vous savez stocker des informations, nous allons voir comment les manipuler avec des opérations mathématiques.
+            </div>
+            <div class="concept-animation">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">🧮 Les Opérateurs de Base</h3>
+                <div class="type-animation">
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem;">+</div>
+                        <div style="color: white; font-size: 0.9rem; font-weight: 600;">Addition</div>
+                        <div style="font-family: monospace; color: #4caf50; font-size: 0.8rem;">5 + 3 = 8</div>
+                    </div>
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem;">-</div>
+                        <div style="color: white; font-size: 0.9rem; font-weight: 600;">Soustraction</div>
+                        <div style="font-family: monospace; color: #4caf50; font-size: 0.8rem;">5 - 3 = 2</div>
+                    </div>
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem;">*</div>
+                        <div style="color: white; font-size: 0.9rem; font-weight: 600;">Multiplication</div>
+                        <div style="font-family: monospace; color: #4caf50; font-size: 0.8rem;">5 * 3 = 15</div>
+                    </div>
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem;">/</div>
+                        <div style="color: white; font-size: 0.9rem; font-weight: 600;">Division</div>
+                        <div style="font-family: monospace; color: #4caf50; font-size: 0.8rem;">10 / 3 = 3.33</div>
+                    </div>
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem;">//</div>
+                        <div style="color: white; font-size: 0.9rem; font-weight: 600;">Division entière</div>
+                        <div style="font-family: monospace; color: #4caf50; font-size: 0.8rem;">10 // 3 = 3</div>
+                    </div>
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem;">%</div>
+                        <div style="color: white; font-size: 0.9rem; font-weight: 600;">Modulo</div>
+                        <div style="font-family: monospace; color: #4caf50; font-size: 0.8rem;">10 % 3 = 1</div>
+                    </div>
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem;">**</div>
+                        <div style="color: white; font-size: 0.9rem; font-weight: 600;">Puissance</div>
+                        <div style="font-family: monospace; color: #4caf50; font-size: 0.8rem;">2 ** 3 = 8</div>
+                    </div>
+                </div>
+            </div>
+            <div class="code-block">
+                <div class="code-content">
+<span class="code-comment"># Exemples d'opérations</span>
+a = <span class="code-number">10</span>
+b = <span class="code-number">3</span>
+
+<span class="code-keyword">print</span>(<span class="code-string">"Addition :"</span>, a + b)          <span class="code-comment"># Affiche 13</span>
+<span class="code-keyword">print</span>(<span class="code-string">"Soustraction :"</span>, a - b)      <span class="code-comment"># Affiche 7</span>
+<span class="code-keyword">print</span>(<span class="code-string">"Multiplication :"</span>, a * b)    <span class="code-comment"># Affiche 30</span>
+<span class="code-keyword">print</span>(<span class="code-string">"Division :"</span>, a / b)          <span class="code-comment"># Affiche 3.333...</span>
+<span class="code-keyword">print</span>(<span class="code-string">"Division entière :"</span>, a // b) <span class="code-comment"># Affiche 3</span>
+<span class="code-keyword">print</span>(<span class="code-string">"Modulo :"</span>, a % b)            <span class="code-comment"># Affiche 1</span>
+<span class="code-keyword">print</span>(<span class="code-string">"Puissance :"</span>, a ** b)        <span class="code-comment"># Affiche 1000</span>
+                </div>
+            </div>
+            <div class="warning-banner">
+                <strong>Ordre des opérations :</strong> Python respecte la priorité mathématique : Parenthèses → Exposants → Multiplication/Division → Addition/Soustraction
+            </div>
+            <div class="code-block">
+                <div class="code-content">
+resultat_1 = <span class="code-number">2</span> + <span class="code-number">3</span> * <span class="code-number">4</span>  <span class="code-comment"># Calcule 3 * 4 d'abord, donc 2 + 12 = 14</span>
+resultat_2 = (<span class="code-number">2</span> + <span class="code-number">3</span>) * <span class="code-number">4</span> <span class="code-comment"># Calcule (2 + 3) d'abord, donc 5 * 4 = 20</span>
+                </div>
+            </div>
+        `
+    },
+    strings: {
+        icon: 'icon-strings',
+        emoji: '🔤',
+        title: 'Opérations sur les Chaînes',
+        subtitle: 'Concaténation et f-strings',
+        content: `
+            <div class="section-text">
+                Les chaînes (str) peuvent aussi être manipulées avec certains opérateurs.
+            </div>
+            <div class="highlight-box">
+                <strong>Concaténation (+)</strong> : Assemble deux chaînes<br>
+                <strong>Répétition (*)</strong> : Répète une chaîne plusieurs fois
+            </div>
+            <div class="code-block">
+                <div class="code-content">
+prenom = <span class="code-string">"John"</span>
+nom = <span class="code-string">"Doe"</span>
+nom_complet = prenom + <span class="code-string">" "</span> + nom
+<span class="code-keyword">print</span>(nom_complet)  <span class="code-comment"># Affiche: John Doe</span>
+
+cri = <span class="code-string">"Hourra ! "</span>
+encouragement = cri * <span class="code-number">3</span>
+<span class="code-keyword">print</span>(encouragement)  <span class="code-comment"># Affiche: Hourra ! Hourra ! Hourra !</span>
+                </div>
+            </div>
+            <div class="concept-animation">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">✨ Les f-strings : La méthode moderne</h3>
+                <p style="color: #ccc; margin-bottom: 15px;">Pour intégrer facilement des variables dans une chaîne, utilisez les f-strings avec la lettre <code>f</code> avant les guillemets.</p>
+            </div>
+            <div class="code-block">
+                <div class="code-content">
+nom = <span class="code-string">"Alex"</span>
+age = <span class="code-number">16</span>
+<span class="code-comment"># On place les variables entre accolades {} directement dans la chaîne</span>
+message = <span class="code-string">f"Je m'appelle {nom} et j'ai {age} ans."</span>
+<span class="code-keyword">print</span>(message)
+<span class="code-comment"># Affiche: Je m'appelle Alex et j'ai 16 ans.</span>
+
+<span class="code-comment"># On peut même y faire des calculs !</span>
+prix_ht = <span class="code-number">50</span>
+tva = <span class="code-number">0.20</span>
+<span class="code-keyword">print</span>(<span class="code-string">f"Le prix TTC est de {prix_ht * (1 + tva)} euros."</span>)
+<span class="code-comment"># Affiche: Le prix TTC est de 60.0 euros.</span>
+                </div>
+            </div>
+        `
+    },
+    conditions: {
+        icon: 'icon-conditions',
+        emoji: '🤔',
+        title: 'Les Conditions',
+        subtitle: 'Faire prendre des décisions',
+        content: `
+            <div class="section-text">
+                Un programme devient "intelligent" quand il peut prendre des décisions. C'est le rôle des structures conditionnelles.
+            </div>
+            <div class="concept-animation">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">🔍 Les Opérateurs de Comparaison</h3>
+                <div class="type-animation">
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem;">==</div>
+                        <div style="color: white; font-size: 0.9rem; font-weight: 600;">Égal à</div>
+                        <div style="font-family: monospace; color: #4caf50; font-size: 0.8rem;">5 == 5 → True</div>
+                    </div>
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem;">!=</div>
+                        <div style="color: white; font-size: 0.9rem; font-weight: 600;">Différent de</div>
+                        <div style="font-family: monospace; color: #4caf50; font-size: 0.8rem;">5 != 3 → True</div>
+                    </div>
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem;">&lt;</div>
+                        <div style="color: white; font-size: 0.9rem; font-weight: 600;">Inférieur à</div>
+                        <div style="font-family: monospace; color: #4caf50; font-size: 0.8rem;">3 &lt; 5 → True</div>
+                    </div>
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem;">&gt;</div>
+                        <div style="color: white; font-size: 0.9rem; font-weight: 600;">Supérieur à</div>
+                        <div style="font-family: monospace; color: #4caf50; font-size: 0.8rem;">5 &gt; 3 → True</div>
+                    </div>
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem;">&lt;=</div>
+                        <div style="color: white; font-size: 0.9rem; font-weight: 600;">Inférieur ou égal</div>
+                        <div style="font-family: monospace; color: #4caf50; font-size: 0.8rem;">3 &lt;= 5 → True</div>
+                    </div>
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem;">&gt;=</div>
+                        <div style="color: white; font-size: 0.9rem; font-weight: 600;">Supérieur ou égal</div>
+                        <div style="font-family: monospace; color: #4caf50; font-size: 0.8rem;">5 &gt;= 5 → True</div>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-banner">
+                <strong>Attention :</strong> Ne confondez jamais <code>=</code> (affectation) et <code>==</code> (comparaison) !
+            </div>
+            <div class="code-block">
+                <div class="code-content">
+age = <span class="code-keyword">int</span>(<span class="code-keyword">input</span>(<span class="code-string">"Quel est votre âge ? "</span>))
+
+<span class="code-keyword">if</span> age >= <span class="code-number">18</span>:
+    <span class="code-keyword">print</span>(<span class="code-string">"Vous êtes majeur !"</span>)
+    <span class="code-keyword">print</span>(<span class="code-string">"Vous pouvez voter."</span>)
+                </div>
+            </div>
+            <div class="highlight-box">
+                <strong>Important :</strong> Notez l'indentation (le décalage de 4 espaces) des lignes après les deux-points <code>:</code>. En Python, l'indentation est obligatoire et définit les blocs de code !
+            </div>
+        `
+    },
+    ifelseif: {
+        icon: 'icon-ifelseif',
+        emoji: '🌟',
+        title: 'if...elif...else',
+        subtitle: 'Enchaîner les conditions',
+        content: `
+            <div class="section-text">
+                Pour gérer plusieurs cas de figure, Python propose les structures <code>if...else</code> et <code>if...elif...else</code>.
+            </div>
+            <div class="code-block">
+                <div class="code-content">
+<span class="code-comment"># Structure if...else</span>
+age = <span class="code-keyword">int</span>(<span class="code-keyword">input</span>(<span class="code-string">"Quel est votre âge ? "</span>))
+
+<span class="code-keyword">if</span> age >= <span class="code-number">18</span>:
+    <span class="code-keyword">print</span>(<span class="code-string">"Vous êtes majeur !"</span>)
+<span class="code-keyword">else</span>:
+    <span class="code-keyword">print</span>(<span class="code-string">"Vous êtes mineur."</span>)
+                </div>
+            </div>
+            <div class="code-block">
+                <div class="code-content">
+<span class="code-comment"># Structure if...elif...else pour plusieurs conditions</span>
+note = <span class="code-keyword">float</span>(<span class="code-keyword">input</span>(<span class="code-string">"Entrez votre note sur 20 : "</span>))
+
+<span class="code-keyword">if</span> note &gt;= <span class="code-number">16</span>:
+    <span class="code-keyword">print</span>(<span class="code-string">"Mention Très Bien"</span>)
+<span class="code-keyword">elif</span> note &gt;= <span class="code-number">14</span>:
+    <span class="code-keyword">print</span>(<span class="code-string">"Mention Bien"</span>)
+<span class="code-keyword">elif</span> note &gt;= <span class="code-number">12</span>:
+    <span class="code-keyword">print</span>(<span class="code-string">"Mention Assez Bien"</span>)
+<span class="code-keyword">elif</span> note &gt;= <span class="code-number">10</span>:
+    <span class="code-keyword">print</span>(<span class="code-string">"Passable"</span>)
+<span class="code-keyword">else</span>:
+    <span class="code-keyword">print</span>(<span class="code-string">"Insuffisant"</span>)
+                </div>
+            </div>
+            <div class="highlight-box">
+                <strong>elif</strong> est la contraction de "else if". Il permet d'enchaîner plusieurs conditions de manière élégante.
+            </div>
+        `
+    },
+    logical: {
+        icon: 'icon-logical',
+        emoji: '🧠',
+        title: 'Opérateurs Logiques',
+        subtitle: 'Combiner les conditions',
+        content: `
+            <div class="section-text">
+                Les opérateurs logiques permettent de combiner plusieurs conditions.
+            </div>
+            <div class="concept-animation">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">🔗 Les 3 opérateurs logiques</h3>
+                <div class="type-animation">
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700;">and</div>
+                        <div style="color: #ccc; font-size: 0.9rem;">ET logique</div>
+                        <div style="font-size: 0.8rem; color: #999;">Toutes vraies</div>
+                    </div>
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700;">or</div>
+                        <div style="color: #ccc; font-size: 0.9rem;">OU logique</div>
+                        <div style="font-size: 0.8rem; color: #999;">Au moins une vraie</div>
+                    </div>
+                    <div class="type-demo">
+                        <div style="font-weight: bold; color: #ffd700;">not</div>
+                        <div style="color: #ccc; font-size: 0.9rem;">NON logique</div>
+                        <div style="font-size: 0.8rem; color: #999;">Inverse le résultat</div>
+                    </div>
+                </div>
+            </div>
+            <div class="code-block">
+                <div class="code-content">
+age = <span class="code-keyword">int</span>(<span class="code-keyword">input</span>(<span class="code-string">"Votre âge ? "</span>))
+permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez-vous le permis ? (oui/non) "</span>)
+
+<span class="code-keyword">if</span> age &gt;= <span class="code-number">18</span> <span class="code-keyword">and</span> permis == <span class="code-string">"oui"</span>:
+    <span class="code-keyword">print</span>(<span class="code-string">"Vous pouvez conduire seul !"</span>)
+<span class="code-keyword">elif</span> age &gt;= <span class="code-number">16</span> <span class="code-keyword">and</span> permis == <span class="code-string">"oui"</span>:
+    <span class="code-keyword">print</span>(<span class="code-string">"Vous pouvez faire la conduite accompagnée."</span>)
+<span class="code-keyword">else</span>:
+    <span class="code-keyword">print</span>(<span class="code-string">"Vous ne pouvez pas encore conduire."</span>)
+                </div>
+            </div>
+        `
+    },
+    exercises2: {
+        icon: 'icon-exercises',
+        emoji: '💻',
+        title: 'Exercices',
+        subtitle: 'Opérations et conditions',
+        content: `
+            <div class="section-text">
+                Mettez en pratique les opérations arithmétiques, les f-strings et les conditions avec ces exercices progressifs.
+            </div>
+            <div class="exercises-grid">
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Facile</div>
+                    <div class="exercise-title">Comparaison de nombres</div>
+                    <div class="exercise-desc">
+                        Demandez deux nombres à l'utilisateur et utilisez une structure if/elif/else pour afficher lequel est le plus grand, le plus petit, ou s'ils sont égaux.
+                    </div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint2')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                    </div>
+                    <div id="hint2" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Utilisez les opérateurs > et < pour comparer, et n'oubliez pas le cas où les deux nombres sont égaux avec ==.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>Exemple d'exécution :</strong><br>
+                        Entrez le premier nombre : 15<br>
+                        Entrez le deuxième nombre : 8<br>
+                        Le premier nombre (15) est plus grand que le second (8)
+                    </div>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Facile</div>
+                    <div class="exercise-title">Présentation avec f-string</div>
+                    <div class="exercise-desc">
+                        Créez des variables pour un prénom, un nom, et un âge. Utilisez une f-string pour afficher une phrase de présentation complète comme "Je m'appelle [prénom] [nom] et j'ai [âge] ans.".
+                    </div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint3')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                    </div>
+                    <div id="hint3" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> N'oubliez pas le 'f' avant les guillemets et mettez vos variables entre accolades {} dans la chaîne.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>Exemple d'exécution :</strong><br>
+                        Je m'appelle Lucas Martin et j'ai 16 ans.
+                    </div>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Moyen</div>
+                    <div class="exercise-title">Contrôle d'accès parc d'attraction</div>
+                    <div class="exercise-desc">
+                        Demandez l'âge d'un visiteur et affichez :<br>
+                        • "Accès interdit" si moins de 5 ans<br>
+                        • "Accès avec accompagnant obligatoire" entre 5 et 12 ans (inclus)<br>
+                        • "Accès libre" pour les plus de 12 ans
+                    </div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint4')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                    </div>
+                    <div id="hint4" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Pour "entre 5 et 12 ans inclus", utilisez l'opérateur 'and' pour vérifier que l'âge est >= 5 ET <= 12.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>Exemple d'exécution :</strong><br>
+                        Quel est l'âge du visiteur ? 8<br>
+                        Accès avec accompagnant obligatoire
+                    </div>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Avancé</div>
+                    <div class="exercise-title">Jeu du nombre mystère</div>
+                    <div class="exercise-desc">
+                        Définissez un nombre_secret (par exemple, nombre_secret = 42). Demandez à l'utilisateur de deviner ce nombre. Indiquez si son nombre est "trop grand", "trop petit", ou "correct". Affichez un message de félicitations s'il trouve.
+                    </div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint5')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                    </div>
+                    <div id="hint5" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Utilisez if/elif/else pour comparer le nombre saisi avec le nombre secret. Pensez aux trois cas possibles !
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>Exemple d'exécution :</strong><br>
+                        Devinez le nombre mystère : 35<br>
+                        Trop petit ! Essayez plus grand.
+                    </div>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Expert</div>
+                    <div class="exercise-title">Simulateur de distributeur</div>
+                    <div class="exercise-desc">
+                        Créez un programme qui simule un distributeur de boissons. Affichez un menu avec des prix, demandez le choix et l'argent inséré, vérifiez si l'argent est suffisant, calculez la monnaie et gérez les cas d'erreur.
+                    </div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                    </div>
+                    <div id="hint6" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Créez des variables pour les prix, vérifiez que le choix est valide, puis comparez l'argent inséré avec le prix choisi.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>Exemple d'exécution :</strong><br>
+                        === DISTRIBUTEUR ===<br>
+                        1. Coca (2€)<br>
+                        2. Eau (1€)<br>
+                        Votre choix : 1<br>
+                        Argent inséré : 5<br>
+                        Voici votre Coca ! Monnaie : 3€
+                    </div>
+                </div>
+            </div>
+        `
+    }
+};
+
+// Current lesson data (will be switched between lesson1Data and lesson2Data)
+let currentLessonData = lesson1Data;

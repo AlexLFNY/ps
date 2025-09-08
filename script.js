@@ -1,7 +1,8 @@
 // Create floating particles
 function createParticles() {
     const particles = document.getElementById('particles');
-    for (let i = 0; i < 20; i++) {
+    const particleCount = 50;
+    for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.left = Math.random() * 100 + '%';
@@ -9,6 +10,121 @@ function createParticles() {
         particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
         particles.appendChild(particle);
     }
+}
+
+// Lesson navigation functions
+function showLessonSelection() {
+    const container = document.querySelector('.container');
+    container.innerHTML = `
+        <div class="hero">
+            <h1>Python Seconde</h1>
+            <p>Choisissez votre leçon</p>
+        </div>
+        <div class="lesson-selection">
+            <div class="lesson-tile" onclick="showLesson(1)">
+                <div class="lesson-number">1</div>
+                <div class="lesson-content">
+                    <div class="lesson-title">Variables et Types</div>
+                    <div class="lesson-subtitle">Les bases de Python</div>
+                </div>
+                <div class="tile-arrow">→</div>
+            </div>
+            <div class="lesson-tile" onclick="showLesson(2)">
+                <div class="lesson-number">2</div>
+                <div class="lesson-content">
+                    <div class="lesson-title">Opérations et Conditions</div>
+                    <div class="lesson-subtitle">Calculs et décisions</div>
+                </div>
+                <div class="tile-arrow">→</div>
+            </div>
+        </div>
+    `;
+}
+
+function showLesson(lessonNumber) {
+    // Switch lesson data
+    if (lessonNumber === 1) {
+        currentLessonData = lesson1Data;
+        showLessonContent('Leçon 1 : Variables et Types', getLessonConcepts(lesson1Data));
+    } else if (lessonNumber === 2) {
+        currentLessonData = lesson2Data;
+        showLessonContent('Leçon 2 : Opérations et Conditions', getLessonConcepts(lesson2Data));
+    }
+}
+
+function getLessonConcepts(lessonData) {
+    const concepts = [];
+    for (const [key, value] of Object.entries(lessonData)) {
+        concepts.push({
+            concept: key,
+            icon: value.icon,
+            emoji: value.emoji,
+            title: value.title,
+            subtitle: value.subtitle
+        });
+    }
+    return concepts;
+}
+
+function showLessonContent(lessonTitle, concepts) {
+    const container = document.querySelector('.container');
+    const conceptsHtml = concepts.map(concept => `
+        <div class="concept-tile" data-concept="${concept.concept}">
+            <div class="tile-icon ${concept.icon}">${concept.emoji}</div>
+            <div class="tile-content">
+                <div class="tile-title">${concept.title}</div>
+                <div class="tile-subtitle">${concept.subtitle}</div>
+            </div>
+            <div class="tile-arrow">→</div>
+        </div>
+    `).join('');
+
+    container.innerHTML = `
+        <div class="hero">
+            <button class="back-button" onclick="showLessonSelection()" style="
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                color: white;
+                font-size: 1.2rem;
+                transition: all 0.3s ease;
+            " onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                ←
+            </button>
+            <h1>${lessonTitle}</h1>
+            <p>Cliquez sur un concept pour l'explorer</p>
+        </div>
+        <div class="tiles-container">
+            ${conceptsHtml}
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <button class="back-button" onclick="showLessonSelection()" style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                border-radius: 12px;
+                padding: 12px 24px;
+                color: white;
+                cursor: pointer;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+                margin-bottom: 20px;
+            " onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                ← Retour aux leçons
+            </button>
+        </div>
+    `;
+    
+    // Reinitialize modal after content change
+    initModal();
 }
 
 // Modal system
@@ -25,7 +141,7 @@ function initModal() {
     tiles.forEach(tile => {
         tile.addEventListener('click', function() {
             const concept = this.dataset.concept;
-            const data = conceptData[concept];
+            const data = currentLessonData[concept];
             
             if (!data) return;
 
@@ -72,13 +188,13 @@ function initTouchGestures() {
     tiles.forEach(tile => {
         let startY = 0;
         let startTime = 0;
-
+        
         tile.addEventListener('touchstart', function(e) {
             startY = e.touches[0].clientY;
             startTime = Date.now();
             this.style.transform = 'scale(0.95)';
         });
-
+        
         tile.addEventListener('touchend', function(e) {
             const endTime = Date.now();
             const duration = endTime - startTime;
@@ -90,7 +206,7 @@ function initTouchGestures() {
                 this.click();
             }
         });
-
+        
         tile.addEventListener('touchcancel', function() {
             this.style.transform = '';
         });
@@ -159,7 +275,8 @@ function setupQuizListeners() {
 }
 
 function checkVariableQuiz() {
-    const options = document.querySelectorAll('#variableQuizFeedback').forEach(feedback => {
+    const feedbackElements = document.querySelectorAll('#variableQuizFeedback');
+    feedbackElements.forEach(feedback => {
         feedback.parentElement.querySelectorAll('.quiz-option').forEach(option => {
             const isCorrect = option.dataset.correct === 'true';
             const isSelected = option.classList.contains('selected');
@@ -186,6 +303,8 @@ function checkVariableQuiz() {
 
 function checkTypeQuiz() {
     const feedback = document.getElementById('typeQuizFeedback');
+    if (!feedback) return;
+    
     const options = feedback.parentElement.querySelectorAll('.quiz-option');
     
     options.forEach(option => {
@@ -211,12 +330,21 @@ function checkTypeQuiz() {
     }
 }
 
-// Initialize everything
-createParticles();
-initModal();
-initTouchGestures();
+// Hint toggle function
+function toggleHint(hintId) {
+    const hint = document.getElementById(hintId);
+    if (hint) {
+        if (hint.style.display === 'none' || hint.style.display === '') {
+            hint.style.display = 'block';
+        } else {
+            hint.style.display = 'none';
+        }
+    }
+}
 
-// Setup interactive features when DOM is loaded
+// Initialize everything
 document.addEventListener('DOMContentLoaded', function() {
+    createParticles();
+    showLessonSelection();
     setupQuizListeners();
 });
