@@ -866,3 +866,617 @@ body {
     background: rgba(255, 215, 0, 0.6);
     border-radius: 3px;
 }
+
+/* Python Console Styles - Floating IDE Window */
+.python-console {
+    position: fixed;
+    top: 10%;
+    right: 20px;
+    width: 750px;
+    max-width: calc(100vw - 40px);
+    height: 600px;
+    max-height: calc(100vh - 80px);
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    transform: translateY(-50%) scale(0.8);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    color: #d4d4d4;
+    resize: both;
+    overflow: hidden;
+    min-width: 400px;
+    min-height: 300px;
+}
+
+.python-console.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.python-console.minimized {
+    height: 50px;
+    width: 300px;
+    resize: none;
+}
+
+.python-console.minimized .console-toolbar,
+.python-console.minimized .console-content,
+.python-console.minimized .console-status-bar {
+    display: none;
+}
+
+/* Console Header with Tabs - Draggable */
+.console-header {
+    background: #2d2d30;
+    border-bottom: 1px solid #3e3e42;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px 12px 0 0;
+    height: 40px;
+    cursor: move;
+    user-select: none;
+}
+
+.console-header:hover {
+    background: #37373d;
+}
+
+.console-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 16px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.tab-icon {
+    font-size: 1rem;
+}
+.alpha-badge {
+    background: linear-gradient(135deg, #ff6b6b, #ffa726);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 8px;
+    box-shadow: 0 1px 3px rgba(255, 107, 107, 0.3);
+}
+
+.console-controls {
+    display: flex;
+    gap: 4px;
+    padding: 0 8px;
+}
+
+.console-control {
+    background: transparent;
+    border: none;
+    color: #cccccc;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.console-control:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.console-control svg {
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
+}
+
+/* Console Toolbar */
+.console-toolbar {
+    background: #252526;
+    border-bottom: 1px solid #3e3e42;
+    padding: 6px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.toolbar-left, .toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.toolbar-btn {
+    background: transparent;
+    border: none;
+    color: #cccccc;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+
+.toolbar-btn.active {
+    background: #007acc;
+    color: #ffffff;
+}
+
+.toolbar-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.status-indicator {
+    color: #007acc;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.console-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #1e1e1e;
+}
+
+.console-output {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #d4d4d4;
+}
+
+.console-welcome {
+    margin-bottom: 16px;
+    padding: 12px;
+    background: #0d47a1;
+    border-left: 4px solid #2196f3;
+    border-radius: 4px;
+}
+
+.welcome-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.python-version {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.python-info {
+    color: #bbbbbb;
+    font-size: 0.85rem;
+}
+
+.welcome-tip {
+    color: #cccccc;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.welcome-tip kbd {
+    background: #333333;
+    border: 1px solid #555555;
+    border-radius: 3px;
+    padding: 1px 4px;
+    font-size: 0.75rem;
+    color: #ffffff;
+}
+
+.console-line {
+    margin-bottom: 4px;
+    color: #d4d4d4;
+    display: flex;
+    align-items: flex-start;
+}
+
+.console-input-line {
+    color: #569cd6;
+    font-weight: 500;
+}
+
+.console-output-line {
+    color: #4fc1ff;
+    margin-left: 24px;
+}
+
+.console-error-line {
+    color: #f48771;
+    margin-left: 24px;
+}
+
+.console-input-container {
+    border-top: 1px solid #3e3e42;
+    padding: 12px 16px;
+    background: #252526;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.line-number {
+    color: #858585;
+    font-size: 0.8rem;
+    min-width: 24px;
+    text-align: right;
+    user-select: none;
+}
+
+.console-prompt {
+    color: #569cd6;
+    font-weight: 600;
+}
+
+.console-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #d4d4d4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.console-input::placeholder {
+    color: #858585;
+}
+
+/* Console Status Bar */
+.console-status-bar {
+    background: #007acc;
+    padding: 4px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #ffffff;
+    height: 22px;
+}
+
+.status-left, .status-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #ffffff;
+}
+
+.status-item svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+}
+
+/* Console Panels */
+.console-panel, .editor-panel, .variables-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Code Editor Panel */
+.editor-toolbar {
+    background: #252526;
+    border-bottom: 1px solid #3e3e42;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editor-toolbar-left, .editor-toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.editor-btn {
+    background: #0e639c;
+    border: none;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.editor-btn:hover {
+    background: #1177bb;
+}
+
+.editor-status {
+    color: #cccccc;
+    font-size: 0.8rem;
+}
+
+.editor-container {
+    flex: 1;
+    display: flex;
+    background: #1e1e1e;
+    overflow: hidden;
+}
+
+.editor-line-numbers {
+    background: #1e1e1e;
+    border-right: 1px solid #3e3e42;
+    padding: 16px 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #858585;
+    text-align: right;
+    min-width: 40px;
+    line-height: 1.6;
+    user-select: none;
+    white-space: pre;
+}
+
+.code-editor {
+    flex: 1;
+    background: #1e1e1e;
+    border: none;
+    color: #d4d4d4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    padding: 16px;
+    resize: none;
+    outline: none;
+    white-space: pre;
+    tab-size: 4;
+}
+
+.code-editor::placeholder {
+    color: #6a6a6a;
+}
+
+.editor-output {
+    background: #0f0f0f;
+    border-top: 1px solid #3e3e42;
+    max-height: 200px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.output-header {
+    background: #252526;
+    padding: 8px 16px;
+    color: #cccccc;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-bottom: 1px solid #3e3e42;
+}
+
+.output-content {
+    flex: 1;
+    padding: 12px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #d4d4d4;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+/* Variables Panel */
+.variables-header {
+    background: #252526;
+    border-bottom: 1px solid #3e3e42;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.variables-header h3 {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.refresh-btn {
+    background: transparent;
+    border: none;
+    color: #cccccc;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.refresh-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.variables-content {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.variables-empty {
+    color: #858585;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+.variable-item {
+    background: #252526;
+    border: 1px solid #3e3e42;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 8px;
+}
+
+.variable-name {
+    color: #569cd6;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.variable-type {
+    color: #4ec9b0;
+    font-size: 0.8rem;
+    margin-left: 8px;
+}
+
+.variable-value {
+    color: #ce9178;
+    font-family: 'JetBrains Mono', monospace;
+    margin-top: 4px;
+    word-break: break-all;
+}
+
+/* Floating Action Button */
+.console-fab {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    left: auto !important;
+    width: auto;
+    height: 56px;
+    padding: 0 24px;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d30);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 28px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 215, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 9998;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: #FFD700;
+    font-weight: 700;
+    font-size: 0.85rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.console-fab:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(255, 215, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 215, 0, 0.6);
+}
+
+.fab-label {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.fab-glow {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.console-fab:hover .fab-glow {
+    opacity: 1;
+}
+
+.console-fab.hidden {
+    transform: scale(0);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Code load buttons in content */
+.code-load-button {
+    background: linear-gradient(135deg, #4caf50, #45a049);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.code-load-button:hover {
+    background: linear-gradient(135deg, #45a049, #4caf50);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .python-console {
+        width: calc(100vw - 20px);
+        right: 10px;
+        height: 300px;
+    }
+    
+    .console-fab {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        padding: 0;
+        border-radius: 50%;
+    }
+    
+    .fab-label {
+        display: none;
+    }
+}

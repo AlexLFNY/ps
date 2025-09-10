@@ -57,6 +57,16 @@ const lesson1Data = {
                 <code style="color: #ffd700; font-family: monospace;">nom_de_la_variable = valeur</code>
             </div>
             <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Exemple : creer des variables
+nom = 'Lucas'
+age = 16
+taille = 1.75
+# Utiliser les variables
+print('Nom:', nom)
+print('Age:', age)
+print('Taille:', taille, 'm')\`)">
+                    🐍 Charger
+                </button>
                 <div class="code-content">
 <span class="code-comment"># Exemple : créer des variables</span>
 <span class="code-keyword">nom</span> = <span class="code-string">'Lucas'</span>
@@ -111,32 +121,39 @@ const lesson1Data = {
                 <h3 style="color: #ffd700; margin-bottom: 20px;">📚 Les 4 types de base</h3>
                 <div class="type-animation">
                     <div class="type-demo">
-                        <div class="type-icon">🔢</div>
-                        <div style="font-weight: bold; color: #ffd700;">int</div>
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem; margin-bottom: 10px;">int</div>
                         <div style="color: #ccc; font-size: 0.9rem;">Entiers</div>
                         <div style="font-family: monospace; color: #4caf50;">42, -17, 0</div>
                     </div>
                     <div class="type-demo">
-                        <div class="type-icon">💧</div>
-                        <div style="font-weight: bold; color: #ffd700;">float</div>
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem; margin-bottom: 10px;">float</div>
                         <div style="color: #ccc; font-size: 0.9rem;">Décimaux</div>
                         <div style="font-family: monospace; color: #4caf50;">3.14, 1.75</div>
                     </div>
                     <div class="type-demo">
-                        <div class="type-icon">📝</div>
-                        <div style="font-weight: bold; color: #ffd700;">str</div>
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem; margin-bottom: 10px;">str</div>
                         <div style="color: #ccc; font-size: 0.9rem;">Texte</div>
                         <div style="font-family: monospace; color: #4caf50;">"Bonjour"</div>
                     </div>
                     <div class="type-demo">
-                        <div class="type-icon">✅</div>
-                        <div style="font-weight: bold; color: #ffd700;">bool</div>
+                        <div style="font-weight: bold; color: #ffd700; font-size: 1.5rem; margin-bottom: 10px;">bool</div>
                         <div style="color: #ccc; font-size: 0.9rem;">Vrai/Faux</div>
                         <div style="font-family: monospace; color: #4caf50;">True, False</div>
                     </div>
                 </div>
             </div>
             <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Decouvrir les types avec type()
+age = 17
+note = 15.5
+nom = 'Marie'
+reussite = True
+print('Type de age:', type(age))
+print('Type de note:', type(note))
+print('Type de nom:', type(nom))
+print('Type de reussite:', type(reussite))\`)">
+                    🐍 Charger
+                </button>
                 <div class="code-content">
 <span class="code-comment"># Découvrir les types avec type()</span>
 <span class="code-keyword">age</span> = <span class="code-number">17</span>
@@ -225,6 +242,13 @@ const lesson1Data = {
                 <strong>input()</strong> : Demande des informations à l'utilisateur
             </div>
             <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Afficher un message
+print('Bonjour le monde !')
+# Demander et stocker
+nom = input('Votre nom ? ')
+print('Bonjour', nom)\`)">
+                    🐍 Charger
+                </button>
                 <div class="code-content">
 <span class="code-comment"># Afficher un message</span>
 <span class="code-keyword">print</span>(<span class="code-string">"Bonjour le monde !"</span>)
@@ -254,9 +278,18 @@ nom = <span class="code-keyword">input</span>(<span class="code-string">"Votre n
                 vous ne pourrez pas faire de calcul avec directement. Il faudra le convertir.
             </div>
             <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Demander l'age
+age_str = input('Votre age ? ')  # '15' (str)
+# Convertir en entier
+age_int = int(age_str)           # 15 (int)
+# Maintenant on peut calculer
+age_futur = age_int + 10
+print('Dans 10 ans:', age_futur, 'ans')\`)">
+                    🐍 Charger
+                </button>
                 <div class="code-content">
-<span class="code-comment"># Demander l'âge</span>
-age_str = <span class="code-keyword">input</span>(<span class="code-string">"Votre âge ? "</span>)  <span class="code-comment"># "15" (str)</span>
+<span class="code-comment"># Demander l'age</span>
+age_str = <span class="code-keyword">input</span>(<span class="code-string">"Votre age ? "</span>)  <span class="code-comment"># "15" (str)</span>
 <span class="code-comment"># Convertir en entier</span>
 age_int = <span class="code-keyword">int</span>(age_str)           <span class="code-comment"># 15 (int)</span>
 <span class="code-comment"># Maintenant on peut calculer</span>
@@ -304,18 +337,18 @@ age_futur = age_int + <span class="code-number">10</span>
     exercises: {
         icon: 'icon-exercises',
         emoji: '💻',
-        title: 'Exercices Pratiques',
+        title: 'Exercices d\'Application',
         subtitle: 'Pratiquez et progressez !',
         content: `
             <div class="section-text">
-                Voici 6 exercices progressifs pour mettre en pratique tout ce que vous avez appris. À vous de créer les programmes !
+                Voici 4 exercices progressifs pour mettre en pratique tout ce que vous avez appris. À vous de créer les programmes !
             </div>
             <div class="exercises-grid">
                 <div class="exercise-card">
                     <div class="exercise-difficulty">Facile</div>
-                    <div class="exercise-title">Dialogue Simple</div>
+                    <div class="exercise-title">Dialogue</div>
                     <div class="exercise-desc">
-                        Créez votre premier programme interactif ! Demandez le prénom de l'utilisateur et saluez-le personnellement.
+                        Écrivez un programme qui demande son prénom à l'utilisateur, puis qui lui dit bonjour en utilisant son prénom.
                     </div>
                     
                     <div class="exercise-steps">
@@ -355,12 +388,174 @@ age_futur = age_int + <span class="code-number">10</span>
                         color: #ffd700;
                         font-style: italic;
                     ">
-                        🔍 <strong>Indice :</strong> Commencez par créer une variable pour stocker le prénom, puis utilisez cette variable dans votre message de salutation.
+                        🔍 <strong>Indice :</strong> Commencez par créer une variable comme <code>prenom = input("Quel est votre prénom ? ")</code>, puis utilisez cette variable dans votre message de salutation.
                     </div>
                     <div class="console-output" style="margin-top: 15px;">
                         <strong>Exemple d'exécution :</strong><br>
-                        Comment vous appelez-vous ? Marie<br>
+                        Quel est votre prénom ? Marie<br>
                         Bonjour Marie, ravi de vous rencontrer !
+                    </div>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Facile</div>
+                    <div class="exercise-title">Age</div>
+                    <div class="exercise-desc">
+                        Écrivez un programme qui demande son année de naissance à l'utilisateur, qui la convertit en entier, calcule son age approximatif et l'affiche.
+                    </div>
+                    
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Demander l'année de naissance avec <code>input()</code></li>
+                            <li>Convertir la réponse en entier avec <code>int()</code></li>
+                            <li>Calculer l'age avec <code>2024 - annee_naissance</code></li>
+                            <li>Afficher le résultat avec <code>print()</code></li>
+                        </ol>
+                    </div>
+                    <div class="highlight-box">
+                        <strong>À vous de jouer !</strong><br>
+                        N'oubliez pas de convertir l'année de naissance en entier pour pouvoir faire le calcul !
+                    </div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint2')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                    </div>
+                    <div id="hint2" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Utilisez <code>annee = int(input("En quelle année etes-vous ne ? "))</code> puis <code>age = 2024 - annee</code>.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>Exemple d'exécution :</strong><br>
+                        En quelle année etes-vous ne ? 2005<br>
+                        Vous avez environ 19 ans.
+                    </div>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Avancé</div>
+                    <div class="exercise-title">Calculateur de TTC</div>
+                    <div class="exercise-desc">
+                        Demandez à l'utilisateur un prix hors taxe (HT) pour un article. Convertissez cette valeur en float. Sachant que la TVA est de 20% (0.2), calculez le prix toutes taxes comprises (TTC) avec la formule : prix_ttc = prix_ht * 1.2. Affichez le résultat avec un message clair.
+                    </div>
+                    
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Demander le prix HT avec <code>input()</code></li>
+                            <li>Convertir en nombre décimal avec <code>float()</code></li>
+                            <li>Calculer le prix TTC : <code>prix_ttc = prix_ht * 1.2</code></li>
+                            <li>Afficher le résultat avec un message clair</li>
+                        </ol>
+                    </div>
+                    <div class="highlight-box">
+                        <strong>À vous de jouer !</strong><br>
+                        Utilisez <code>float()</code> pour convertir le prix en nombre décimal et n'oubliez pas que TVA 20% = multiplier par 1.2 !
+                    </div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint3')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                    </div>
+                    <div id="hint3" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Commencez par <code>prix_ht = float(input("Prix HT : "))</code>, puis <code>prix_ttc = prix_ht * 1.2</code>, et enfin affichez le résultat.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>Exemple d'exécution :</strong><br>
+                        Prix HT de l'article : 50<br>
+                        Le prix TTC est de : 60.0 euros
+                    </div>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Avancé</div>
+                    <div class="exercise-title">Distance d'un éclair</div>
+                    <div class="exercise-desc">
+                        Le son voyage à environ 343 mètres par seconde. Écrivez un programme qui demande à l'utilisateur combien de secondes se sont écoulées entre l'éclair et le tonnerre. Convertissez cette durée en float. Calculez la distance de l'éclair en mètres (distance = duree * 343). Affichez la distance avec un message clair.
+                    </div>
+                    
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Demander la durée en secondes avec <code>input()</code></li>
+                            <li>Convertir en nombre décimal avec <code>float()</code></li>
+                            <li>Calculer la distance : <code>distance = duree * 343</code></li>
+                            <li>Afficher le résultat avec un message explicatif</li>
+                        </ol>
+                    </div>
+                    <div class="highlight-box">
+                        <strong>À vous de jouer !</strong><br>
+                        Rappelez-vous que la vitesse du son est de 343 m/s. Plus l'éclair est loin, plus il y a de délai entre l'éclair et le tonnerre !
+                    </div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint4')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                    </div>
+                    <div id="hint4" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Utilisez <code>duree = float(input("Duree en secondes : "))</code> puis <code>distance = duree * 343</code>.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>Exemple d'exécution :</strong><br>
+                        Combien de secondes entre l'eclair et le tonnerre ? 3<br>
+                        L'eclair se trouve à environ 1029.0 metres.
                     </div>
                 </div>
             </div>
@@ -420,6 +615,19 @@ const lesson2Data = {
                 </div>
             </div>
             <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Exemples d'operations
+a = 10
+b = 3
+
+print('Addition :', a + b)          # Affiche 13
+print('Soustraction :', a - b)      # Affiche 7
+print('Multiplication :', a * b)    # Affiche 30
+print('Division :', a / b)          # Affiche 3.333...
+print('Division entière :', a // b) # Affiche 3
+print('Modulo :', a % b)            # Affiche 1
+print('Puissance :', a ** b)        # Affiche 1000\`)">
+                    🐍 Charger
+                </button>
                 <div class="code-content">
 <span class="code-comment"># Exemples d'opérations</span>
 a = <span class="code-number">10</span>
@@ -438,6 +646,13 @@ b = <span class="code-number">3</span>
                 <strong>Ordre des opérations :</strong> Python respecte la priorité mathématique : Parenthèses → Exposants → Multiplication/Division → Addition/Soustraction
             </div>
             <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Ordre des operations
+resultat_1 = 2 + 3 * 4  # Calcule 3 * 4 d'abord, donc 2 + 12 = 14
+resultat_2 = (2 + 3) * 4 # Calcule (2 + 3) d'abord, donc 5 * 4 = 20
+print('Resultat 1:', resultat_1)
+print('Resultat 2:', resultat_2)\`)">
+                    🐍 Charger
+                </button>
                 <div class="code-content">
 resultat_1 = <span class="code-number">2</span> + <span class="code-number">3</span> * <span class="code-number">4</span>  <span class="code-comment"># Calcule 3 * 4 d'abord, donc 2 + 12 = 14</span>
 resultat_2 = (<span class="code-number">2</span> + <span class="code-number">3</span>) * <span class="code-number">4</span> <span class="code-comment"># Calcule (2 + 3) d'abord, donc 5 * 4 = 20</span>
@@ -459,6 +674,17 @@ resultat_2 = (<span class="code-number">2</span> + <span class="code-number">3</
                 <strong>Répétition (*)</strong> : Répète une chaîne plusieurs fois
             </div>
             <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Operations sur les chaines
+prenom = 'John'
+nom = 'Doe'
+nom_complet = prenom + ' ' + nom
+print(nom_complet)  # Affiche: John Doe
+
+cri = 'Hourra ! '
+encouragement = cri * 3
+print(encouragement)  # Affiche: Hourra ! Hourra ! Hourra !\`)">
+                    🐍 Charger
+                </button>
                 <div class="code-content">
 prenom = <span class="code-string">"John"</span>
 nom = <span class="code-string">"Doe"</span>
@@ -475,6 +701,21 @@ encouragement = cri * <span class="code-number">3</span>
                 <p style="color: #ccc; margin-bottom: 15px;">Pour intégrer facilement des variables dans une chaîne, utilisez les f-strings avec la lettre <code>f</code> avant les guillemets.</p>
             </div>
             <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# f-strings : la methode moderne
+nom = 'Alex'
+age = 16
+# On place les variables entre accolades {} directement dans la chaine
+message = f'Je m\'appelle {nom} et j\'ai {age} ans.'
+print(message)
+# Affiche: Je m'appelle Alex et j'ai 16 ans.
+
+# On peut meme y faire des calculs !
+prix_ht = 50
+tva = 0.20
+print(f'Le prix TTC est de {prix_ht * (1 + tva)} euros.')
+# Affiche: Le prix TTC est de 60.0 euros.\`)">
+                    🐍 Charger
+                </button>
                 <div class="code-content">
 nom = <span class="code-string">"Alex"</span>
 age = <span class="code-number">16</span>
@@ -483,7 +724,7 @@ message = <span class="code-string">f"Je m'appelle {nom} et j'ai {age} ans."</sp
 <span class="code-keyword">print</span>(message)
 <span class="code-comment"># Affiche: Je m'appelle Alex et j'ai 16 ans.</span>
 
-<span class="code-comment"># On peut même y faire des calculs !</span>
+<span class="code-comment"># On peut meme y faire des calculs !</span>
 prix_ht = <span class="code-number">50</span>
 tva = <span class="code-number">0.20</span>
 <span class="code-keyword">print</span>(<span class="code-string">f"Le prix TTC est de {prix_ht * (1 + tva)} euros."</span>)
@@ -540,11 +781,19 @@ tva = <span class="code-number">0.20</span>
                 <strong>Attention :</strong> Ne confondez jamais <code>=</code> (affectation) et <code>==</code> (comparaison) !
             </div>
             <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Simple condition if
+age = int(input('Quel est votre age ? '))
+
+if age >= 18:
+    print('Vous etes majeur !')
+    print('Vous pouvez voter.')\`)">
+                    🐍 Charger
+                </button>
                 <div class="code-content">
-age = <span class="code-keyword">int</span>(<span class="code-keyword">input</span>(<span class="code-string">"Quel est votre âge ? "</span>))
+age = <span class="code-keyword">int</span>(<span class="code-keyword">input</span>(<span class="code-string">"Quel est votre age ? "</span>))
 
 <span class="code-keyword">if</span> age >= <span class="code-number">18</span>:
-    <span class="code-keyword">print</span>(<span class="code-string">"Vous êtes majeur !"</span>)
+    <span class="code-keyword">print</span>(<span class="code-string">"Vous etes majeur !"</span>)
     <span class="code-keyword">print</span>(<span class="code-string">"Vous pouvez voter."</span>)
                 </div>
             </div>
@@ -563,17 +812,41 @@ age = <span class="code-keyword">int</span>(<span class="code-keyword">input</sp
                 Pour gérer plusieurs cas de figure, Python propose les structures <code>if...else</code> et <code>if...elif...else</code>.
             </div>
             <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Structure if...else
+age = int(input('Quel est votre age ? '))
+
+if age >= 18:
+    print('Vous etes majeur !')
+else:
+    print('Vous etes mineur.')\`)">
+                    🐍 Charger
+                </button>
                 <div class="code-content">
 <span class="code-comment"># Structure if...else</span>
-age = <span class="code-keyword">int</span>(<span class="code-keyword">input</span>(<span class="code-string">"Quel est votre âge ? "</span>))
+age = <span class="code-keyword">int</span>(<span class="code-keyword">input</span>(<span class="code-string">"Quel est votre age ? "</span>))
 
 <span class="code-keyword">if</span> age >= <span class="code-number">18</span>:
-    <span class="code-keyword">print</span>(<span class="code-string">"Vous êtes majeur !"</span>)
+    <span class="code-keyword">print</span>(<span class="code-string">"Vous etes majeur !"</span>)
 <span class="code-keyword">else</span>:
-    <span class="code-keyword">print</span>(<span class="code-string">"Vous êtes mineur."</span>)
+    <span class="code-keyword">print</span>(<span class="code-string">"Vous etes mineur."</span>)
                 </div>
             </div>
             <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Structure if...elif...else pour plusieurs conditions
+note = float(input('Entrez votre note sur 20 : '))
+
+if note >= 16:
+    print('Mention Très Bien')
+elif note >= 14:
+    print('Mention Bien')
+elif note >= 12:
+    print('Mention Assez Bien')
+elif note >= 10:
+    print('Passable')
+else:
+    print('Insuffisant')\`)">
+                    🐍 Charger
+                </button>
                 <div class="code-content">
 <span class="code-comment"># Structure if...elif...else pour plusieurs conditions</span>
 note = <span class="code-keyword">float</span>(<span class="code-keyword">input</span>(<span class="code-string">"Entrez votre note sur 20 : "</span>))
@@ -625,6 +898,18 @@ note = <span class="code-keyword">float</span>(<span class="code-keyword">input<
                 </div>
             </div>
             <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Operateurs logiques
+age = int(input('Votre age ? '))
+permis = input('Avez-vous le permis ? (oui/non) ')
+
+if age >= 18 and permis == 'oui':
+    print('Vous pouvez conduire seul !')
+elif age >= 16 and permis == 'oui':
+    print('Vous pouvez faire la conduite accompagnée.')
+else:
+    print('Vous ne pouvez pas encore conduire.')\`)">
+                    🐍 Charger
+                </button>
                 <div class="code-content">
 age = <span class="code-keyword">int</span>(<span class="code-keyword">input</span>(<span class="code-string">"Votre âge ? "</span>))
 permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez-vous le permis ? (oui/non) "</span>)

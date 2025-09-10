@@ -347,4 +347,426 @@ document.addEventListener('DOMContentLoaded', function() {
     createParticles();
     showLessonSelection();
     setupQuizListeners();
+    initConsole();
+});
+
+// Skulpt Configuration and Editor functionality
+let skulptVariables = {};
+let currentTab = 'editor';
+
+function initConsole() {
+    // Wait for Skulpt to load, then configure it
+    if (typeof Sk === 'undefined') {
+        console.log('Skulpt not yet loaded, retrying...');
+        setTimeout(initConsole, 100);
+        return;
+    }
+    
+    console.log('Skulpt loaded successfully!', Sk);
+    
+    const codeEditor = document.getElementById('codeEditor');
+    
+    if (codeEditor) {
+        codeEditor.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'Enter') {
+                e.preventDefault();
+                runCode();
+            }
+        });
+        
+        codeEditor.addEventListener('input', updateLineNumbers);
+        codeEditor.addEventListener('scroll', syncLineNumbers);
+        updateLineNumbers();
+    }
+    
+    // Show editor by default
+    switchTab('editor');
+    
+    // Also make sure the editor panel is visible
+    const editorPanel = document.getElementById('editorPanel');
+    if (editorPanel) {
+        editorPanel.style.display = 'flex';
+    }
+    
+    // Initialize dragging functionality
+    initDragging();
+}
+
+// Dragging functionality
+function initDragging() {
+    const consoleWindow = document.getElementById('pythonConsole');
+    const header = consoleWindow.querySelector('.console-header');
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+    let xOffset = 0;
+    let yOffset = 0;
+
+    header.addEventListener('mousedown', dragStart);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', dragEnd);
+
+    function dragStart(e) {
+        // Don't drag if clicking on buttons
+        if (e.target.closest('.console-control') || e.target.closest('.toolbar-btn')) {
+            return;
+        }
+        
+        isDragging = true;
+        consoleWindow.style.transition = 'none';
+        
+        initialX = e.clientX - xOffset;
+        initialY = e.clientY - yOffset;
+    }
+
+    function drag(e) {
+        if (!isDragging) return;
+        
+        e.preventDefault();
+        currentX = e.clientX - initialX;
+        currentY = e.clientY - initialY;
+        
+        xOffset = currentX;
+        yOffset = currentY;
+        
+        consoleWindow.style.transform = `translate(${currentX}px, ${currentY}px) scale(1)`;
+    }
+
+    function dragEnd() {
+        if (!isDragging) return;
+        
+        isDragging = false;
+        consoleWindow.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    }
+}
+
+// Skulpt read function for imports
+function builtinRead(x) {
+    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined) {
+        throw new Error("File not found: '" + x + "'");
+    }
+    return Sk.builtinFiles["files"][x];
+}
+
+function showConsole() {
+    const console = document.getElementById('pythonConsole');
+    const fab = document.getElementById('consoleFab');
+    
+    console.classList.add('active');
+    fab.classList.add('hidden');
+}
+
+function hideConsole() {
+    const console = document.getElementById('pythonConsole');
+    const fab = document.getElementById('consoleFab');
+    
+    console.classList.remove('active');
+    fab.classList.remove('hidden');
+}
+
+function toggleConsole() {
+    const console = document.getElementById('pythonConsole');
+    const isMinimized = console.classList.contains('minimized');
+    
+    console.classList.toggle('minimized');
+    
+    // Update the minimize button icon
+    const toggleButton = document.querySelector('button[onclick="toggleConsole()"]');
+    if (toggleButton) {
+        const svg = toggleButton.querySelector('svg');
+        const path = svg.querySelector('path');
+        
+        if (console.classList.contains('minimized')) {
+            // Show maximize icon (square)
+            path.setAttribute('d', 'M3 3h18v18H3V3zm2 2v14h14V5H5z');
+            toggleButton.title = 'Maximiser';
+        } else {
+            // Show minimize icon (line)
+            path.setAttribute('d', 'M19 12H5');
+            toggleButton.title = 'Minimiser';
+        }
+    }
+}
+
+function clearConsole() {
+    // Clear editor instead
+    clearEditor();
+    
+    // Clear Skulpt globals
+    if (Sk.globals) {
+        for (let key in Sk.globals) {
+            if (!key.startsWith('__') && typeof Sk.globals[key] !== 'function') {
+                delete Sk.globals[key];
+            }
+        }
+    }
+}
+
+// Multi-panel interface functions
+function switchTab(tabName) {
+    currentTab = tabName;
+    
+    // Update tab buttons
+    document.querySelectorAll('.toolbar-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabName + 'Tab').classList.add('active');
+    
+    // Show/hide panels
+    document.getElementById('editorPanel').style.display = tabName === 'editor' ? 'flex' : 'none';
+    document.getElementById('variablesPanel').style.display = tabName === 'variables' ? 'flex' : 'none';
+}
+
+// Code Editor functions
+function runCode() {
+    const codeEditor = document.getElementById('codeEditor');
+    const outputContent = document.getElementById('outputContent');
+    const editorStatus = document.querySelector('.editor-status');
+    
+    const code = codeEditor.value.trim();
+    if (!code) return;
+    
+    // Clear previous output
+    outputContent.textContent = 'Exécution en cours...';
+    editorStatus.textContent = 'En cours...';
+    
+    // Check if Skulpt is loaded
+    if (typeof Sk === 'undefined') {
+        outputContent.textContent = 'ERREUR: Skulpt n\'est pas chargé.';
+        editorStatus.textContent = 'Erreur';
+        return;
+    }
+    
+    // Capture output for editor
+    let editorOutput = '';
+    
+    function captureOutput(text) {
+        console.log('Python output:', text);
+        editorOutput += text;
+        outputContent.textContent = editorOutput;
+    }
+    
+    // Configure Skulpt for execution
+    try {
+        Sk.pre = "output";
+        Sk.configure({
+            output: captureOutput,
+            read: function(x) {
+                if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined) {
+                    throw "File not found: '" + x + "'";
+                }
+                return Sk.builtinFiles["files"][x];
+            },
+            inputfun: function(prompt) {
+                return new Promise(function(resolve) {
+                    const outputContent = document.getElementById('outputContent');
+                    
+                    // Add the prompt to the output
+                    const promptSpan = document.createElement('span');
+                    promptSpan.textContent = prompt || '';
+                    promptSpan.style.color = '#00ff00';
+                    outputContent.appendChild(promptSpan);
+                    
+                    // Create input field
+                    const inputField = document.createElement('input');
+                    inputField.type = 'text';
+                    inputField.style.cssText = `
+                        background: transparent;
+                        border: none;
+                        outline: none;
+                        color: #ffffff;
+                        font-family: 'JetBrains Mono', monospace;
+                        font-size: inherit;
+                        margin-left: 5px;
+                        border-bottom: 1px solid #00ff00;
+                        padding: 2px 0;
+                    `;
+                    
+                    outputContent.appendChild(inputField);
+                    inputField.focus();
+                    
+                    // Handle input submission
+                    function handleSubmit() {
+                        const value = inputField.value;
+                        inputField.remove();
+                        
+                        // Add the entered value to output
+                        const valueSpan = document.createElement('span');
+                        valueSpan.textContent = value;
+                        valueSpan.style.color = '#ffffff';
+                        outputContent.appendChild(valueSpan);
+                        
+                        // Add line break
+                        outputContent.appendChild(document.createElement('br'));
+                        
+                        resolve(value);
+                    }
+                    
+                    inputField.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter') {
+                            handleSubmit();
+                        }
+                    });
+                });
+            },
+            inputfunTakesPrompt: true,
+            __future__: Sk.python3,
+            execLimit: 10000
+        });
+        
+        console.log('Executing Python code:', code);
+        
+        // Use the simpler evaluation method
+        const promise = Sk.misceval.asyncToPromise(function() {
+            return Sk.importMainWithBody("<stdin>", false, code, true);
+        });
+        
+        promise.then(function(mod) {
+            console.log('Python execution completed successfully');
+            editorStatus.textContent = 'Terminé';
+            if (!editorOutput.trim()) {
+                outputContent.textContent = 'Code exécuté avec succès (aucune sortie).';
+            }
+            updateVariables();
+        }, function(err) {
+            console.error('Python execution error:', err);
+            const errorMsg = err.toString();
+            outputContent.textContent = (editorOutput ? editorOutput + '\n\n' : '') + 'ERREUR:\n' + errorMsg;
+            editorStatus.textContent = 'Erreur';
+        });
+        
+    } catch (err) {
+        console.error('Skulpt configuration error:', err);
+        outputContent.textContent = 'ERREUR de configuration: ' + err.toString();
+        editorStatus.textContent = 'Erreur';
+    }
+}
+
+function clearEditor() {
+    const codeEditor = document.getElementById('codeEditor');
+    const outputContent = document.getElementById('outputContent');
+    const editorStatus = document.querySelector('.editor-status');
+    
+    codeEditor.value = '';
+    outputContent.textContent = 'Cliquez sur "Exécuter" pour voir le résultat de votre code.';
+    editorStatus.textContent = 'Prêt';
+    updateLineNumbers();
+}
+
+// Line number functions for editor
+function updateLineNumbers() {
+    const codeEditor = document.getElementById('codeEditor');
+    const lineNumbers = document.getElementById('editorLineNumbers');
+    
+    if (!codeEditor || !lineNumbers) return;
+    
+    const lines = codeEditor.value.split('\n');
+    const numbers = lines.map((_, i) => i + 1).join('\n');
+    lineNumbers.textContent = numbers;
+}
+
+function syncLineNumbers() {
+    const codeEditor = document.getElementById('codeEditor');
+    const lineNumbers = document.getElementById('editorLineNumbers');
+    
+    if (!codeEditor || !lineNumbers) return;
+    
+    lineNumbers.scrollTop = codeEditor.scrollTop;
+}
+
+// Variables panel functions
+function updateVariables() {
+    if (currentTab === 'variables') {
+        refreshVariables();
+    }
+}
+
+function refreshVariables() {
+    const variablesContent = document.getElementById('variablesContent');
+    
+    // Get global variables from Skulpt
+    const globals = Sk.globals;
+    const variables = [];
+    
+    if (globals) {
+        for (let key in globals) {
+            if (key.startsWith('__') || typeof globals[key] === 'function') continue;
+            
+            try {
+                const value = globals[key];
+                const pythonValue = Sk.ffi.remapToJs(value);
+                const pythonType = value.tp$name || typeof pythonValue;
+                
+                variables.push({
+                    name: key,
+                    value: JSON.stringify(pythonValue),
+                    type: pythonType
+                });
+            } catch (e) {
+                // Skip variables that can't be converted
+            }
+        }
+    }
+    
+    if (variables.length === 0) {
+        variablesContent.innerHTML = '<div class="variables-empty">Aucune variable définie. Exécutez du code pour voir les variables ici.</div>';
+    } else {
+        variablesContent.innerHTML = variables.map(variable => `
+            <div class="variable-item">
+                <div>
+                    <span class="variable-name">${variable.name}</span>
+                    <span class="variable-type">${variable.type}</span>
+                </div>
+                <div class="variable-value">${variable.value}</div>
+            </div>
+        `).join('');
+    }
+}
+
+// Function to load code into editor from content
+function loadCodeIntoConsole(code) {
+    console.log('Loading code into editor:', code);
+    
+    // Close modal first if it's open
+    const modal = document.getElementById('fullscreenModal');
+    if (modal && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Show the Python editor console
+    showConsole();
+    
+    // Switch to editor tab
+    switchTab('editor');
+    
+    // Wait a moment for the editor to be visible, then load the code
+    setTimeout(() => {
+        const codeEditor = document.getElementById('codeEditor');
+        if (codeEditor) {
+            codeEditor.value = code;
+            updateLineNumbers();
+            console.log('Code loaded successfully:', codeEditor.value);
+        } else {
+            console.error('Code editor not found!');
+        }
+    }, 100);
+}
+
+// Alternative name for consistency
+function loadCodeIntoEditor(code) {
+    loadCodeIntoConsole(code);
+}
+
+// Add keyboard shortcut to toggle console (Ctrl+`)
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.key === '`') {
+        e.preventDefault();
+        const console = document.getElementById('pythonConsole');
+        if (console.classList.contains('active')) {
+            hideConsole();
+        } else {
+            showConsole();
+        }
+    }
 });

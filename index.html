@@ -33,6 +33,133 @@
         </div>
     </div>
 
+    <!-- Python Console -->
+    <div class="python-console" id="pythonConsole">
+        <div class="console-header">
+            <div class="console-title">
+                <span class="tab-icon">⚡</span>
+                <span>Éditeur Python</span>
+                <span class="alpha-badge">alpha</span>
+            </div>
+            <div class="console-controls">
+                <button class="console-control" onclick="clearConsole()" title="Effacer l'éditeur">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7h-1a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1zM9 5V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2h4v2H5V5h4z"/>
+                    </svg>
+                </button>
+                <button class="console-control" onclick="toggleConsole()" title="Minimiser/Maximiser">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 12H5"/>
+                    </svg>
+                </button>
+                <button class="console-control" onclick="hideConsole()" title="Fermer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="console-toolbar">
+            <div class="toolbar-left">
+                <button class="toolbar-btn active" id="editorTab" onclick="switchTab('editor')" title="Éditeur Python">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41L17.66 3.29c-.19-.19-.45-.29-.7-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/>
+                    </svg>
+                    Éditeur Python
+                </button>
+                <button class="toolbar-btn" id="variablesTab" onclick="switchTab('variables')" title="Variables">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    Variables
+                </button>
+            </div>
+            <div class="toolbar-right">
+                <span class="status-indicator">Python 3.11 (Skulpt)</span>
+            </div>
+        </div>
+        <div class="console-content">
+            <!-- Code Editor Panel -->
+            <div class="editor-panel" id="editorPanel">
+                <div class="editor-toolbar">
+                    <div class="editor-toolbar-left">
+                        <button class="editor-btn" onclick="runCode()" title="Exécuter le code (Ctrl+Enter)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            Exécuter
+                        </button>
+                        <button class="editor-btn" onclick="clearEditor()" title="Vider l'éditeur">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7h-1a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z"/>
+                            </svg>
+                            Effacer
+                        </button>
+                    </div>
+                    <div class="editor-toolbar-right">
+                        <span class="editor-status">Prêt</span>
+                    </div>
+                </div>
+                <div class="editor-container">
+                    <div class="editor-line-numbers" id="editorLineNumbers">1</div>
+                    <textarea class="code-editor" id="codeEditor" placeholder="# Écrivez votre code Python ici...
+# Utilisez Ctrl+Enter pour exécuter
+
+print('Bonjour le monde!')
+x = 10
+y = 20
+print(f'x + y = {x + y}')"></textarea>
+                </div>
+                <div class="editor-output" id="editorOutput">
+                    <div class="output-header">Sortie:</div>
+                    <div class="output-content" id="outputContent">Cliquez sur "Exécuter" pour voir le résultat de votre code.</div>
+                </div>
+            </div>
+            
+            <!-- Variables Panel -->
+            <div class="variables-panel" id="variablesPanel" style="display: none;">
+                <div class="variables-header">
+                    <h3>Variables actuelles</h3>
+                    <button class="refresh-btn" onclick="refreshVariables()" title="Actualiser">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="variables-content" id="variablesContent">
+                    <div class="variables-empty">Aucune variable définie. Exécutez du code pour voir les variables ici.</div>
+                </div>
+            </div>
+        </div>
+        <div class="console-status-bar">
+            <div class="status-left">
+                <span class="status-item">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    Éditeur Python prêt
+                </span>
+            </div>
+            <div class="status-right">
+                <span class="status-item">Skulpt</span>
+                <span class="status-item">UTF-8</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Console Toggle Button -->
+    <button class="console-fab" id="consoleFab" onclick="showConsole()" title="Ouvrir l'Éditeur Python">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L13.09 8.26L22 9L14.5 14.74L17.18 22L12 17.77L6.82 22L9.5 14.74L2 9L10.91 8.26L12 2Z"/>
+        </svg>
+        <span class="fab-label">Python IDE</span>
+        <div class="fab-glow"></div>
+    </button>
+
+    <!-- Skulpt Python Interpreter -->
+    <script src="https://unpkg.com/skulpt@0.11.1/dist/skulpt.min.js"></script>
+    <script src="https://unpkg.com/skulpt@0.11.1/dist/skulpt-stdlib.js"></script>
+    
     <!-- Scripts -->
     <script src="content.js"></script>
     <script src="script.js"></script>
