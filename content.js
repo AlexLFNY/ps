@@ -374,8 +374,22 @@ age_futur = age_int + <span class="code-number">10</span>
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
+                            margin-right: 10px;
                         " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
                         </button>
                     </div>
                     <div id="hint1" class="hint-content" style="
@@ -428,8 +442,22 @@ age_futur = age_int + <span class="code-number">10</span>
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
+                            margin-right: 10px;
                         " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
                         </button>
                     </div>
                     <div id="hint2" class="hint-content" style="
@@ -482,8 +510,22 @@ age_futur = age_int + <span class="code-number">10</span>
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
+                            margin-right: 10px;
                         " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
                         </button>
                     </div>
                     <div id="hint3" class="hint-content" style="
@@ -536,8 +578,22 @@ age_futur = age_int + <span class="code-number">10</span>
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
+                            margin-right: 10px;
                         " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
                         </button>
                     </div>
                     <div id="hint4" class="hint-content" style="
@@ -936,12 +992,23 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
             <div class="exercises-grid">
                 <div class="exercise-card">
                     <div class="exercise-difficulty">Facile</div>
-                    <div class="exercise-title">Comparaison de nombres</div>
+                    <div class="exercise-title">Périmètre d'un rectangle</div>
                     <div class="exercise-desc">
-                        Demandez deux nombres à l'utilisateur et utilisez une structure if/elif/else pour afficher lequel est le plus grand, le plus petit, ou s'ils sont égaux.
+                        Demandez à l'utilisateur la longueur et la largeur d'un rectangle en mètres. Calculez et affichez le périmètre en utilisant la formule : périmètre = 2 × (longueur + largeur).
                     </div>
+                    
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Demander la longueur avec <code>input()</code> et convertir en <code>float()</code></li>
+                            <li>Demander la largeur avec <code>input()</code> et convertir en <code>float()</code></li>
+                            <li>Calculer le périmètre : <code>perimetre = 2 * (longueur + largeur)</code></li>
+                            <li>Afficher le résultat avec une f-string</li>
+                        </ol>
+                    </div>
+                    
                     <div style="text-align: center; margin-top: 15px;">
-                        <button class="hint-button" onclick="toggleHint('hint2')" style="
+                        <button class="hint-button" onclick="toggleHint('hint2_1')" style="
                             background: rgba(255, 215, 0, 0.2);
                             border: 2px solid rgba(255, 215, 0, 0.4);
                             border-radius: 8px;
@@ -951,11 +1018,25 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
+                            margin-right: 10px;
                         " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
                     </div>
-                    <div id="hint2" class="hint-content" style="
+                    <div id="hint2_1" class="hint-content" style="
                         display: none;
                         background: rgba(255, 215, 0, 0.1);
                         border: 2px solid rgba(255, 215, 0, 0.3);
@@ -965,13 +1046,79 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                         color: #ffd700;
                         font-style: italic;
                     ">
-                        🔍 <strong>Indice :</strong> Utilisez les opérateurs > et < pour comparer, et n'oubliez pas le cas où les deux nombres sont égaux avec ==.
+                        🔍 <strong>Indice :</strong> N'oubliez pas les parenthèses dans le calcul ! Utilisez une f-string pour un affichage clair : <code>f"Le périmètre est de {perimetre} mètres."</code>
                     </div>
                     <div class="console-output" style="margin-top: 15px;">
                         <strong>Exemple d'exécution :</strong><br>
-                        Entrez le premier nombre : 15<br>
-                        Entrez le deuxième nombre : 8<br>
-                        Le premier nombre (15) est plus grand que le second (8)
+                        Entrez la longueur du rectangle (en mètres) : 5.5<br>
+                        Entrez la largeur du rectangle (en mètres) : 3.2<br>
+                        Le périmètre du rectangle est de 17.4 mètres.
+                    </div>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Facile</div>
+                    <div class="exercise-title">Surface d'un rectangle</div>
+                    <div class="exercise-desc">
+                        Demandez à l'utilisateur la longueur et la largeur d'un rectangle en mètres. Calculez et affichez la surface en utilisant la formule : surface = longueur × largeur.
+                    </div>
+                    
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Demander la longueur et la largeur</li>
+                            <li>Convertir en nombres décimaux avec <code>float()</code></li>
+                            <li>Calculer la surface : <code>surface = longueur * largeur</code></li>
+                            <li>Afficher le résultat avec une f-string</li>
+                        </ol>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint2_2')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            margin-right: 10px;
+                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint2_2" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> La surface se mesure en mètres carrés (m²). Utilisez <code>f"La surface est de {surface} m²."</code>
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>Exemple d'exécution :</strong><br>
+                        Entrez la longueur du rectangle (en mètres) : 4.5<br>
+                        Entrez la largeur du rectangle (en mètres) : 2.8<br>
+                        La surface du rectangle est de 12.6 m².
                     </div>
                 </div>
                 
@@ -992,8 +1139,22 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
+                            margin-right: 10px;
                         " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
                         </button>
                     </div>
                     <div id="hint3" class="hint-content" style="
@@ -1011,6 +1172,72 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                     <div class="console-output" style="margin-top: 15px;">
                         <strong>Exemple d'exécution :</strong><br>
                         Je m'appelle Lucas Martin et j'ai 16 ans.
+                    </div>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Moyen</div>
+                    <div class="exercise-title">Calculateur de Notes</div>
+                    <div class="exercise-desc">
+                        Créez un programme qui demande une note sur 20, calcule le pourcentage correspondant, et affiche la mention obtenue selon le système français (Très Bien ≥ 16, Bien ≥ 14, Assez Bien ≥ 12, Passable ≥ 10, Insuffisant &lt; 10).
+                    </div>
+                    
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Demander la note sur 20 et convertir en <code>float()</code></li>
+                            <li>Calculer le pourcentage : <code>pourcentage = (note / 20) * 100</code></li>
+                            <li>Utiliser if/elif/else pour déterminer la mention</li>
+                            <li>Afficher le pourcentage ET la mention</li>
+                        </ol>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint2_4')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            margin-right: 10px;
+                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint2_4" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Commencez par la mention la plus haute (≥ 16) et descendez. Le pourcentage se calcule en divisant par 20 puis multipliant par 100.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>Exemple d'exécution :</strong><br>
+                        Entrez votre note sur 20 : 15.5<br>
+                        Votre note : 15.5/20 (77.5%)<br>
+                        Mention : Bien
                     </div>
                 </div>
                 
@@ -1034,8 +1261,22 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
+                            margin-right: 10px;
                         " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
                         </button>
                     </div>
                     <div id="hint4" class="hint-content" style="
@@ -1059,12 +1300,23 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                 
                 <div class="exercise-card">
                     <div class="exercise-difficulty">Avancé</div>
-                    <div class="exercise-title">Jeu du nombre mystère</div>
+                    <div class="exercise-title">Calculateur d'aire de cercle</div>
                     <div class="exercise-desc">
-                        Définissez un nombre_secret (par exemple, nombre_secret = 42). Demandez à l'utilisateur de deviner ce nombre. Indiquez si son nombre est "trop grand", "trop petit", ou "correct". Affichez un message de félicitations s'il trouve.
+                        Créez un programme qui demande le rayon d'un cercle en centimètres, calcule son aire en utilisant la formule aire = π × rayon², et détermine si c'est un "petit cercle" (&lt; 100 cm²), "moyen" (100-500 cm²) ou "grand cercle" (&gt; 500 cm²).
                     </div>
+                    
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Demander le rayon et convertir en <code>float()</code></li>
+                            <li>Utiliser pi = 3.14159 (ou importer math.pi)</li>
+                            <li>Calculer l'aire : <code>aire = pi * rayon ** 2</code></li>
+                            <li>Utiliser des conditions pour classer le cercle</li>
+                        </ol>
+                    </div>
+                    
                     <div style="text-align: center; margin-top: 15px;">
-                        <button class="hint-button" onclick="toggleHint('hint5')" style="
+                        <button class="hint-button" onclick="toggleHint('hint2_6')" style="
                             background: rgba(255, 215, 0, 0.2);
                             border: 2px solid rgba(255, 215, 0, 0.4);
                             border-radius: 8px;
@@ -1074,11 +1326,25 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
+                            margin-right: 10px;
                         " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
                     </div>
-                    <div id="hint5" class="hint-content" style="
+                    <div id="hint2_6" class="hint-content" style="
                         display: none;
                         background: rgba(255, 215, 0, 0.1);
                         border: 2px solid rgba(255, 215, 0, 0.3);
@@ -1088,23 +1354,103 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                         color: #ffd700;
                         font-style: italic;
                     ">
-                        🔍 <strong>Indice :</strong> Utilisez if/elif/else pour comparer le nombre saisi avec le nombre secret. Pensez aux trois cas possibles !
+                        🔍 <strong>Indice :</strong> Définissez <code>pi = 3.14159</code> au début. Utilisez l'opérateur ** 2 pour élever au carré le rayon.
                     </div>
                     <div class="console-output" style="margin-top: 15px;">
                         <strong>Exemple d'exécution :</strong><br>
-                        Devinez le nombre mystère : 35<br>
-                        Trop petit ! Essayez plus grand.
+                        Entrez le rayon du cercle (en cm) : 8<br>
+                        L'aire du cercle est de 201.06 cm²<br>
+                        C'est un cercle de taille moyenne.
+                    </div>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Avancé</div>
+                    <div class="exercise-title">Calculateur de Moyenne Pondérée</div>
+                    <div class="exercise-desc">
+                        Créez un programme qui calcule la moyenne pondérée de 3 matières (coefficients différents). Demandez les 3 notes et leurs coefficients, calculez la moyenne pondérée, et indiquez si l'élève "passe au niveau suivant" (≥10) ou "doit redoubler" (&lt;10).
+                    </div>
+                    
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Demander 3 notes et 3 coefficients</li>
+                            <li>Calculer la somme pondérée : <code>somme = (note1*coef1) + (note2*coef2) + (note3*coef3)</code></li>
+                            <li>Calculer la somme des coefficients</li>
+                            <li>Moyenne pondérée = somme pondérée / somme des coefficients</li>
+                        </ol>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint2_7')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            margin-right: 10px;
+                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint2_7" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> La moyenne pondérée = (note1×coef1 + note2×coef2 + note3×coef3) / (coef1 + coef2 + coef3)
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>Exemple d'exécution :</strong><br>
+                        Note Maths (coef 4) : 15<br>
+                        Note Français (coef 3) : 12<br>
+                        Note Anglais (coef 2) : 14<br>
+                        Moyenne pondérée : 13.67/20<br>
+                        Résultat : Passe au niveau suivant !
                     </div>
                 </div>
                 
                 <div class="exercise-card">
                     <div class="exercise-difficulty">Expert</div>
-                    <div class="exercise-title">Simulateur de distributeur</div>
+                    <div class="exercise-title">Calculateur de Volume et Surface de Cylindre</div>
                     <div class="exercise-desc">
-                        Créez un programme qui simule un distributeur de boissons. Affichez un menu avec des prix, demandez le choix et l'argent inséré, vérifiez si l'argent est suffisant, calculez la monnaie et gérez les cas d'erreur.
+                        Créez un programme complet qui calcule le volume ET la surface totale d'un cylindre. Demandez le rayon et la hauteur, calculez les deux valeurs en utilisant les bonnes formules, et déterminez si c'est un "petit", "moyen" ou "grand" cylindre selon le volume.
                     </div>
+                    
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Demander rayon et hauteur en centimètres</li>
+                            <li>Calculer le volume : <code>V = π × rayon² × hauteur</code></li>
+                            <li>Calculer la surface totale : <code>S = 2π × rayon × (rayon + hauteur)</code></li>
+                            <li>Classer selon le volume : petit (&lt; 1000 cm³), moyen (1000-5000 cm³), grand (&gt; 5000 cm³)</li>
+                        </ol>
+                    </div>
+                    
                     <div style="text-align: center; margin-top: 15px;">
-                        <button class="hint-button" onclick="toggleHint('hint6')" style="
+                        <button class="hint-button" onclick="toggleHint('hint2_8')" style="
                             background: rgba(255, 215, 0, 0.2);
                             border: 2px solid rgba(255, 215, 0, 0.4);
                             border-radius: 8px;
@@ -1114,11 +1460,25 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
+                            margin-right: 10px;
                         " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
                     </div>
-                    <div id="hint6" class="hint-content" style="
+                    <div id="hint2_8" class="hint-content" style="
                         display: none;
                         background: rgba(255, 215, 0, 0.1);
                         border: 2px solid rgba(255, 215, 0, 0.3);
@@ -1128,16 +1488,87 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                         color: #ffd700;
                         font-style: italic;
                     ">
-                        🔍 <strong>Indice :</strong> Créez des variables pour les prix, vérifiez que le choix est valide, puis comparez l'argent inséré avec le prix choisi.
+                        🔍 <strong>Indice :</strong> Utilisez pi = 3.14159. Pour la surface totale, pensez aux deux bases circulaires + surface latérale. Organisez vos calculs étape par étape !
                     </div>
                     <div class="console-output" style="margin-top: 15px;">
                         <strong>Exemple d'exécution :</strong><br>
-                        === DISTRIBUTEUR ===<br>
-                        1. Coca (2€)<br>
-                        2. Eau (1€)<br>
-                        Votre choix : 1<br>
-                        Argent inséré : 5<br>
-                        Voici votre Coca ! Monnaie : 3€
+                        Rayon du cylindre (cm) : 5<br>
+                        Hauteur du cylindre (cm) : 12<br>
+                        Volume : 942.48 cm³<br>
+                        Surface totale : 534.07 cm²<br>
+                        Catégorie : Petit cylindre
+                    </div>
+                </div>
+                
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Expert</div>
+                    <div class="exercise-title">Calculateur de Trajets Scolaires</div>
+                    <div class="exercise-desc">
+                        Créez un calculateur de coûts pour les trajets domicile-lycée. Demandez la distance aller (km), le nombre de jours de cours par semaine, le prix de l'essence (/L), et la consommation de la voiture (L/100km). Calculez le coût quotidien, hebdomadaire et mensuel, puis proposez des recommandations selon le coût.
+                    </div>
+                    
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Demander : distance aller, jours/semaine, prix essence, consommation</li>
+                            <li>Calculer distance quotidienne : <code>distance_jour = distance_aller * 2</code></li>
+                            <li>Calculer litres/jour : <code>litres = (distance_jour * consommation) / 100</code></li>
+                            <li>Calculer coûts quotidien, hebdomadaire (×jours), mensuel (×4 semaines)</li>
+                            <li>Donner des conseils selon le coût mensuel</li>
+                        </ol>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint2_9')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            margin-right: 10px;
+                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint2_9" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Pensez aller-retour ! Si la consommation est 7L/100km et qu'on fait 20km/jour, alors litres = (20 * 7) / 100 = 1.4L
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>Exemple d'exécution :</strong><br>
+                        Distance domicile-lycée (km) : 15<br>
+                        Jours de cours/semaine : 5<br>
+                        Prix essence (€/L) : 1.65<br>
+                        Consommation (L/100km) : 7<br>
+                        Coût quotidien : 3.47€<br>
+                        Coût hebdomadaire : 17.33€<br>
+                        Coût mensuel : 69.30€<br>
+                        Conseil : Coût élevé - Envisagez les transports en commun !
                     </div>
                 </div>
             </div>

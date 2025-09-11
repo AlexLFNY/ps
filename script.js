@@ -758,6 +758,10 @@ function loadCodeIntoEditor(code) {
     loadCodeIntoConsole(code);
 }
 
+// Make functions available globally
+window.loadCodeIntoConsole = loadCodeIntoConsole;
+window.loadCodeIntoEditor = loadCodeIntoEditor;
+
 // Add keyboard shortcut to toggle console (Ctrl+`)
 document.addEventListener('keydown', function(e) {
     if (e.ctrlKey && e.key === '`') {
