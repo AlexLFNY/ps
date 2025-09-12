@@ -1,15 +1,35 @@
-// Create floating particles
+// Performance optimizations and imports
+let particleSystem = null;
+let performanceOptimizer = null;
+
+// Create floating particles with performance optimizations
 function createParticles() {
+    // Import particle system dynamically for better initial load
+    import('./js/particles.js').then(({ ParticleSystem, getOptimalParticleCount }) => {
+        const optimalCount = getOptimalParticleCount();
+        particleSystem = new ParticleSystem('particles', { count: optimalCount });
+    }).catch(error => {
+        console.warn('Failed to load particle system:', error);
+        // Fallback to simple particle creation
+        createFallbackParticles();
+    });
+}
+
+function createFallbackParticles() {
     const particles = document.getElementById('particles');
-    const particleCount = 50;
+    const particleCount = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 
+                         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 15 : 30;
+    
+    const fragment = document.createDocumentFragment();
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.left = Math.random() * 100 + '%';
         particle.style.animationDelay = Math.random() * 6 + 's';
         particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-        particles.appendChild(particle);
+        fragment.appendChild(particle);
     }
+    particles.appendChild(fragment);
 }
 
 // Lesson navigation functions
@@ -342,11 +362,31 @@ function toggleHint(hintId) {
     }
 }
 
-// Initialize everything
+// Initialize everything with performance optimizations
 document.addEventListener('DOMContentLoaded', function() {
-    createParticles();
+    // Initialize performance optimizer first
+    import('./js/performance.js').then(({ PerformanceOptimizer }) => {
+        performanceOptimizer = new PerformanceOptimizer();
+    }).catch(error => {
+        console.warn('Failed to load performance optimizer:', error);
+    });
+    
+    // Use requestIdleCallback for non-critical initializations
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+            createParticles();
+            setupQuizListeners();
+        });
+    } else {
+        // Fallback for browsers without requestIdleCallback
+        setTimeout(() => {
+            createParticles();
+            setupQuizListeners();
+        }, 0);
+    }
+    
+    // Critical initializations
     showLessonSelection();
-    setupQuizListeners();
     initConsole();
 });
 

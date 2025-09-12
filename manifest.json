@@ -1,0 +1,155 @@
+{
+  "name": "Python Seconde - Apprentissage Interactif",
+  "short_name": "Python Seconde",
+  "description": "Application interactive pour apprendre Python au niveau Seconde avec IDE intégré",
+  "version": "1.2.0",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#0f0f23",
+  "background_color": "#0f0f23",
+  "scope": "./",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["education", "productivity", "developer"],
+  "icons": [
+    {
+      "src": "icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Leçon 1: Variables et Types",
+      "short_name": "Variables",
+      "description": "Apprendre les variables et types de données Python",
+      "url": "./?lesson=1",
+      "icons": [
+        {
+          "src": "icons/shortcut-variables.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Leçon 2: Opérations et Conditions",
+      "short_name": "Opérations",
+      "description": "Apprendre les opérations et conditions Python",
+      "url": "./?lesson=2",
+      "icons": [
+        {
+          "src": "icons/shortcut-operations.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "IDE Python",
+      "short_name": "IDE",
+      "description": "Accès direct à l'éditeur Python intégré",
+      "url": "./?ide=open",
+      "icons": [
+        {
+          "src": "icons/shortcut-ide.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/desktop-home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Page d'accueil sur desktop"
+    },
+    {
+      "src": "screenshots/desktop-lesson.png", 
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Interface de leçon sur desktop"
+    },
+    {
+      "src": "screenshots/mobile-home.png",
+      "sizes": "375x812",
+      "type": "image/png",
+      "label": "Page d'accueil sur mobile"
+    },
+    {
+      "src": "screenshots/mobile-ide.png",
+      "sizes": "375x812", 
+      "type": "image/png",
+      "label": "IDE Python sur mobile"
+    }
+  ],
+  "features": [
+    "Cross Platform",
+    "Educational Content",
+    "Interactive Learning",
+    "Offline Support",
+    "Python IDE",
+    "Progress Tracking"
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://python.org",
+      "id": "org.python.www"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "capture_links": "existing-client-navigate"
+}

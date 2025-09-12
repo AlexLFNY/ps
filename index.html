@@ -3,31 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Application interactive pour apprendre Python au niveau Seconde. Cours, exercices et IDE intégré.">
+    <meta name="keywords" content="Python, programmation, Seconde, éducation, interactif">
+    <meta name="author" content="Python Seconde Interactive">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Python Seconde - Apprentissage Interactif">
+    <meta property="og:description" content="Application interactive pour apprendre Python au niveau Seconde">
+    <meta property="og:url" content="">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Python Seconde - Apprentissage Interactif">
+    <meta name="twitter:description" content="Application interactive pour apprendre Python au niveau Seconde">
+    
     <title>Python Seconde - Apprentissage Interactif</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <!-- Optimized font loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#0f0f23">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Python Seconde">
+    
+    <!-- iOS splash screens -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/iPhone_14_Pro_Max_portrait.png">
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/iPhone_14_Pro_portrait.png">
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/iPhone_14_portrait.png">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
 </head>
 <body>
     <div class="bg-animated"></div>
     <div class="particles" id="particles"></div>
 
-    <div class="container">
+    <main class="container" role="main" aria-label="Contenu principal de l'application">
         <!-- Content will be dynamically loaded by JavaScript -->
+        <noscript>
+            <div class="noscript-warning" style="background: rgba(255,107,107,0.3); border: 2px solid #ff6b6b; border-radius: 12px; padding: 20px; margin: 20px; color: white; text-align: center;">
+                <h2>⚠️ JavaScript requis</h2>
+                <p>Cette application nécessite JavaScript pour fonctionner. Veuillez activer JavaScript dans votre navigateur.</p>
+            </div>
+        </noscript>
+    </main>
+
+    <!-- Version indicator -->
+    <div class="version-indicator" aria-label="Version de l'application">
+        v1.2.0
     </div>
 
     <!-- Fullscreen modal -->
-    <div class="fullscreen-modal" id="fullscreenModal">
-        <div class="close-button" id="closeButton">×</div>
+    <div class="fullscreen-modal" id="fullscreenModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+        <div class="close-button" id="closeButton" role="button" tabindex="0" aria-label="Fermer la fenêtre modale">×</div>
         <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-icon" id="modalIcon"></div>
+            <header class="modal-header">
+                <div class="modal-icon" id="modalIcon" aria-hidden="true"></div>
                 <div>
                     <h1 class="modal-title" id="modalTitle"></h1>
                     <p class="modal-subtitle" id="modalSubtitle"></p>
                 </div>
-            </div>
-            <div class="modal-body" id="modalBody">
+            </header>
+            <div class="modal-body" id="modalBody" role="document">
                 <!-- Content will be populated by JavaScript -->
             </div>
         </div>
@@ -160,9 +214,42 @@ print(f'x + y = {x + y}')"></textarea>
     <script src="https://unpkg.com/skulpt@0.11.1/dist/skulpt.min.js"></script>
     <script src="https://unpkg.com/skulpt@0.11.1/dist/skulpt-stdlib.js"></script>
     
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                        
+                        // Check for updates
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // New content is available, show update notification
+                                    showUpdateNotification();
+                                }
+                            });
+                        });
+                    })
+                    .catch(registrationError => {
+                        console.warn('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+        
+        function showUpdateNotification() {
+            // Simple update notification
+            if (confirm('Une nouvelle version est disponible. Souhaitez-vous actualiser la page ?')) {
+                window.location.reload();
+            }
+        }
+    </script>
+    
     <!-- Scripts -->
-    <script src="content.js?v=1.1"></script>
-    <script src="solutions.js?v=1.1"></script>
-    <script src="script.js?v=1.1"></script>
+    <script src="content.js?v=1.2" defer></script>
+    <script src="solutions.js?v=1.2" defer></script>
+    <script src="script.js?v=1.2" defer></script>
 </body>
 </html>
