@@ -374,8 +374,7 @@ age_futur = age_int + <span class="code-number">10</span>
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
-                            margin-right: 10px;
-                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
                         <button style="
@@ -442,8 +441,7 @@ age_futur = age_int + <span class="code-number">10</span>
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
-                            margin-right: 10px;
-                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
                         <button style="
@@ -510,8 +508,7 @@ age_futur = age_int + <span class="code-number">10</span>
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
-                            margin-right: 10px;
-                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
                         <button style="
@@ -578,8 +575,7 @@ age_futur = age_int + <span class="code-number">10</span>
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
-                            margin-right: 10px;
-                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
                         <button style="
@@ -1018,8 +1014,7 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
-                            margin-right: 10px;
-                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
                         <button style="
@@ -1084,8 +1079,7 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
-                            margin-right: 10px;
-                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
                         <button style="
@@ -1139,8 +1133,7 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
-                            margin-right: 10px;
-                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
                         <button style="
@@ -1203,8 +1196,7 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
-                            margin-right: 10px;
-                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
                         <button style="
@@ -1261,8 +1253,7 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
-                            margin-right: 10px;
-                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
                         <button style="
@@ -1326,8 +1317,7 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
-                            margin-right: 10px;
-                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
                         <button style="
@@ -1392,8 +1382,7 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
-                            margin-right: 10px;
-                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
                         <button style="
@@ -1460,8 +1449,7 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
-                            margin-right: 10px;
-                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
                         <button style="
@@ -1529,8 +1517,7 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
                             font-size: 0.9rem;
                             font-weight: 600;
                             transition: all 0.3s ease;
-                            margin-right: 10px;
-                        " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
                             💡 Indice
                         </button>
                         <button style="
@@ -1576,5 +1563,505 @@ permis = <span class="code-keyword">input</span>(<span class="code-string">"Avez
     }
 };
 
-// Current lesson data (will be switched between lesson1Data and lesson2Data)
+// Lesson 3 Content Data
+const lesson3Data = {
+    introduction: {
+        icon: 'icon-functions',
+        emoji: '🔧',
+        title: 'Qu\'est-ce qu\'une Fonction ?',
+        subtitle: 'Organiser le code en blocs',
+        content: `
+            <div class="section-text">
+                Une fonction est un bloc de code qui effectue une tâche spécifique. 
+                Cela permet de :
+            </div>
+            <div class="highlight-box">
+                <ul style="margin: 10px 0; padding-left: 20px;">
+                    <li><strong>Réutiliser le code</strong> : Exécuter le même bloc plusieurs fois sans réécriture</li>
+                    <li><strong>Organiser le code</strong> : Diviser un programme en parties logiques</li>
+                    <li><strong>Simplifier la maintenance</strong> : Modifier une tâche à un seul endroit</li>
+                </ul>
+            </div>
+            <div class="concept-animation">
+                <h3 style="color: #ffd700; margin-bottom: 15px;">💡 Analogie Spotify</h3>
+                <div class="practical-example">
+                    <div class="example-title">🎵 Analogie Spotify</div>
+                    <p>Imaginez une app comme Spotify : vous tapez le nom d'un artiste (paramètre), 
+                    l'app fait ses recherches dans sa base de données, et elle vous retourne une playlist (résultat). 
+                    Vous n'avez pas besoin de savoir comment l'algorithme fonctionne à l'intérieur !</p>
+                </div>
+            </div>
+        `
+    },
+    definition: {
+        icon: 'icon-code',
+        emoji: '📝',
+        title: 'Définir une Fonction Simple',
+        subtitle: 'Syntaxe de base avec def',
+        content: `
+            <div class="section-text">
+                Pour créer une fonction, on utilise le mot-clé <code>def</code> (pour "définir"), 
+                suivi de son nom, de parenthèses <code>()</code> et de deux-points <code>:</code>. 
+                Le code à l'intérieur doit être indenté (décalé de 4 espaces).
+            </div>
+            <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Un exemple de fonction simple\ndef saluer():\n    print(\'Bonjour !\')\n    print(\'Bienvenue dans le programme.\')\n\n# Pour utiliser (ou \'appeler\') la fonction\nsaluer()\n# Affiche :\n# Bonjour !\n# Bienvenue dans le programme.')">
+                    🐍 Charger
+                </button>
+                <div class="code-content">
+<span class="code-comment"># Un exemple de fonction simple</span>
+<span class="code-keyword">def</span> <span class="code-function">saluer</span>():
+    <span class="code-keyword">print</span>(<span class="code-string">"Bonjour !"</span>)
+    <span class="code-keyword">print</span>(<span class="code-string">"Bienvenue dans le programme."</span>)
+
+<span class="code-comment"># Pour utiliser (ou "appeler") la fonction</span>
+<span class="code-function">saluer</span>()
+<span class="code-comment"># Affiche :</span>
+<span class="code-comment"># Bonjour !</span>
+<span class="code-comment"># Bienvenue dans le programme.</span>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <strong>Points importants :</strong><br>
+                • Le mot-clé <code>def</code> définit une fonction<br>
+                • Les parenthèses <code>()</code> contiennent les paramètres (ici aucun)<br>
+                • Les deux-points <code>:</code> marquent le début du bloc de code<br>
+                • L'indentation (4 espaces) définit ce qui appartient à la fonction
+            </div>
+        `
+    },
+    parameters: {
+        icon: 'icon-input',
+        emoji: '📥',
+        title: 'Les Paramètres',
+        subtitle: 'Passer des informations',
+        content: `
+            <div class="section-text">
+                Les fonctions peuvent accepter des informations en entrée, appelées <strong>paramètres</strong>. 
+                Les paramètres agissent comme des variables temporaires.
+            </div>
+            <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# La fonction \'saluer_personne\' prend un paramètre \'nom\'\ndef saluer_personne(nom):\n    print(f\'Bonjour, {nom} !\')\n\n# On appelle la fonction avec une valeur\nsaluer_personne(\'Marie\')\nsaluer_personne(\'Alex\')\n# Affiche :\n# Bonjour, Marie !\n# Bonjour, Alex !')">
+                    🐍 Charger
+                </button>
+                <div class="code-content">
+<span class="code-comment"># La fonction 'saluer_personne' prend un paramètre 'nom'</span>
+<span class="code-keyword">def</span> <span class="code-function">saluer_personne</span>(nom):
+    <span class="code-keyword">print</span>(<span class="code-string">f"Bonjour, {nom} !"</span>)
+
+<span class="code-comment"># On appelle la fonction avec une valeur</span>
+<span class="code-function">saluer_personne</span>(<span class="code-string">"Marie"</span>)
+<span class="code-function">saluer_personne</span>(<span class="code-string">"Alex"</span>)
+<span class="code-comment"># Affiche :</span>
+<span class="code-comment"># Bonjour, Marie !</span>
+<span class="code-comment"># Bonjour, Alex !</span>
+                </div>
+            </div>
+            <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('def presenter_personne(prenom, age, ville):\n    print(f\'Je m\\\'appelle {prenom}, j\\\'ai {age} ans et j\\\'habite à {ville}.\')\n\n# Appel avec plusieurs arguments\npresenter_personne(\'Emma\', 16, \'Brooklyn\')\npresenter_personne(\'Lucas\', 15, \'Manhattan\')\n# Affiche :\n# Je m\'appelle Emma, j\'ai 16 ans et j\'habite à Brooklyn.\n# Je m\'appelle Lucas, j\'ai 15 ans et j\'habite à Manhattan.')">
+                    🐍 Charger
+                </button>
+                <div class="code-content">
+<span class="code-keyword">def</span> <span class="code-function">presenter_personne</span>(prenom, age, ville):
+    <span class="code-keyword">print</span>(<span class="code-string">f"Je m'appelle {prenom}, j'ai {age} ans et j'habite à {ville}."</span>)
+
+<span class="code-comment"># Appel avec plusieurs arguments</span>
+<span class="code-function">presenter_personne</span>(<span class="code-string">"Emma"</span>, <span class="code-number">16</span>, <span class="code-string">"Brooklyn"</span>)
+<span class="code-function">presenter_personne</span>(<span class="code-string">"Lucas"</span>, <span class="code-number">15</span>, <span class="code-string">"Manhattan"</span>)
+<span class="code-comment"># Affiche :</span>
+<span class="code-comment"># Je m'appelle Emma, j'ai 16 ans et j'habite à Brooklyn.</span>
+<span class="code-comment"># Je m'appelle Lucas, j'ai 15 ans et j'habite à Manhattan.</span>
+                </div>
+            </div>
+        `
+    },
+    return_values: {
+        icon: 'icon-output',
+        emoji: '📤',
+        title: 'La Valeur de Retour',
+        subtitle: 'Renvoyer un résultat',
+        content: `
+            <div class="section-text">
+                Une fonction peut renvoyer une valeur en utilisant le mot-clé <code>return</code>. 
+                Cette valeur peut ensuite être stockée dans une variable ou utilisée ailleurs.
+            </div>
+            <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Cette fonction calcule le carré d\'un nombre\ndef calculer_carre(nombre):\n    resultat = nombre ** 2\n    return resultat\n\n# On stocke le résultat dans une variable\ncarre_de_5 = calculer_carre(5)\nprint(f\'Le carré de 5 est {carre_de_5}.\')\n# Affiche : Le carré de 5 est 25.')">
+                    🐍 Charger
+                </button>
+                <div class="code-content">
+<span class="code-comment"># Cette fonction calcule le carré d'un nombre</span>
+<span class="code-keyword">def</span> <span class="code-function">calculer_carre</span>(nombre):
+    resultat = nombre ** <span class="code-number">2</span>
+    <span class="code-keyword">return</span> resultat
+
+<span class="code-comment"># On stocke le résultat dans une variable</span>
+carre_de_5 = <span class="code-function">calculer_carre</span>(<span class="code-number">5</span>)
+<span class="code-keyword">print</span>(<span class="code-string">f"Le carré de 5 est {carre_de_5}."</span>)
+<span class="code-comment"># Affiche : Le carré de 5 est 25.</span>
+                </div>
+            </div>
+            <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('def calculer_surface_rectangle(longueur, largeur):\n    surface = longueur * largeur\n    return f\'La surface du rectangle est de {surface} m²\'\n\n# Utilisation\nmessage = calculer_surface_rectangle(5, 3)\nprint(message)  # La surface du rectangle est de 15 m²')">
+                    🐍 Charger
+                </button>
+                <div class="code-content">
+<span class="code-keyword">def</span> <span class="code-function">calculer_surface_rectangle</span>(longueur, largeur):
+    surface = longueur * largeur
+    <span class="code-keyword">return</span> <span class="code-string">f"La surface du rectangle est de {surface} m²"</span>
+
+<span class="code-comment"># Utilisation</span>
+message = <span class="code-function">calculer_surface_rectangle</span>(<span class="code-number">5</span>, <span class="code-number">3</span>)
+<span class="code-keyword">print</span>(message)  <span class="code-comment"># La surface du rectangle est de 15 m²</span>
+                </div>
+            </div>
+        `
+    },
+    docstrings: {
+        icon: 'icon-documentation',
+        emoji: '📚',
+        title: 'Les Docstrings',
+        subtitle: 'Documenter vos fonctions',
+        content: `
+            <div class="section-text">
+                Une <strong>docstring</strong> est une chaîne de caractères qui décrit ce que fait une fonction. 
+                Elle se place juste après la définition, entre triple guillemets <code>"""</code>.
+            </div>
+            <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('def convertir_celsius_fahrenheit(celsius):\n    \'\'\'\n    Convertit une température de Celsius en Fahrenheit.\n    \n    Paramètre:\n        celsius (float): Température en degrés Celsius\n    \n    Retourne:\n        float: Température en degrés Fahrenheit\n    \'\'\'\n    fahrenheit = (celsius * 9/5) + 32\n    return fahrenheit\n\n# Test\ntemp_f = convertir_celsius_fahrenheit(25)\nprint(f\'25°C = {temp_f}°F\')  # 25°C = 77.0°F')">
+                    🐍 Charger
+                </button>
+                <div class="code-content">
+<span class="code-keyword">def</span> <span class="code-function">convertir_celsius_fahrenheit</span>(celsius):
+    <span class="code-string">"""
+    Convertit une température de Celsius en Fahrenheit.
+    
+    Paramètre:
+        celsius (float): Température en degrés Celsius
+    
+    Retourne:
+        float: Température en degrés Fahrenheit
+    """</span>
+    fahrenheit = (celsius * <span class="code-number">9</span>/<span class="code-number">5</span>) + <span class="code-number">32</span>
+    <span class="code-keyword">return</span> fahrenheit
+
+<span class="code-comment"># Test</span>
+temp_f = <span class="code-function">convertir_celsius_fahrenheit</span>(<span class="code-number">25</span>)
+<span class="code-keyword">print</span>(<span class="code-string">f"25°C = {temp_f}°F"</span>)  <span class="code-comment"># 25°C = 77.0°F</span>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <strong>Bonnes pratiques :</strong><br>
+                • Décrivez clairement ce que fait la fonction<br>
+                • Listez les paramètres et leurs types<br>
+                • Indiquez ce que renvoie la fonction<br>
+                • Ajoutez des exemples si nécessaire
+            </div>
+        `
+    },
+    complete_example: {
+        icon: 'icon-calculator',
+        emoji: '📊',
+        title: 'Exemple Complet',
+        subtitle: 'Calculateur de moyenne',
+        content: `
+            <div class="section-text">
+                Voici un exemple complet qui combine tous les concepts : paramètres, calculs, conditions et return.
+            </div>
+            <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('def calculer_moyenne_notes(note1, note2, note3):\n    \'\'\'\n    Calcule la moyenne de trois notes et donne une appréciation.\n    \n    Paramètres:\n        note1, note2, note3 (float): Les trois notes sur 20\n    \n    Retourne:\n        str: Message avec la moyenne et l\'appréciation\n    \'\'\'\n    moyenne = (note1 + note2 + note3) / 3\n    \n    # Déterminer l\'appréciation\n    if moyenne >= 16:\n        appreciation = \'Excellent !\'\n    elif moyenne >= 14:\n        appreciation = \'Bien\'\n    elif moyenne >= 12:\n        appreciation = \'Assez bien\'\n    elif moyenne >= 10:\n        appreciation = \'Passable\'\n    else:\n        appreciation = \'Insuffisant\'\n    \n    return f\'Moyenne : {moyenne:.1f}/20 - {appreciation}\'\n\n# Tests de la fonction\nprint(calculer_moyenne_notes(15, 17, 14))  # Moyenne : 15.3/20 - Bien\nprint(calculer_moyenne_notes(8, 12, 10))   # Moyenne : 10.0/20 - Passable\nprint(calculer_moyenne_notes(18, 19, 17))  # Moyenne : 18.0/20 - Excellent !')">
+                    🐍 Charger
+                </button>
+                <div class="code-content">
+<span class="code-keyword">def</span> <span class="code-function">calculer_moyenne_notes</span>(note1, note2, note3):
+    <span class="code-string">"""
+    Calcule la moyenne de trois notes et donne une appréciation.
+    
+    Paramètres:
+        note1, note2, note3 (float): Les trois notes sur 20
+    
+    Retourne:
+        str: Message avec la moyenne et l'appréciation
+    """</span>
+    moyenne = (note1 + note2 + note3) / <span class="code-number">3</span>
+    
+    <span class="code-comment"># Déterminer l'appréciation</span>
+    <span class="code-keyword">if</span> moyenne >= <span class="code-number">16</span>:
+        appreciation = <span class="code-string">"Excellent !"</span>
+    <span class="code-keyword">elif</span> moyenne >= <span class="code-number">14</span>:
+        appreciation = <span class="code-string">"Bien"</span>
+    <span class="code-keyword">elif</span> moyenne >= <span class="code-number">12</span>:
+        appreciation = <span class="code-string">"Assez bien"</span>
+    <span class="code-keyword">elif</span> moyenne >= <span class="code-number">10</span>:
+        appreciation = <span class="code-string">"Passable"</span>
+    <span class="code-keyword">else</span>:
+        appreciation = <span class="code-string">"Insuffisant"</span>
+    
+    <span class="code-keyword">return</span> <span class="code-string">f"Moyenne : {moyenne:.1f}/20 - {appreciation}"</span>
+
+<span class="code-comment"># Tests de la fonction</span>
+<span class="code-keyword">print</span>(<span class="code-function">calculer_moyenne_notes</span>(<span class="code-number">15</span>, <span class="code-number">17</span>, <span class="code-number">14</span>))  <span class="code-comment"># Moyenne : 15.3/20 - Bien</span>
+<span class="code-keyword">print</span>(<span class="code-function">calculer_moyenne_notes</span>(<span class="code-number">8</span>, <span class="code-number">12</span>, <span class="code-number">10</span>))   <span class="code-comment"># Moyenne : 10.0/20 - Passable</span>
+<span class="code-keyword">print</span>(<span class="code-function">calculer_moyenne_notes</span>(<span class="code-number">18</span>, <span class="code-number">19</span>, <span class="code-number">17</span>))  <span class="code-comment"># Moyenne : 18.0/20 - Excellent !</span>
+                </div>
+            </div>
+        `
+    },
+    error_handling: {
+        icon: 'icon-error',
+        emoji: '⚠️',
+        title: 'Gestion d\'Erreurs Simple',
+        subtitle: 'Prévoir les cas inattendus',
+        content: `
+            <div class="section-text">
+                Il est important de prévoir les cas où une fonction reçoit des valeurs inattendues :
+            </div>
+            <div class="code-block">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('def calculer_age_dans_x_ans(age_actuel, annees):\n    \'\'\'Calcule l\'âge futur en vérifiant les entrées.\'\'\'\n    if age_actuel < 0 or annees < 0:\n        return \'Erreur : les âges et années doivent être positifs\'\n    \n    age_futur = age_actuel + annees\n    return f\'Dans {annees} ans, vous aurez {age_futur} ans.\'\n\n# Tests\nprint(calculer_age_dans_x_ans(16, 5))    # Normal\nprint(calculer_age_dans_x_ans(-5, 3))    # Erreur\nprint(calculer_age_dans_x_ans(16, -2))   # Erreur')">
+                    🐍 Charger
+                </button>
+                <div class="code-content">
+<span class="code-keyword">def</span> <span class="code-function">calculer_age_dans_x_ans</span>(age_actuel, annees):
+    <span class="code-string">"""Calcule l'âge futur en vérifiant les entrées."""</span>
+    <span class="code-keyword">if</span> age_actuel < <span class="code-number">0</span> <span class="code-keyword">or</span> annees < <span class="code-number">0</span>:
+        <span class="code-keyword">return</span> <span class="code-string">"Erreur : les âges et années doivent être positifs"</span>
+    
+    age_futur = age_actuel + annees
+    <span class="code-keyword">return</span> <span class="code-string">f"Dans {annees} ans, vous aurez {age_futur} ans."</span>
+
+<span class="code-comment"># Tests</span>
+<span class="code-keyword">print</span>(<span class="code-function">calculer_age_dans_x_ans</span>(<span class="code-number">16</span>, <span class="code-number">5</span>))    <span class="code-comment"># Normal</span>
+<span class="code-keyword">print</span>(<span class="code-function">calculer_age_dans_x_ans</span>(-<span class="code-number">5</span>, <span class="code-number">3</span>))    <span class="code-comment"># Erreur</span>
+<span class="code-keyword">print</span>(<span class="code-function">calculer_age_dans_x_ans</span>(<span class="code-number">16</span>, -<span class="code-number">2</span>))   <span class="code-comment"># Erreur</span>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <strong>Conseils :</strong><br>
+                • Vérifiez toujours les valeurs d'entrée<br>
+                • Retournez des messages d'erreur clairs<br>
+                • Testez avec des valeurs limites<br>
+                • Documentez les cas d'erreur possibles
+            </div>
+        `
+    },
+    exercises: {
+        icon: 'icon-exercises',
+        emoji: '💪',
+        title: 'Exercices d\'Application',
+        subtitle: 'Mettre en pratique',
+        content: `
+            <div class="section-text">
+                <strong>Exercices Faciles</strong>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-difficulty">Facile</div>
+                <div class="exercise-title">Salutation personnalisée</div>
+                <div class="exercise-desc">
+                    Écrivez une fonction <code>saluer(prenom)</code> qui prend un prénom en paramètre et affiche un message de bienvenue personnalisé avec une f-string.
+                </div>
+                <div class="exercise-steps">
+                    <strong>Ce qu'il faut faire :</strong>
+                    <ol>
+                        <li>Définir la fonction avec <code>def saluer(prenom):</code></li>
+                        <li>Utiliser <code>print()</code> avec une f-string</li>
+                        <li>Tester la fonction avec différents prénoms</li>
+                    </ol>
+                </div>
+                <div class="highlight-box">
+                    <strong>À vous de jouer !</strong><br>
+                    Utilisez ce que vous avez appris sur les fonctions et les f-strings.
+                </div>
+                <div style="text-align: center; margin-top: 15px;">
+                    <button class="hint-button" onclick="toggleHint('hint_func1')" style="
+                        background: rgba(255, 215, 0, 0.2);
+                        border: 2px solid rgba(255, 215, 0, 0.4);
+                        border-radius: 8px;
+                        padding: 8px 16px;
+                        color: #ffd700;
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        transition: all 0.3s ease;
+                    " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                        💡 Indice
+                    </button>
+                </div>
+                <div id="hint_func1" class="hint-content" style="display: none; background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 8px; padding: 15px; margin-top: 15px;">
+                    <strong>💡 Indice :</strong><br>
+                    Utilisez la syntaxe <code>f"Bonjour {prenom} !"</code> pour créer le message personnalisé.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-difficulty">Facile</div>
+                <div class="exercise-title">Calculateur simple</div>
+                <div class="exercise-desc">
+                    Créez une fonction <code>additionner(a, b)</code> qui prend deux nombres et retourne leur somme. Testez-la avec différents nombres.
+                </div>
+                <div class="exercise-steps">
+                    <strong>Ce qu'il faut faire :</strong>
+                    <ol>
+                        <li>Définir la fonction avec deux paramètres</li>
+                        <li>Calculer la somme et la retourner avec <code>return</code></li>
+                        <li>Tester avec plusieurs couples de nombres</li>
+                    </ol>
+                </div>
+                <div class="highlight-box">
+                    <strong>À retenir !</strong><br>
+                    Une fonction qui calcule doit utiliser <code>return</code> pour renvoyer le résultat.
+                </div>
+                <div style="text-align: center; margin-top: 15px;">
+                    <button class="hint-button" onclick="toggleHint('hint_func2')" style="
+                        background: rgba(255, 215, 0, 0.2);
+                        border: 2px solid rgba(255, 215, 0, 0.4);
+                        border-radius: 8px;
+                        padding: 8px 16px;
+                        color: #ffd700;
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        transition: all 0.3s ease;
+                    " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                        💡 Indice
+                    </button>
+                </div>
+                <div id="hint_func2" class="hint-content" style="display: none; background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 8px; padding: 15px; margin-top: 15px;">
+                    <strong>💡 Indice :</strong><br>
+                    N'oubliez pas d'utiliser <code>return a + b</code> pour renvoyer le résultat du calcul.
+                </div>
+            </div>
+
+            <div class="section-text" style="margin-top: 30px;">
+                <strong>Exercices Intermédiaires</strong>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-difficulty">Moyen</div>
+                <div class="exercise-title">Calculateur de TTC</div>
+                <div class="exercise-desc">
+                    Créez une fonction <code>calculer_ttc(prix_ht, taux_tva=0.20)</code> qui prend le prix hors taxe et renvoie le prix TTC avec un message formaté.
+                </div>
+                <div class="exercise-steps">
+                    <strong>Ce qu'il faut faire :</strong>
+                    <ol>
+                        <li>Définir la fonction avec un paramètre par défaut pour la TVA</li>
+                        <li>Calculer le prix TTC : prix_ht × (1 + taux_tva)</li>
+                        <li>Retourner un message formaté avec f-string</li>
+                    </ol>
+                </div>
+                <div class="highlight-box">
+                    <strong>Nouveau concept !</strong><br>
+                    Le paramètre <code>taux_tva=0.20</code> a une valeur par défaut de 20%.
+                </div>
+                <div style="text-align: center; margin-top: 15px;">
+                    <button class="hint-button" onclick="toggleHint('hint_func3')" style="
+                        background: rgba(255, 215, 0, 0.2);
+                        border: 2px solid rgba(255, 215, 0, 0.4);
+                        border-radius: 8px;
+                        padding: 8px 16px;
+                        color: #ffd700;
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        transition: all 0.3s ease;
+                    " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                        💡 Indice
+                    </button>
+                </div>
+                <div id="hint_func3" class="hint-content" style="display: none; background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 8px; padding: 15px; margin-top: 15px;">
+                    <strong>💡 Indice :</strong><br>
+                    Pour un prix HT de 100€ avec 20% de TVA : 100 × (1 + 0.20) = 120€ TTC
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-difficulty">Moyen</div>
+                <div class="exercise-title">Analyseur de notes</div>
+                <div class="exercise-desc">
+                    Créez une fonction <code>analyser_note(note)</code> qui retourne une appréciation selon la note sur 20.
+                </div>
+                <div class="exercise-steps">
+                    <strong>Barème :</strong>
+                    <ul>
+                        <li>16-20 : "Excellent"</li>
+                        <li>14-16 : "Bien"</li>
+                        <li>12-14 : "Assez bien"</li>
+                        <li>10-12 : "Passable"</li>
+                        <li>0-10 : "Insuffisant"</li>
+                    </ul>
+                </div>
+                <div class="highlight-box">
+                    <strong>Technique !</strong><br>
+                    Utilisez des conditions <code>if/elif/else</code> dans votre fonction.
+                </div>
+                <div style="text-align: center; margin-top: 15px;">
+                    <button class="hint-button" onclick="toggleHint('hint_func4')" style="
+                        background: rgba(255, 215, 0, 0.2);
+                        border: 2px solid rgba(255, 215, 0, 0.4);
+                        border-radius: 8px;
+                        padding: 8px 16px;
+                        color: #ffd700;
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        transition: all 0.3s ease;
+                    " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                        💡 Indice
+                    </button>
+                </div>
+                <div id="hint_func4" class="hint-content" style="display: none; background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 8px; padding: 15px; margin-top: 15px;">
+                    <strong>💡 Indice :</strong><br>
+                    Commencez par le cas le plus élevé : <code>if note >= 16:</code> puis descendez.
+                </div>
+            </div>
+
+            <div class="section-text" style="margin-top: 30px;">
+                <strong>Exercices Avancés</strong>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-difficulty">Expert</div>
+                <div class="exercise-title">Calculateur de pourboire NYC</div>
+                <div class="exercise-desc">
+                    Créez une fonction <code>calculer_pourboire_nyc(montant_addition, qualite_service)</code> où la qualité peut être "excellent" (25%), "bon" (20%), "moyen" (15%).
+                </div>
+                <div class="exercise-steps">
+                    <strong>Ce qu'il faut faire :</strong>
+                    <ol>
+                        <li>Définir les taux selon la qualité du service</li>
+                        <li>Calculer le montant du pourboire</li>
+                        <li>Retourner le pourboire ET le total à payer</li>
+                        <li>Gérer les cas d'erreur (service non reconnu)</li>
+                    </ol>
+                </div>
+                <div class="highlight-box">
+                    <strong>Challenge !</strong><br>
+                    Utilisez un dictionnaire pour stocker les taux de pourboire par qualité.
+                </div>
+                <div style="text-align: center; margin-top: 15px;">
+                    <button class="hint-button" onclick="toggleHint('hint_func5')" style="
+                        background: rgba(255, 215, 0, 0.2);
+                        border: 2px solid rgba(255, 215, 0, 0.4);
+                        border-radius: 8px;
+                        padding: 8px 16px;
+                        color: #ffd700;
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        transition: all 0.3s ease;
+                    " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                        💡 Indice
+                    </button>
+                </div>
+                <div id="hint_func5" class="hint-content" style="display: none; background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 8px; padding: 15px; margin-top: 15px;">
+                    <strong>💡 Indice :</strong><br>
+                    Créez un dictionnaire : <code>taux = {"excellent": 0.25, "bon": 0.20, "moyen": 0.15}</code>
+                </div>
+            </div>
+        `
+    }
+};
+
+// Current lesson data (will be switched between lesson1Data, lesson2Data, and lesson3Data)
 let currentLessonData = lesson1Data;

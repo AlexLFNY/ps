@@ -57,6 +57,14 @@ function showLessonSelection() {
                 </div>
                 <div class="tile-arrow">→</div>
             </div>
+            <div class="lesson-tile" onclick="showLesson(3)">
+                <div class="lesson-number">3</div>
+                <div class="lesson-content">
+                    <div class="lesson-title">Les Fonctions</div>
+                    <div class="lesson-subtitle">Organiser votre code</div>
+                </div>
+                <div class="tile-arrow">→</div>
+            </div>
         </div>
     `;
 }
@@ -69,6 +77,9 @@ function showLesson(lessonNumber) {
     } else if (lessonNumber === 2) {
         currentLessonData = lesson2Data;
         showLessonContent('Leçon 2 : Opérations et Conditions', getLessonConcepts(lesson2Data));
+    } else if (lessonNumber === 3) {
+        currentLessonData = lesson3Data;
+        showLessonContent('Leçon 3 : Les Fonctions', getLessonConcepts(lesson3Data));
     }
 }
 
@@ -159,11 +170,18 @@ function initModal() {
 
     // Open modal when clicking a tile
     tiles.forEach(tile => {
-        tile.addEventListener('click', function() {
+        // Remove existing listeners to avoid duplicates
+        const newTile = tile.cloneNode(true);
+        tile.parentNode.replaceChild(newTile, tile);
+        
+        newTile.addEventListener('click', function() {
             const concept = this.dataset.concept;
             const data = currentLessonData[concept];
             
-            if (!data) return;
+            if (!data) {
+                console.error('No data found for concept:', concept, 'Available concepts:', Object.keys(currentLessonData));
+                return;
+            }
 
             // Update modal content
             modalIcon.className = `modal-icon ${data.icon}`;
@@ -358,6 +376,17 @@ function toggleHint(hintId) {
             hint.style.display = 'block';
         } else {
             hint.style.display = 'none';
+        }
+    }
+}
+
+function toggleSolution(solutionId) {
+    const solution = document.getElementById(solutionId);
+    if (solution) {
+        if (solution.style.display === 'none' || solution.style.display === '') {
+            solution.style.display = 'block';
+        } else {
+            solution.style.display = 'none';
         }
     }
 }
