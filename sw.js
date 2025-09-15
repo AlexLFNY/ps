@@ -22,8 +22,7 @@ const CORE_CACHE_RESOURCES = [
 // External resources to cache
 const EXTERNAL_CACHE_RESOURCES = [
     'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap',
-    'https://unpkg.com/skulpt@0.11.1/dist/skulpt.min.js',
-    'https://unpkg.com/skulpt@0.11.1/dist/skulpt-stdlib.js'
+    'https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js'
 ];
 
 // Cache strategies
@@ -48,7 +47,7 @@ const ROUTE_STRATEGIES = [
         cacheName: 'google-fonts-webfonts'
     },
     {
-        pattern: /^https:\/\/unpkg\.com/,
+        pattern: /^https:\/\/(unpkg\.com|cdn\.jsdelivr\.net)/,
         strategy: CACHE_STRATEGIES.STALE_WHILE_REVALIDATE,
         cacheName: 'cdn-resources'
     },

@@ -57,14 +57,7 @@ const lesson1Data = {
                 <code style="color: #ffd700; font-family: monospace;">nom_de_la_variable = valeur</code>
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Exemple : creer des variables
-nom = 'Lucas'
-age = 16
-taille = 1.75
-# Utiliser les variables
-print('Nom:', nom)
-print('Age:', age)
-print('Taille:', taille, 'm')\`)">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Exemple : creer des variables\\nnom = \\'Lucas\\'\\nage = 16\\ntaille = 1.75\\n# Utiliser les variables\\nprint(\\'Nom:\\', nom)\\nprint(\\'Age:\\', age)\\nprint(\\'Taille:\\', taille, \\'m\\')')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -143,15 +136,7 @@ print('Taille:', taille, 'm')\`)">
                 </div>
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Decouvrir les types avec type()
-age = 17
-note = 15.5
-nom = 'Marie'
-reussite = True
-print('Type de age:', type(age))
-print('Type de note:', type(note))
-print('Type de nom:', type(nom))
-print('Type de reussite:', type(reussite))\`)">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Decouvrir les types avec type()\\nage = 17\\nnote = 15.5\\nnom = \\'Marie\\'\\nreussite = True\\nprint(\\'Type de age:\\', type(age))\\nprint(\\'Type de note:\\', type(note))\\nprint(\\'Type de nom:\\', type(nom))\\nprint(\\'Type de reussite:\\', type(reussite))')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -242,11 +227,7 @@ print('Type de reussite:', type(reussite))\`)">
                 <strong>input()</strong> : Demande des informations à l'utilisateur
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Afficher un message
-print('Bonjour le monde !')
-# Demander et stocker
-nom = input('Votre nom ? ')
-print('Bonjour', nom)\`)">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Afficher un message\\nprint(\\'Bonjour le monde !\\')\\n# Demander et stocker\\nnom = input(\\'Votre nom ? \\')\\nprint(\\'Bonjour\\', nom)')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -278,13 +259,7 @@ nom = <span class="code-keyword">input</span>(<span class="code-string">"Votre n
                 vous ne pourrez pas faire de calcul avec directement. Il faudra le convertir.
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Demander l'age
-age_str = input('Votre age ? ')  # '15' (str)
-# Convertir en entier
-age_int = int(age_str)           # 15 (int)
-# Maintenant on peut calculer
-age_futur = age_int + 10
-print('Dans 10 ans:', age_futur, 'ans')\`)">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Demander l\\'age\\nage_str = input(\\'Votre age ? \\')  # \\'15\\' (str)\\n# Convertir en entier\\nage_int = int(age_str)           # 15 (int)\\n# Maintenant on peut calculer\\nage_futur = age_int + 10\\nprint(\\'Dans 10 ans:\\', age_futur, \\'ans\\')')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -667,17 +642,7 @@ const lesson2Data = {
                 </div>
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Exemples d'operations
-a = 10
-b = 3
-
-print('Addition :', a + b)          # Affiche 13
-print('Soustraction :', a - b)      # Affiche 7
-print('Multiplication :', a * b)    # Affiche 30
-print('Division :', a / b)          # Affiche 3.333...
-print('Division entière :', a // b) # Affiche 3
-print('Modulo :', a % b)            # Affiche 1
-print('Puissance :', a ** b)        # Affiche 1000\`)">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Exemples d\\'operations\\na = 10\\nb = 3\\n\\nprint(\\'Addition :\\', a + b)          # Affiche 13\\nprint(\\'Soustraction :\\', a - b)      # Affiche 7\\nprint(\\'Multiplication :\\', a * b)    # Affiche 30\\nprint(\\'Division :\\', a / b)          # Affiche 3.333...\\nprint(\\'Division entière :\\', a // b) # Affiche 3\\nprint(\\'Modulo :\\', a % b)            # Affiche 1\\nprint(\\'Puissance :\\', a ** b)        # Affiche 1000')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -698,11 +663,7 @@ b = <span class="code-number">3</span>
                 <strong>Ordre des opérations :</strong> Python respecte la priorité mathématique : Parenthèses → Exposants → Multiplication/Division → Addition/Soustraction
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Ordre des operations
-resultat_1 = 2 + 3 * 4  # Calcule 3 * 4 d'abord, donc 2 + 12 = 14
-resultat_2 = (2 + 3) * 4 # Calcule (2 + 3) d'abord, donc 5 * 4 = 20
-print('Resultat 1:', resultat_1)
-print('Resultat 2:', resultat_2)\`)">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Ordre des operations\\nresultat_1 = 2 + 3 * 4  # Calcule 3 * 4 d\\'abord, donc 2 + 12 = 14\\nresultat_2 = (2 + 3) * 4 # Calcule (2 + 3) d\\'abord, donc 5 * 4 = 20\\nprint(\\'Resultat 1:\\', resultat_1)\\nprint(\\'Resultat 2:\\', resultat_2)')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -726,15 +687,7 @@ resultat_2 = (<span class="code-number">2</span> + <span class="code-number">3</
                 <strong>Répétition (*)</strong> : Répète une chaîne plusieurs fois
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Operations sur les chaines
-prenom = 'John'
-nom = 'Doe'
-nom_complet = prenom + ' ' + nom
-print(nom_complet)  # Affiche: John Doe
-
-cri = 'Hourra ! '
-encouragement = cri * 3
-print(encouragement)  # Affiche: Hourra ! Hourra ! Hourra !\`)">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Operations sur les chaines\\nprenom = \\'John\\'\\nnom = \\'Doe\\'\\nnom_complet = prenom + \\' \\' + nom\\nprint(nom_complet)  # Affiche: John Doe\\n\\ncri = \\'Hourra ! \\'\\nencouragement = cri * 3\\nprint(encouragement)  # Affiche: Hourra ! Hourra ! Hourra !')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -753,19 +706,7 @@ encouragement = cri * <span class="code-number">3</span>
                 <p style="color: #ccc; margin-bottom: 15px;">Pour intégrer facilement des variables dans une chaîne, utilisez les f-strings avec la lettre <code>f</code> avant les guillemets.</p>
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# f-strings : la methode moderne
-nom = 'Alex'
-age = 16
-# On place les variables entre accolades {} directement dans la chaine
-message = f'Je m\'appelle {nom} et j\'ai {age} ans.'
-print(message)
-# Affiche: Je m'appelle Alex et j'ai 16 ans.
-
-# On peut meme y faire des calculs !
-prix_ht = 50
-tva = 0.20
-print(f'Le prix TTC est de {prix_ht * (1 + tva)} euros.')
-# Affiche: Le prix TTC est de 60.0 euros.\`)">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# f-strings : la methode moderne\\nnom = \\'Alex\\'\\nage = 16\\n# On place les variables entre accolades {} directement dans la chaine\\nmessage = f\\'Je m\\\\\\'appelle {nom} et j\\\\\\'ai {age} ans.\\'\\nprint(message)\\n# Affiche: Je m\\'appelle Alex et j\\'ai 16 ans.\\n\\n# On peut meme y faire des calculs !\\nprix_ht = 50\\ntva = 0.20\\nprint(f\\'Le prix TTC est de {prix_ht * (1 + tva)} euros.\\')\\n# Affiche: Le prix TTC est de 60.0 euros.')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -833,12 +774,7 @@ tva = <span class="code-number">0.20</span>
                 <strong>Attention :</strong> Ne confondez jamais <code>=</code> (affectation) et <code>==</code> (comparaison) !
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Simple condition if
-age = int(input('Quel est votre age ? '))
-
-if age >= 18:
-    print('Vous etes majeur !')
-    print('Vous pouvez voter.')\`)">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Simple condition if\\nage = int(input(\\'Quel est votre age ? \\'))\\n\\nif age >= 18:\\n    print(\\'Vous etes majeur !\\')\\n    print(\\'Vous pouvez voter.\\')')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -864,13 +800,7 @@ age = <span class="code-keyword">int</span>(<span class="code-keyword">input</sp
                 Pour gérer plusieurs cas de figure, Python propose les structures <code>if...else</code> et <code>if...elif...else</code>.
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Structure if...else
-age = int(input('Quel est votre age ? '))
-
-if age >= 18:
-    print('Vous etes majeur !')
-else:
-    print('Vous etes mineur.')\`)">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Structure if...else\\nage = int(input(\\'Quel est votre age ? \\'))\\n\\nif age >= 18:\\n    print(\\'Vous etes majeur !\\')\\nelse:\\n    print(\\'Vous etes mineur.\\')')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -884,19 +814,7 @@ age = <span class="code-keyword">int</span>(<span class="code-keyword">input</sp
                 </div>
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Structure if...elif...else pour plusieurs conditions
-note = float(input('Entrez votre note sur 20 : '))
-
-if note >= 16:
-    print('Mention Très Bien')
-elif note >= 14:
-    print('Mention Bien')
-elif note >= 12:
-    print('Mention Assez Bien')
-elif note >= 10:
-    print('Passable')
-else:
-    print('Insuffisant')\`)">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Structure if...elif...else pour plusieurs conditions\\nnote = float(input(\\'Entrez votre note sur 20 : \\'))\\n\\nif note >= 16:\\n    print(\\'Mention Très Bien\\')\\nelif note >= 14:\\n    print(\\'Mention Bien\\')\\nelif note >= 12:\\n    print(\\'Mention Assez Bien\\')\\nelif note >= 10:\\n    print(\\'Passable\\')\\nelse:\\n    print(\\'Insuffisant\\')')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -950,16 +868,7 @@ note = <span class="code-keyword">float</span>(<span class="code-keyword">input<
                 </div>
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole(\`# Operateurs logiques
-age = int(input('Votre age ? '))
-permis = input('Avez-vous le permis ? (oui/non) ')
-
-if age >= 18 and permis == 'oui':
-    print('Vous pouvez conduire seul !')
-elif age >= 16 and permis == 'oui':
-    print('Vous pouvez faire la conduite accompagnée.')
-else:
-    print('Vous ne pouvez pas encore conduire.')\`)">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Operateurs logiques\\nage = int(input(\\'Votre age ? \\'))\\npermis = input(\\'Avez-vous le permis ? (oui/non) \\')\\n\\nif age >= 18 and permis == \\'oui\\':\\n    print(\\'Vous pouvez conduire seul !\\')\\nelif age >= 16 and permis == \\'oui\\':\\n    print(\\'Vous pouvez faire la conduite accompagnée.\\')\\nelse:\\n    print(\\'Vous ne pouvez pas encore conduire.\\')')">
                     🐍 Charger
                 </button>
                 <div class="code-content">

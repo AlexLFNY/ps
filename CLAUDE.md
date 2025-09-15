@@ -19,6 +19,7 @@ This is a French educational web application teaching Python programming fundame
 ## Technology Stack
 
 - **Frontend**: Pure HTML5, CSS3, and Vanilla JavaScript (no frameworks)
+- **Python Engine**: Pyodide v0.24.1 (CPython compiled to WebAssembly)
 - **Styling**: CSS3 with glassmorphism effects, CSS Grid, Flexbox, responsive design
 - **Animations**: CSS animations and JavaScript for interactive particles
 - **Deployment**: GitHub Pages via GitHub Actions
@@ -38,18 +39,18 @@ This is a **modular web application** with clean separation of concerns:
 1. **Hero Section**: Landing area with animated background and floating particles
 2. **Concept Tiles**: 7 interactive tiles covering Python concepts
 3. **Modal System**: Full-screen modal for detailed content display
-4. **Content Data**: JavaScript object containing all educational content
-5. **Interactive Effects**: Hover effects, touch gestures, particle animations
+4. **Python Console**: Interactive Pyodide-powered Python interpreter with code execution
+5. **Content Data**: JavaScript object containing all educational content
+6. **Interactive Effects**: Hover effects, touch gestures, particle animations
 
 ### Content Structure
 
 The application covers these Python topics:
-- Introduction to Python
-- Variables and data storage
-- Data types (int, float, str, bool)
-- User interaction (print, input functions)
-- Type conversion
-- Naming conventions
+- **Lesson 1**: Variables and data types (int, float, str, bool), print/input functions, type conversion
+- **Lesson 2**: Operations (arithmetic, string), conditions (if/else/elif), logical operators
+- **Lesson 3**: Functions (definition, parameters, return values, docstrings, error handling)
+- Each lesson includes interactive code examples with **🐍 Charger** buttons that load into the Python console
+- F-strings fully supported thanks to Pyodide's Python 3.12 compatibility
 - Practical exercises (4 levels: Facile, Moyen, Avancé, Expert)
 
 ## Development Workflow
@@ -71,6 +72,8 @@ open index.html
 - Open `index.html` in browser
 - Test responsive design on different screen sizes
 - Verify touch gestures on mobile devices
+- Test Python console functionality with f-strings and complex code
+- Verify **🐍 Charger** buttons load code correctly into the Pyodide interpreter
 
 ### Content Updates
 - Modify the `conceptData` object in JavaScript section (lines 768-1076)
@@ -92,8 +95,18 @@ open index.html
 - This is a **modular application** with clean separation of concerns
 - All educational content is in French - maintain language consistency  
 - The design follows glassmorphism trends with responsive mobile-first approach
-- No package managers, build tools, or testing frameworks are used
+- **Python Engine**: Uses Pyodide v0.24.1 for full Python 3.12 compatibility including f-strings
+- **No build process**: Pyodide loads directly from CDN, no package managers or build tools needed
 - The particle animation system creates floating elements for visual appeal
 - When updating content, modify `content.js` - avoid hardcoding content in other files
 - Styling changes should be made in `styles.css`
 - Interactive functionality belongs in `script.js`
+- **Python Console**: Fully functional with variable inspection, code execution, and error handling
+
+## Python Console Features
+
+- **Full Python 3.12 Support**: F-strings, modern syntax, comprehensive standard library
+- **Interactive Code Loading**: 🐍 Charger buttons automatically load examples into the console
+- **Variable Inspection**: Real-time display of user-defined variables with types and values
+- **Error Handling**: Clean error messages with French localization
+- **Persistent State**: Variables remain available across code executions within a session

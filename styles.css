@@ -1355,6 +1355,12 @@ body {
     color: #6a6a6a;
 }
 
+
+/* Ensure editor container is positioned relatively */
+.editor-container {
+    position: relative;
+}
+
 .editor-output {
     background: #0f0f0f;
     border-top: 1px solid #3e3e42;

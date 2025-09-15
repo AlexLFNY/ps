@@ -154,8 +154,9 @@ function showLessonContent(lessonTitle, concepts) {
         </div>
     `;
     
-    // Reinitialize modal after content change
+    // Reinitialize modal and charger buttons after content change
     initModal();
+    initChargerButtons();
 }
 
 // Modal system
@@ -189,6 +190,9 @@ function initModal() {
             modalTitle.textContent = data.title;
             modalSubtitle.textContent = data.subtitle;
             modalBody.innerHTML = data.content;
+            
+            // Re-initialize charger buttons after content is loaded
+            initChargerButtons();
             
             // Show modal
             modal.classList.add('active');
@@ -417,21 +421,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Critical initializations
     showLessonSelection();
     initConsole();
+    initChargerButtons();
 });
 
-// Skulpt Configuration and Editor functionality
-let skulptVariables = {};
+// Pyodide Configuration and Editor functionality
+let pyodideInstance = null;
 let currentTab = 'editor';
 
-function initConsole() {
-    // Wait for Skulpt to load, then configure it
-    if (typeof Sk === 'undefined') {
-        console.log('Skulpt not yet loaded, retrying...');
-        setTimeout(initConsole, 100);
-        return;
+async function initConsole() {
+    // Initialize Pyodide
+    if (!pyodideInstance) {
+        console.log('Loading Pyodide...');
+        try {
+            pyodideInstance = await loadPyodide();
+            console.log('Pyodide loaded successfully!', pyodideInstance);
+        } catch (error) {
+            console.error('Failed to load Pyodide:', error);
+            return;
+        }
     }
-    
-    console.log('Skulpt loaded successfully!', Sk);
     
     const codeEditor = document.getElementById('codeEditor');
     
@@ -511,13 +519,7 @@ function initDragging() {
     }
 }
 
-// Skulpt read function for imports
-function builtinRead(x) {
-    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined) {
-        throw new Error("File not found: '" + x + "'");
-    }
-    return Sk.builtinFiles["files"][x];
-}
+// Pyodide doesn't need a custom read function for imports
 
 function showConsole() {
     const console = document.getElementById('pythonConsole');
@@ -563,13 +565,15 @@ function clearConsole() {
     // Clear editor instead
     clearEditor();
     
-    // Clear Skulpt globals
-    if (Sk.globals) {
-        for (let key in Sk.globals) {
-            if (!key.startsWith('__') && typeof Sk.globals[key] !== 'function') {
-                delete Sk.globals[key];
-            }
-        }
+    // Clear Pyodide globals
+    if (pyodideInstance) {
+        pyodideInstance.runPython(`
+            # Clear user-defined variables
+            user_vars = [k for k in globals().keys() if not k.startswith('_')]
+            for var in user_vars:
+                if var not in ['__builtins__', '__name__', '__doc__', '__package__']:
+                    del globals()[var]
+        `);
     }
 }
 
@@ -587,7 +591,7 @@ function switchTab(tabName) {
 }
 
 // Code Editor functions
-function runCode() {
+async function runCode() {
     const codeEditor = document.getElementById('codeEditor');
     const outputContent = document.getElementById('outputContent');
     const editorStatus = document.querySelector('.editor-status');
@@ -596,117 +600,214 @@ function runCode() {
     if (!code) return;
     
     // Clear previous output
-    outputContent.textContent = 'Exécution en cours...';
+    outputContent.innerHTML = 'Exécution en cours...';
     editorStatus.textContent = 'En cours...';
     
-    // Check if Skulpt is loaded
-    if (typeof Sk === 'undefined') {
-        outputContent.textContent = 'ERREUR: Skulpt n\'est pas chargé.';
+    // Check if Pyodide is loaded
+    if (!pyodideInstance) {
+        outputContent.textContent = 'ERREUR: Pyodide n\'est pas chargé.';
         editorStatus.textContent = 'Erreur';
         return;
     }
     
-    // Capture output for editor
-    let editorOutput = '';
+    // Setup input/output handling
+    let capturedOutput = '';
     
-    function captureOutput(text) {
-        console.log('Python output:', text);
-        editorOutput += text;
-        outputContent.textContent = editorOutput;
-    }
-    
-    // Configure Skulpt for execution
     try {
-        Sk.pre = "output";
-        Sk.configure({
-            output: captureOutput,
-            read: function(x) {
-                if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined) {
-                    throw "File not found: '" + x + "'";
-                }
-                return Sk.builtinFiles["files"][x];
-            },
-            inputfun: function(prompt) {
-                return new Promise(function(resolve) {
-                    const outputContent = document.getElementById('outputContent');
-                    
-                    // Add the prompt to the output
-                    const promptSpan = document.createElement('span');
-                    promptSpan.textContent = prompt || '';
-                    promptSpan.style.color = '#00ff00';
-                    outputContent.appendChild(promptSpan);
-                    
-                    // Create input field
-                    const inputField = document.createElement('input');
-                    inputField.type = 'text';
-                    inputField.style.cssText = `
-                        background: transparent;
-                        border: none;
-                        outline: none;
-                        color: #ffffff;
-                        font-family: 'JetBrains Mono', monospace;
-                        font-size: inherit;
-                        margin-left: 5px;
-                        border-bottom: 1px solid #00ff00;
-                        padding: 2px 0;
-                    `;
-                    
-                    outputContent.appendChild(inputField);
-                    inputField.focus();
-                    
-                    // Handle input submission
-                    function handleSubmit() {
-                        const value = inputField.value;
-                        inputField.remove();
-                        
-                        // Add the entered value to output
-                        const valueSpan = document.createElement('span');
-                        valueSpan.textContent = value;
-                        valueSpan.style.color = '#ffffff';
-                        outputContent.appendChild(valueSpan);
-                        
-                        // Add line break
-                        outputContent.appendChild(document.createElement('br'));
-                        
-                        resolve(value);
-                    }
-                    
-                    inputField.addEventListener('keydown', function(e) {
-                        if (e.key === 'Enter') {
-                            handleSubmit();
-                        }
-                    });
-                });
-            },
-            inputfunTakesPrompt: true,
-            __future__: Sk.python3,
-            execLimit: 10000
-        });
-        
         console.log('Executing Python code:', code);
         
-        // Use the simpler evaluation method
-        const promise = Sk.misceval.asyncToPromise(function() {
-            return Sk.importMainWithBody("<stdin>", false, code, true);
-        });
+        // Setup custom input function for Pyodide
+        pyodideInstance.runPython(`
+import sys
+from io import StringIO
+import builtins
+
+_stdout_backup = sys.stdout
+_input_backup = builtins.input
+sys.stdout = StringIO()
+
+# Store input prompts and responses
+_input_queue = []
+_input_responses = []
+
+def custom_input(prompt=""):
+    _input_queue.append(str(prompt))
+    # This will be replaced by JavaScript
+    raise Exception("INPUT_REQUIRED")
+
+builtins.input = custom_input
+        `);
         
-        promise.then(function(mod) {
+        // Execute the user code
+        try {
+            const result = pyodideInstance.runPython(code);
+            
+            // Get the captured output
+            capturedOutput = pyodideInstance.runPython(`
+captured = sys.stdout.getvalue()
+sys.stdout = _stdout_backup
+builtins.input = _input_backup
+captured
+            `);
+            
             console.log('Python execution completed successfully');
             editorStatus.textContent = 'Terminé';
-            if (!editorOutput.trim()) {
+            
+            // Display output
+            if (capturedOutput.trim()) {
+                outputContent.textContent = capturedOutput;
+            } else if (result !== undefined) {
+                outputContent.textContent = String(result);
+            } else {
                 outputContent.textContent = 'Code exécuté avec succès (aucune sortie).';
             }
-            updateVariables();
-        }, function(err) {
-            console.error('Python execution error:', err);
-            const errorMsg = err.toString();
-            outputContent.textContent = (editorOutput ? editorOutput + '\n\n' : '') + 'ERREUR:\n' + errorMsg;
-            editorStatus.textContent = 'Erreur';
-        });
+            
+        } catch (err) {
+            if (err.toString().includes('INPUT_REQUIRED')) {
+                // Handle input request
+                await handleInputRequest(code, outputContent, editorStatus);
+                return;
+            } else {
+                throw err; // Re-throw other errors
+            }
+        }
+        
+        updateVariables();
         
     } catch (err) {
-        console.error('Skulpt configuration error:', err);
-        outputContent.textContent = 'ERREUR de configuration: ' + err.toString();
+        console.error('Python execution error:', err);
+        
+        // Restore stdout and input in case of error
+        pyodideInstance.runPython(`
+sys.stdout = _stdout_backup
+builtins.input = _input_backup
+        `);
+        
+        let errorMsg = err.toString();
+        
+        // Clean up Pyodide error messages for better readability
+        if (errorMsg.includes('PythonError:')) {
+            errorMsg = errorMsg.replace('PythonError: ', '');
+        }
+        
+        outputContent.textContent = (capturedOutput ? capturedOutput + '\n\n' : '') + 'ERREUR:\n' + errorMsg;
+        editorStatus.textContent = 'Erreur';
+    }
+}
+
+async function handleInputRequest(code, outputContent, editorStatus) {
+    // Get the current prompt
+    const prompt = pyodideInstance.runPython(`_input_queue[-1] if _input_queue else ""`);
+    
+    // Show interactive input
+    outputContent.innerHTML = '';
+    
+    // Add the prompt to the output
+    if (prompt) {
+        const promptSpan = document.createElement('span');
+        promptSpan.textContent = prompt;
+        promptSpan.style.color = '#00ff00';
+        outputContent.appendChild(promptSpan);
+    }
+    
+    // Create input field
+    const inputField = document.createElement('input');
+    inputField.type = 'text';
+    inputField.style.cssText = `
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #ffffff;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: inherit;
+        margin-left: 5px;
+        border-bottom: 1px solid #00ff00;
+        padding: 2px 4px;
+        width: 200px;
+    `;
+    
+    outputContent.appendChild(inputField);
+    inputField.focus();
+    
+    // Wait for user input
+    const userInput = await new Promise(resolve => {
+        function handleSubmit() {
+            const value = inputField.value;
+            inputField.remove();
+            
+            // Add the entered value to output
+            const valueSpan = document.createElement('span');
+            valueSpan.textContent = value;
+            valueSpan.style.color = '#ffffff';
+            outputContent.appendChild(valueSpan);
+            
+            // Add line break
+            outputContent.appendChild(document.createElement('br'));
+            
+            resolve(value);
+        }
+        
+        inputField.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                handleSubmit();
+            }
+        });
+    });
+    
+    // Continue execution with the input
+    try {
+        pyodideInstance.runPython(`
+# Add the response to the queue
+_input_responses.append(${JSON.stringify(userInput)})
+
+# Redefine input to return responses in order
+def custom_input(prompt=""):
+    if prompt:
+        print(prompt, end="")
+    if _input_responses:
+        response = _input_responses.pop(0)
+        print(response)
+        return response
+    return ""
+
+builtins.input = custom_input
+        `);
+        
+        // Re-execute the code
+        const result = pyodideInstance.runPython(code);
+        
+        // Get the captured output
+        const capturedOutput = pyodideInstance.runPython(`
+captured = sys.stdout.getvalue()
+sys.stdout = _stdout_backup
+builtins.input = _input_backup
+captured
+        `);
+        
+        console.log('Python execution with input completed successfully');
+        editorStatus.textContent = 'Terminé';
+        
+        // Display full output
+        outputContent.textContent = capturedOutput || 'Code exécuté avec succès.';
+        
+        updateVariables();
+        
+    } catch (err) {
+        console.error('Python execution error with input:', err);
+        
+        // Restore stdout and input
+        pyodideInstance.runPython(`
+sys.stdout = _stdout_backup
+builtins.input = _input_backup
+        `);
+        
+        let errorMsg = err.toString();
+        if (errorMsg.includes('PythonError:')) {
+            errorMsg = errorMsg.replace('PythonError: ', '');
+        }
+        
+        outputContent.textContent = 'ERREUR:\n' + errorMsg;
         editorStatus.textContent = 'Erreur';
     }
 }
@@ -753,43 +854,145 @@ function updateVariables() {
 function refreshVariables() {
     const variablesContent = document.getElementById('variablesContent');
     
-    // Get global variables from Skulpt
-    const globals = Sk.globals;
-    const variables = [];
+    if (!pyodideInstance) {
+        variablesContent.innerHTML = '<div class="variables-empty">Pyodide en cours de chargement...</div>';
+        return;
+    }
     
-    if (globals) {
-        for (let key in globals) {
-            if (key.startsWith('__') || typeof globals[key] === 'function') continue;
+    try {
+        // Get global variables from Pyodide - execute in a clean namespace
+        const variablesData = pyodideInstance.runPython(`
+# Create a clean namespace to avoid polluting globals
+def get_user_variables():
+    import json
+    user_vars = {}
+    
+    # Get current globals 
+    current_globals = dict(globals())
+    
+    # Define system/internal variables to exclude
+    excluded_names = {
+        '__name__', '__doc__', '__package__', '__loader__', '__spec__', '__annotations__', '__builtins__',
+        'sys', 'builtins', 'json', 'StringIO', 'get_user_variables',
+        '_stdout_backup', '_input_backup', '_input_queue', '_input_responses', 'custom_input',
+        'user_vars', 'builtin_names', 'system_names', 'captured', 'current_globals', 'excluded_names'
+    }
+    
+    # Get builtin names
+    try:
+        if hasattr(__builtins__, '__dict__'):
+            builtin_names = set(__builtins__.__dict__.keys())
+        elif hasattr(__builtins__, '__iter__'):
+            builtin_names = set(dir(__builtins__))
+        else:
+            builtin_names = set()
+    except:
+        builtin_names = set()
+    
+    # Filter variables
+    for name, value in current_globals.items():
+        # Skip if it's internal, builtin, or callable (except user functions)
+        if (name.startswith('_') or 
+            name in excluded_names or 
+            name in builtin_names or
+            (callable(value) and not hasattr(value, '__code__'))):
+            continue
             
-            try {
-                const value = globals[key];
-                const pythonValue = Sk.ffi.remapToJs(value);
-                const pythonType = value.tp$name || typeof pythonValue;
+        try:
+            # Get the type name
+            type_name = type(value).__name__
+            
+            # Convert value to string representation safely
+            if isinstance(value, str):
+                str_value = repr(value) if len(value) <= 50 else repr(value[:47]) + '...'
+            elif isinstance(value, (int, float, bool)):
+                str_value = str(value)
+            elif isinstance(value, (list, tuple)):
+                str_val = str(value)
+                str_value = str_val if len(str_val) <= 50 else str_val[:47] + '...'
+            elif isinstance(value, dict):
+                str_val = str(value)
+                str_value = str_val if len(str_val) <= 50 else str_val[:47] + '...'
+            elif hasattr(value, '__code__'):  # User-defined function
+                str_value = f'<function {name}>'
+            else:
+                str_value = f'<{type_name} object>'
                 
-                variables.push({
-                    name: key,
-                    value: JSON.stringify(pythonValue),
-                    type: pythonType
+            user_vars[name] = {
+                'type': type_name,
+                'value': str_value
+            }
+        except Exception as e:
+            # Skip problematic variables
+            continue
+    
+    return json.dumps(user_vars)
+
+# Call the function and return result
+get_user_variables()
+        `);
+        
+        const variables = JSON.parse(variablesData);
+        const variableList = Object.entries(variables);
+        
+        if (variableList.length === 0) {
+            variablesContent.innerHTML = '<div class="variables-empty">Aucune variable définie. Exécutez du code pour voir les variables ici.</div>';
+        } else {
+            variablesContent.innerHTML = variableList.map(([name, data]) => `
+                <div class="variable-item">
+                    <div>
+                        <span class="variable-name">${escapeHtml(name)}</span>
+                        <span class="variable-type">${escapeHtml(data.type)}</span>
+                    </div>
+                    <div class="variable-value">${escapeHtml(data.value)}</div>
+                </div>
+            `).join('');
+        }
+    } catch (err) {
+        console.error('Error refreshing variables:', err);
+        variablesContent.innerHTML = `<div class="variables-empty">Erreur: ${err.message}</div>`;
+    }
+}
+
+// Helper function to escape HTML
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+
+// Initialize charger buttons with proper event listeners
+function initChargerButtons() {
+    // Find all charger buttons in the current document
+    const chargerButtons = document.querySelectorAll('.code-load-button');
+    
+    chargerButtons.forEach(button => {
+        // Remove any existing click listeners
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+        
+        // Extract the code from the onclick attribute
+        const onclickAttr = newButton.getAttribute('onclick');
+        if (onclickAttr) {
+            // Parse the code from the onclick attribute
+            const match = onclickAttr.match(/loadCodeIntoConsole\(['"`](.*)['"`]\)/);
+            if (match) {
+                const code = match[1]
+                    .replace(/\\n/g, '\n')
+                    .replace(/\\'/g, "'")
+                    .replace(/\\"/g, '"')
+                    .replace(/\\\\/g, '\\');
+                
+                newButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Charger button clicked, loading code:', code.substring(0, 50) + '...');
+                    loadCodeIntoConsole(code);
                 });
-            } catch (e) {
-                // Skip variables that can't be converted
             }
         }
-    }
-    
-    if (variables.length === 0) {
-        variablesContent.innerHTML = '<div class="variables-empty">Aucune variable définie. Exécutez du code pour voir les variables ici.</div>';
-    } else {
-        variablesContent.innerHTML = variables.map(variable => `
-            <div class="variable-item">
-                <div>
-                    <span class="variable-name">${variable.name}</span>
-                    <span class="variable-type">${variable.type}</span>
-                </div>
-                <div class="variable-value">${variable.value}</div>
-            </div>
-        `).join('');
-    }
+    });
 }
 
 // Function to load code into editor from content
