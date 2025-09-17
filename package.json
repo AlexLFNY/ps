@@ -1,0 +1,17 @@
+{
+  "name": "python-lesson-interactive",
+  "version": "1.3.0",
+  "description": "Interactive Python learning application for high school students",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 8080",
+    "create-lesson": "node tools/generateLesson.js",
+    "serve": "python3 -m http.server 8080"
+  },
+  "keywords": ["python", "education", "interactive", "learning", "high-school"],
+  "author": "Python Seconde Interactive",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

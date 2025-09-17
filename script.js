@@ -1,6 +1,10 @@
+// Import the lesson registry
+import { lessonRegistry, getLessonById } from './lessons/lessonRegistry.js';
+
 // Performance optimizations and imports
 let particleSystem = null;
 let performanceOptimizer = null;
+let currentLessonData = null;
 
 // Create floating particles with performance optimizations
 function createParticles() {
@@ -33,53 +37,49 @@ function createFallbackParticles() {
 }
 
 // Lesson navigation functions
-function showLessonSelection() {
+async function showLessonSelection() {
     const container = document.querySelector('.container');
+    
+    // Generate lesson tiles dynamically from registry
+    const lessonTilesHtml = lessonRegistry.map(lesson => `
+        <div class="lesson-tile" onclick="showLesson(${lesson.id})">
+            <div class="lesson-number">${lesson.number}</div>
+            <div class="lesson-content">
+                <div class="lesson-title">${lesson.title}</div>
+                <div class="lesson-subtitle">${lesson.subtitle}</div>
+            </div>
+            <div class="tile-arrow">→</div>
+        </div>
+    `).join('');
+    
     container.innerHTML = `
         <div class="hero">
             <h1>Python Seconde</h1>
             <p>Choisissez votre leçon</p>
         </div>
         <div class="lesson-selection">
-            <div class="lesson-tile" onclick="showLesson(1)">
-                <div class="lesson-number">1</div>
-                <div class="lesson-content">
-                    <div class="lesson-title">Variables et Types</div>
-                    <div class="lesson-subtitle">Les bases de Python</div>
-                </div>
-                <div class="tile-arrow">→</div>
-            </div>
-            <div class="lesson-tile" onclick="showLesson(2)">
-                <div class="lesson-number">2</div>
-                <div class="lesson-content">
-                    <div class="lesson-title">Opérations et Conditions</div>
-                    <div class="lesson-subtitle">Calculs et décisions</div>
-                </div>
-                <div class="tile-arrow">→</div>
-            </div>
-            <div class="lesson-tile" onclick="showLesson(3)">
-                <div class="lesson-number">3</div>
-                <div class="lesson-content">
-                    <div class="lesson-title">Les Fonctions</div>
-                    <div class="lesson-subtitle">Organiser votre code</div>
-                </div>
-                <div class="tile-arrow">→</div>
-            </div>
+            ${lessonTilesHtml}
         </div>
     `;
 }
 
-function showLesson(lessonNumber) {
-    // Switch lesson data
-    if (lessonNumber === 1) {
-        currentLessonData = lesson1Data;
-        showLessonContent('Leçon 1 : Variables et Types', getLessonConcepts(lesson1Data));
-    } else if (lessonNumber === 2) {
-        currentLessonData = lesson2Data;
-        showLessonContent('Leçon 2 : Opérations et Conditions', getLessonConcepts(lesson2Data));
-    } else if (lessonNumber === 3) {
-        currentLessonData = lesson3Data;
-        showLessonContent('Leçon 3 : Les Fonctions', getLessonConcepts(lesson3Data));
+async function showLesson(lessonId) {
+    const lesson = getLessonById(lessonId);
+    if (!lesson) {
+        console.error('Lesson not found:', lessonId);
+        return;
+    }
+    
+    try {
+        // Dynamically import the lesson data
+        const lessonModule = await lesson.module();
+        currentLessonData = lessonModule[lesson.dataKey];
+        
+        showLessonContent(`Leçon ${lesson.number} : ${lesson.title}`, getLessonConcepts(currentLessonData));
+    } catch (error) {
+        console.error('Failed to load lesson:', error);
+        // Fallback to lesson selection
+        showLessonSelection();
     }
 }
 
@@ -396,32 +396,44 @@ function toggleSolution(solutionId) {
 }
 
 // Initialize everything with performance optimizations
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize performance optimizer first
-    import('./js/performance.js').then(({ PerformanceOptimizer }) => {
-        performanceOptimizer = new PerformanceOptimizer();
-    }).catch(error => {
-        console.warn('Failed to load performance optimizer:', error);
-    });
-    
-    // Use requestIdleCallback for non-critical initializations
-    if ('requestIdleCallback' in window) {
-        requestIdleCallback(() => {
-            createParticles();
-            setupQuizListeners();
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        // Initialize performance optimizer first
+        import('./js/performance.js').then(({ PerformanceOptimizer }) => {
+            performanceOptimizer = new PerformanceOptimizer();
+        }).catch(error => {
+            console.warn('Failed to load performance optimizer:', error);
         });
-    } else {
-        // Fallback for browsers without requestIdleCallback
-        setTimeout(() => {
-            createParticles();
-            setupQuizListeners();
-        }, 0);
+        
+        // Use requestIdleCallback for non-critical initializations
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => {
+                createParticles();
+                setupQuizListeners();
+            });
+        } else {
+            // Fallback for browsers without requestIdleCallback
+            setTimeout(() => {
+                createParticles();
+                setupQuizListeners();
+            }, 0);
+        }
+        
+        // Critical initializations - run showLessonSelection after the module loads
+        await showLessonSelection();
+        initConsole();
+        initChargerButtons();
+    } catch (error) {
+        console.error('Failed to initialize application:', error);
+        // Fallback: show a basic error message
+        document.querySelector('.container').innerHTML = `
+            <div class="hero">
+                <h1>Python Seconde</h1>
+                <p>Une erreur s'est produite lors du chargement. Veuillez actualiser la page.</p>
+                <p style="font-size: 0.8em; color: #ccc;">Erreur: ${error.message}</p>
+            </div>
+        `;
     }
-    
-    // Critical initializations
-    showLessonSelection();
-    initConsole();
-    initChargerButtons();
 });
 
 // Pyodide Configuration and Editor functionality
@@ -1030,9 +1042,26 @@ function loadCodeIntoEditor(code) {
     loadCodeIntoConsole(code);
 }
 
+// Toggle hint visibility
+function toggleHint(hintId) {
+    const hintElement = document.getElementById(hintId);
+    if (hintElement) {
+        if (hintElement.style.display === 'none' || hintElement.style.display === '') {
+            hintElement.style.display = 'block';
+        } else {
+            hintElement.style.display = 'none';
+        }
+    }
+}
+
 // Make functions available globally
 window.loadCodeIntoConsole = loadCodeIntoConsole;
 window.loadCodeIntoEditor = loadCodeIntoEditor;
+window.showLessonSelection = showLessonSelection;
+window.showLesson = showLesson;
+window.toggleHint = toggleHint;
+window.checkVariableQuiz = checkVariableQuiz;
+window.checkTypeQuiz = checkTypeQuiz;
 
 // Add keyboard shortcut to toggle console (Ctrl+`)
 document.addEventListener('keydown', function(e) {

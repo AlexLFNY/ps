@@ -65,6 +65,8 @@ open index.html
 - Automatic deployment to GitHub Pages via `.github/workflows/static.yml`
 - Triggers on pushes to `main` branch
 - No build step - deploys static files directly
+- ES6 modules supported with `.nojekyll` file for proper MIME types
+- Lesson registry and modular architecture fully compatible
 
 ## Common Tasks
 
