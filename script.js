@@ -1070,6 +1070,10 @@ window.showLesson = showLesson;
 window.toggleHint = toggleHint;
 window.checkVariableQuiz = checkVariableQuiz;
 window.checkTypeQuiz = checkTypeQuiz;
+window.showConsole = showConsole;
+window.hideConsole = hideConsole;
+window.toggleConsole = toggleConsole;
+window.clearConsole = clearConsole;
 
 // Add keyboard shortcut to toggle console (Ctrl+`)
 document.addEventListener('keydown', function(e) {
