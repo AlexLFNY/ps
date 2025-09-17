@@ -423,7 +423,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         // Critical initializations - run showLessonSelection after the module loads
         console.log('Loading lesson selection...');
+        console.log('Lesson registry available:', lessonRegistry);
         await showLessonSelection();
+        console.log('Lesson selection completed');
         
         // Remove loading indicator after lessons are loaded
         const initialContent = document.getElementById('initialContent');
