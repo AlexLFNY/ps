@@ -400,12 +400,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     try {
         console.log('Application starting...');
         
-        // Remove loading indicator
-        const initialContent = document.getElementById('initialContent');
-        if (initialContent) {
-            initialContent.style.display = 'none';
-        }
-        
         // Initialize performance optimizer first
         import('./js/performance.js').then(({ PerformanceOptimizer }) => {
             performanceOptimizer = new PerformanceOptimizer();
@@ -430,6 +424,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Critical initializations - run showLessonSelection after the module loads
         console.log('Loading lesson selection...');
         await showLessonSelection();
+        
+        // Remove loading indicator after lessons are loaded
+        const initialContent = document.getElementById('initialContent');
+        if (initialContent) {
+            initialContent.style.display = 'none';
+        }
+        
         initConsole();
         initChargerButtons();
         console.log('Application initialized successfully');
