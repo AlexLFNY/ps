@@ -427,6 +427,17 @@ document.addEventListener('DOMContentLoaded', async function() {
         await showLessonSelection();
         console.log('Lesson selection completed');
         
+        // Debug: Add click listeners to all Charger buttons to see if they work
+        setTimeout(() => {
+            const chargerButtons = document.querySelectorAll('.code-load-button');
+            console.log('Found', chargerButtons.length, 'Charger buttons');
+            chargerButtons.forEach((btn, index) => {
+                btn.addEventListener('click', function(e) {
+                    console.log(`🐍 Button ${index} clicked!`, e.target);
+                });
+            });
+        }, 1000);
+        
         // Remove loading indicator after lessons are loaded
         const initialContent = document.getElementById('initialContent');
         if (initialContent) {
@@ -1029,7 +1040,7 @@ function initChargerButtons() {
 
 // Function to load code into editor from content
 function loadCodeIntoConsole(code) {
-    console.log('Loading code into editor:', code);
+    console.log('🐍 CHARGER CLICKED! Loading code into editor:', code.substring(0, 100));
     
     // Close modal first if it's open
     const modal = document.getElementById('fullscreenModal');
