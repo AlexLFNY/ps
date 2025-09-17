@@ -1074,6 +1074,10 @@ window.showConsole = showConsole;
 window.hideConsole = hideConsole;
 window.toggleConsole = toggleConsole;
 window.clearConsole = clearConsole;
+window.runCode = runCode;
+window.clearEditor = clearEditor;
+window.switchTab = switchTab;
+window.refreshVariables = refreshVariables;
 
 // Add keyboard shortcut to toggle console (Ctrl+`)
 document.addEventListener('keydown', function(e) {
