@@ -78,7 +78,7 @@ export const lesson3Data = {
                 Les paramètres agissent comme des variables temporaires.
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole('# La fonction \'saluer_personne\' prend un paramètre \'nom\'\ndef saluer_personne(nom):\n    print(f\'Bonjour, {nom} !\')\n\n# On appelle la fonction avec une valeur\nsaluer_personne(\'Marie\')\nsaluer_personne(\'Alex\')\n# Affiche :\n# Bonjour, Marie !\n# Bonjour, Alex !')">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# La fonction \'saluer_personne\' prend un paramètre \'nom\'\ndef saluer_personne(nom):\n    print(f\"Bonjour, {nom} !\")\n\n# On appelle la fonction avec une valeur\nsaluer_personne(\'Marie\')\nsaluer_personne(\'Alex\')\n# Affiche :\n# Bonjour, Marie !\n# Bonjour, Alex !')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -95,7 +95,7 @@ export const lesson3Data = {
                 </div>
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole('def presenter_personne(prenom, age, ville):\n    print(f\'Je m\\\'appelle {prenom}, j\\\'ai {age} ans et j\\\'habite à {ville}.\')\n\n# Appel avec plusieurs arguments\npresenter_personne(\'Emma\', 16, \'Brooklyn\')\npresenter_personne(\'Lucas\', 15, \'Manhattan\')\n# Affiche :\n# Je m\'appelle Emma, j\'ai 16 ans et j\'habite à Brooklyn.\n# Je m\'appelle Lucas, j\'ai 15 ans et j\'habite à Manhattan.')">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('def presenter_personne(prenom, age, ville):\n    print(f\"Je m\'appelle {prenom}, j\'ai {age} ans et j\'habite à {ville}.\")\n\n# Appel avec plusieurs arguments\npresenter_personne(\'Emma\', 16, \'Brooklyn\')\npresenter_personne(\'Lucas\', 15, \'Manhattan\')\n# Affiche :\n# Je m\'appelle Emma, j\'ai 16 ans et j\'habite à Brooklyn.\n# Je m\'appelle Lucas, j\'ai 15 ans et j\'habite à Manhattan.')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -123,7 +123,7 @@ export const lesson3Data = {
                 Cette valeur peut ensuite être stockée dans une variable ou utilisée ailleurs.
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole('# Cette fonction calcule le carré d\'un nombre\ndef calculer_carre(nombre):\n    resultat = nombre ** 2\n    return resultat\n\n# On stocke le résultat dans une variable\ncarre_de_5 = calculer_carre(5)\nprint(f\'Le carré de 5 est {carre_de_5}.\')\n# Affiche : Le carré de 5 est 25.')">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Cette fonction calcule le carré d\'un nombre\ndef calculer_carre(nombre):\n    resultat = nombre ** 2\n    return resultat\n\n# On stocke le résultat dans une variable\ncarre_de_5 = calculer_carre(5)\nprint(f\"Le carré de 5 est {carre_de_5}.\")\n# Affiche : Le carré de 5 est 25.')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -139,7 +139,7 @@ carre_de_5 = <span class="code-function">calculer_carre</span>(<span class="code
                 </div>
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole('def calculer_surface_rectangle(longueur, largeur):\n    surface = longueur * largeur\n    return f\'La surface du rectangle est de {surface} m²\'\n\n# Utilisation\nmessage = calculer_surface_rectangle(5, 3)\nprint(message)  # La surface du rectangle est de 15 m²')">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('def calculer_surface_rectangle(longueur, largeur):\n    surface = longueur * largeur\n    return f\"La surface du rectangle est de {surface} m²\"\n\n# Utilisation\nmessage = calculer_surface_rectangle(5, 3)\nprint(message)  # La surface du rectangle est de 15 m²')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -165,7 +165,7 @@ message = <span class="code-function">calculer_surface_rectangle</span>(<span cl
                 Elle se place juste après la définition, entre triple guillemets <code>"""</code>.
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole('def convertir_celsius_fahrenheit(celsius):\n    \'\'\'\n    Convertit une température de Celsius en Fahrenheit.\n    \n    Paramètre:\n        celsius (float): Température en degrés Celsius\n    \n    Retourne:\n        float: Température en degrés Fahrenheit\n    \'\'\'\n    fahrenheit = (celsius * 9/5) + 32\n    return fahrenheit\n\n# Test\ntemp_f = convertir_celsius_fahrenheit(25)\nprint(f\'25°C = {temp_f}°F\')  # 25°C = 77.0°F')">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('def convertir_celsius_fahrenheit(celsius):\n    \'\'\'\n    Convertit une température de Celsius en Fahrenheit.\n    \n    Paramètre:\n        celsius (float): Température en degrés Celsius\n    \n    Retourne:\n        float: Température en degrés Fahrenheit\n    \'\'\'\n    fahrenheit = (celsius * 9/5) + 32\n    return fahrenheit\n\n# Test\ntemp_f = convertir_celsius_fahrenheit(25)\nprint(f\"25°C = {temp_f}°F\")  # 25°C = 77.0°F')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -206,7 +206,7 @@ temp_f = <span class="code-function">convertir_celsius_fahrenheit</span>(<span c
                 Voici un exemple complet qui combine tous les concepts : paramètres, calculs, conditions et return.
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole('def calculer_moyenne_notes(note1, note2, note3):\n    \'\'\'\n    Calcule la moyenne de trois notes et donne une appréciation.\n    \n    Paramètres:\n        note1, note2, note3 (float): Les trois notes sur 20\n    \n    Retourne:\n        str: Message avec la moyenne et l\'appréciation\n    \'\'\'\n    moyenne = (note1 + note2 + note3) / 3\n    \n    # Déterminer l\'appréciation\n    if moyenne >= 16:\n        appreciation = \'Excellent !\'\n    elif moyenne >= 14:\n        appreciation = \'Bien\'\n    elif moyenne >= 12:\n        appreciation = \'Assez bien\'\n    elif moyenne >= 10:\n        appreciation = \'Passable\'\n    else:\n        appreciation = \'Insuffisant\'\n    \n    return f\'Moyenne : {moyenne:.1f}/20 - {appreciation}\'\n\n# Tests de la fonction\nprint(calculer_moyenne_notes(15, 17, 14))  # Moyenne : 15.3/20 - Bien\nprint(calculer_moyenne_notes(8, 12, 10))   # Moyenne : 10.0/20 - Passable\nprint(calculer_moyenne_notes(18, 19, 17))  # Moyenne : 18.0/20 - Excellent !')">
+                <button class="code-load-button" onclick="loadCodeIntoConsole('def calculer_moyenne_notes(note1, note2, note3):\n    \'\'\'\n    Calcule la moyenne de trois notes et donne une appréciation.\n    \n    Paramètres:\n        note1, note2, note3 (float): Les trois notes sur 20\n    \n    Retourne:\n        str: Message avec la moyenne et l\'appréciation\n    \'\'\'\n    moyenne = (note1 + note2 + note3) / 3\n    \n    # Déterminer l\'appréciation\n    if moyenne >= 16:\n        appreciation = \"Excellent !\"\n    elif moyenne >= 14:\n        appreciation = \"Bien\"\n    elif moyenne >= 12:\n        appreciation = \"Assez bien\"\n    elif moyenne >= 10:\n        appreciation = \"Passable\"\n    else:\n        appreciation = \"Insuffisant\"\n    \n    return f\"Moyenne : {moyenne:.1f}/20 - {appreciation}\"\n\n# Tests de la fonction\nprint(calculer_moyenne_notes(15, 17, 14))  # Moyenne : 15.3/20 - Bien\nprint(calculer_moyenne_notes(8, 12, 10))   # Moyenne : 10.0/20 - Passable\nprint(calculer_moyenne_notes(18, 19, 17))  # Moyenne : 18.0/20 - Excellent !')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
