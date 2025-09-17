@@ -398,6 +398,14 @@ function toggleSolution(solutionId) {
 // Initialize everything with performance optimizations
 document.addEventListener('DOMContentLoaded', async function() {
     try {
+        console.log('Application starting...');
+        
+        // Remove loading indicator
+        const initialContent = document.getElementById('initialContent');
+        if (initialContent) {
+            initialContent.style.display = 'none';
+        }
+        
         // Initialize performance optimizer first
         import('./js/performance.js').then(({ PerformanceOptimizer }) => {
             performanceOptimizer = new PerformanceOptimizer();
@@ -420,9 +428,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
         
         // Critical initializations - run showLessonSelection after the module loads
+        console.log('Loading lesson selection...');
         await showLessonSelection();
         initConsole();
         initChargerButtons();
+        console.log('Application initialized successfully');
     } catch (error) {
         console.error('Failed to initialize application:', error);
         // Fallback: show a basic error message
@@ -431,6 +441,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                 <h1>Python Seconde</h1>
                 <p>Une erreur s'est produite lors du chargement. Veuillez actualiser la page.</p>
                 <p style="font-size: 0.8em; color: #ccc;">Erreur: ${error.message}</p>
+                <details style="margin-top: 10px; color: #999;">
+                    <summary>Détails techniques</summary>
+                    <pre style="font-size: 0.7em; white-space: pre-wrap;">${error.stack}</pre>
+                </details>
+                <button onclick="location.reload()" style="margin-top: 15px; padding: 10px 20px; background: rgba(255,215,0,0.2); border: 2px solid #ffd700; border-radius: 8px; color: #ffd700; cursor: pointer;">
+                    Actualiser la page
+                </button>
             </div>
         `;
     }
@@ -1040,18 +1057,6 @@ function loadCodeIntoConsole(code) {
 // Alternative name for consistency
 function loadCodeIntoEditor(code) {
     loadCodeIntoConsole(code);
-}
-
-// Toggle hint visibility
-function toggleHint(hintId) {
-    const hintElement = document.getElementById(hintId);
-    if (hintElement) {
-        if (hintElement.style.display === 'none' || hintElement.style.display === '') {
-            hintElement.style.display = 'block';
-        } else {
-            hintElement.style.display = 'none';
-        }
-    }
 }
 
 // Make functions available globally
