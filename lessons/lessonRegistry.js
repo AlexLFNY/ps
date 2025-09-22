@@ -31,6 +31,16 @@ export const lessonRegistry = [
         module: () => import('./lesson3.js'),
         dataKey: 'lesson3Data',
         concepts: ['functions_intro', 'parameters', 'return_values', 'exercises']
+    },
+    {
+        id: 4,
+        number: 4,
+        title: "Les Boucles",
+        subtitle: "Répéter des actions",
+        description: "Maîtrisez les boucles while pour automatiser les tâches répétitives",
+        module: () => import('./lesson4.js'),
+        dataKey: 'lesson4Data',
+        concepts: ['intro', 'while_basics', 'loop_anatomy', 'infinite_loop', 'interactive_menu', 'validation', 'exercises']
     }
 ];
 
