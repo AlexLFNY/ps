@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Lesson Loading</title>
+</head>
+<body>
+    <div id="debug"></div>
+    <script type="module">
+        try {
+            console.log('Starting debug...');
+            
+            // Test import
+            const registry = await import('./lessons/lessonRegistry.js');
+            console.log('Registry loaded:', registry);
+            
+            // Test lesson import
+            const lesson1 = await import('./lessons/lesson1.js');
+            console.log('Lesson 1 loaded:', lesson1);
+            
+            document.getElementById('debug').innerHTML = `
+                <h1>Debug Results</h1>
+                <p>Registry contains ${registry.lessonRegistry.length} lessons</p>
+                <p>Lesson 1 data: ${Object.keys(lesson1.lesson1Data).join(', ')}</p>
+            `;
+            
+        } catch (error) {
+            console.error('Debug error:', error);
+            document.getElementById('debug').innerHTML = `<h1>Error: ${error.message}</h1>`;
+        }
+    </script>
+</body>
+</html>

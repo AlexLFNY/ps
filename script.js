@@ -372,6 +372,35 @@ function checkTypeQuiz() {
     }
 }
 
+function checkInfiniteLoopQuiz() {
+    const feedback = document.getElementById('infiniteLoopQuizFeedback');
+    if (!feedback) return;
+
+    const options = feedback.parentElement.querySelectorAll('.quiz-option');
+
+    options.forEach(option => {
+        const isCorrect = option.dataset.correct === 'true';
+        const isSelected = option.classList.contains('selected');
+
+        if (isCorrect) {
+            option.classList.add('correct');
+        } else if (isSelected) {
+            option.classList.add('incorrect');
+        }
+    });
+
+    const correctSelected = feedback.parentElement.querySelector('.quiz-option.selected[data-correct="true"]');
+    feedback.style.display = 'block';
+
+    if (correctSelected) {
+        feedback.className = 'quiz-feedback correct';
+        feedback.textContent = '🎉 Parfait ! Il faut toujours modifier la variable de condition pour éviter les boucles infinies';
+    } else {
+        feedback.className = 'quiz-feedback incorrect';
+        feedback.textContent = '❌ Il faut absolument modifier la variable de condition, sinon la boucle ne s\'arrête jamais !';
+    }
+}
+
 // Hint toggle function
 function toggleHint(hintId) {
     const hint = document.getElementById(hintId);
@@ -427,16 +456,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         await showLessonSelection();
         console.log('Lesson selection completed');
         
-        // Debug: Add click listeners to all Charger buttons to see if they work
-        setTimeout(() => {
-            const chargerButtons = document.querySelectorAll('.code-load-button');
-            console.log('Found', chargerButtons.length, 'Charger buttons');
-            chargerButtons.forEach((btn, index) => {
-                btn.addEventListener('click', function(e) {
-                    console.log(`🐍 Button ${index} clicked!`, e.target);
-                });
-            });
-        }, 1000);
         
         // Remove loading indicator after lessons are loaded
         const initialContent = document.getElementById('initialContent');
@@ -1040,7 +1059,7 @@ function initChargerButtons() {
 
 // Function to load code into editor from content
 function loadCodeIntoConsole(code) {
-    console.log('🐍 CHARGER CLICKED! Loading code into editor:', code.substring(0, 100));
+    console.log('Loading code into editor:', code);
     
     // Close modal first if it's open
     const modal = document.getElementById('fullscreenModal');
@@ -1081,6 +1100,7 @@ window.showLesson = showLesson;
 window.toggleHint = toggleHint;
 window.checkVariableQuiz = checkVariableQuiz;
 window.checkTypeQuiz = checkTypeQuiz;
+window.checkInfiniteLoopQuiz = checkInfiniteLoopQuiz;
 window.showConsole = showConsole;
 window.hideConsole = hideConsole;
 window.toggleConsole = toggleConsole;

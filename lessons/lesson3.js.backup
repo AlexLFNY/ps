@@ -42,7 +42,7 @@ export const lesson3Data = {
                 Le code à l'intérieur doit être indenté (décalé de 4 espaces).
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole('# Un exemple de fonction simple\\ndef saluer():\\n    print(\\'Bonjour !\\')\\n    print(\\'Bienvenue dans le programme.\\')\\n\\n# Pour utiliser (ou \\'appeler\\') la fonction\\nsaluer()\\n# Affiche :\\n# Bonjour !\\n# Bienvenue dans le programme.')")
+                <button class="code-load-button" onclick="loadCodeIntoConsole('# Un exemple de fonction simple\ndef saluer():\n    print(\'Bonjour !\')\n    print(\'Bienvenue dans le programme.\')\n\n# Pour utiliser (ou \'appeler\') la fonction\nsaluer()\n# Affiche :\n# Bonjour !\n# Bienvenue dans le programme.')">
                     🐍 Charger
                 </button>
                 <div class="code-content">
@@ -139,10 +139,7 @@ carre_de_5 = <span class="code-function">calculer_carre</span>(<span class="code
                 </div>
             </div>
             <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole('print(\'Hello from lesson 3!\')')">
-                    🐍 TEST
-                </button>
-                <button class="code-load-button" onclick="loadCodeIntoConsole('def calculer_surface_rectangle(longueur, largeur):\\n    surface = longueur * largeur\\n    return f\\'La surface du rectangle est de {surface} m²\\'\\n\\n# Utilisation\\nmessage = calculer_surface_rectangle(5, 3)\\nprint(message)  # La surface du rectangle est de 15 m²')")
+                <button class="code-load-button" onclick="loadCodeIntoConsole('def calculer_surface_rectangle(longueur, largeur):\\n    surface = longueur * largeur\\n    return f\"La surface du rectangle est de {surface} m²\"\\n\\n# Utilisation\\nmessage = calculer_surface_rectangle(5, 3)\\nprint(message)  # La surface du rectangle est de 15 m²')">
                     🐍 Charger
                 </button>
                 <div class="code-content">

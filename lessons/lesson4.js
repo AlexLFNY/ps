@@ -294,7 +294,7 @@ export const lesson4Data = {
                         <div style="color: #ff6b6b; font-weight: bold;">❌ MAUVAIS EXEMPLE</div>
                         <div style="font-family: monospace; background: rgba(255, 107, 107, 0.1); padding: 10px; border-radius: 8px;">
                             compteur = 1<br>
-                            while compteur <= 5:<br>
+                            while compteur &lt;= 5:<br>
                             &nbsp;&nbsp;&nbsp;&nbsp;print("Au secours, je suis bloqué !")<br>
                             &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff6b6b;"># On a oublié : compteur += 1</span>
                         </div>
@@ -403,72 +403,6 @@ export const lesson4Data = {
                 ...<br>
                 Votre choix ? quitter<br>
                 Programme terminé.
-            </div>
-        `
-    },
-    validation: {
-        icon: 'icon-check',
-        emoji: '✅',
-        title: 'Validation de Saisie',
-        subtitle: 'Assurer des entrées valides',
-        content: `
-            <div class="section-text">
-                Les boucles <code>while</code> sont très utiles pour valider les entrées utilisateur.
-                On répète la demande tant que l'entrée n'est pas valide.
-            </div>
-            <div class="code-block">
-                <button class="code-load-button" onclick="loadCodeIntoConsole('# Validation d\\'âge avec boucle while\\n# On commence avec une valeur impossible\\nage = -1\\n\\nwhile age < 0 or age > 120:\\n    try:\\n        age = int(input(\\\"Entrez votre âge (0-120) : \\\"))\\n        if age < 0 or age > 120:\\n            print(\\\"Âge invalide ! Veuillez réessayer.\\\")\\n    except ValueError:\\n        print(\\\"Veuillez entrer un nombre entier.\\\")\\n        age = -1  # Reset pour continuer la boucle\\n\\nprint(f\\\"Âge valide : {age} ans\\\")\\n')">
-                    🐍 Charger
-                </button>
-                <div class="code-content">
-<span class="code-comment"># Validation d'âge avec boucle while</span>
-<span class="code-comment"># On commence avec une valeur impossible</span>
-<span class="code-keyword">age</span> = <span class="code-number">-1</span>
-
-<span class="code-keyword">while</span> age < <span class="code-number">0</span> <span class="code-keyword">or</span> age > <span class="code-number">120</span>:
-    <span class="code-keyword">try</span>:
-        age = <span class="code-keyword">int</span>(<span class="code-keyword">input</span>(<span class="code-string">"Entrez votre âge (0-120) : "</span>))
-        <span class="code-keyword">if</span> age < <span class="code-number">0</span> <span class="code-keyword">or</span> age > <span class="code-number">120</span>:
-            <span class="code-keyword">print</span>(<span class="code-string">"Âge invalide ! Veuillez réessayer."</span>)
-    <span class="code-keyword">except</span> ValueError:
-        <span class="code-keyword">print</span>(<span class="code-string">"Veuillez entrer un nombre entier."</span>)
-        age = <span class="code-number">-1</span>  <span class="code-comment"># Reset pour continuer la boucle</span>
-
-<span class="code-keyword">print</span>(<span class="code-string">f"Âge valide : {age} ans"</span>)
-                </div>
-            </div>
-            <div class="concept-animation">
-                <h3 style="color: #ffd700; margin-bottom: 20px;">🔄 Processus de validation</h3>
-                <div class="validation-flow">
-                    <div class="validation-step">
-                        <div class="step-icon">📝</div>
-                        <div>Demander l'entrée</div>
-                    </div>
-                    <div class="arrow">→</div>
-                    <div class="validation-step">
-                        <div class="step-icon">🔍</div>
-                        <div>Vérifier si valide</div>
-                    </div>
-                    <div class="arrow">→</div>
-                    <div class="validation-step">
-                        <div class="step-icon">❌</div>
-                        <div>Si invalide : redemander</div>
-                    </div>
-                    <div class="arrow">→</div>
-                    <div class="validation-step">
-                        <div class="step-icon">✅</div>
-                        <div>Si valide : continuer</div>
-                    </div>
-                </div>
-            </div>
-            <div class="console-output">
-                <strong>Exemple d'exécution :</strong><br>
-                Entrez votre âge (0-120) : -5<br>
-                Âge invalide ! Veuillez réessayer.<br>
-                Entrez votre âge (0-120) : abc<br>
-                Veuillez entrer un nombre entier.<br>
-                Entrez votre âge (0-120) : 17<br>
-                Âge valide : 17 ans
             </div>
         `
     },
