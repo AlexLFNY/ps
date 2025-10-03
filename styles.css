@@ -681,30 +681,66 @@ body {
 }
 
 /* Floating particles */
-.particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
+.logo-container {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 20px !important;
+    top: auto !important;
+    z-index: 1000;
 }
 
-.particle {
+.logo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    transition: transform 0.15s ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.computer-fact {
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    animation: float 6s infinite linear;
+    bottom: 110px;
+    left: 0;
+    background: linear-gradient(135deg, rgba(74, 158, 255, 0.95), rgba(138, 43, 226, 0.95));
+    color: white;
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    max-width: 320px;
+    white-space: normal;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-@keyframes float {
-    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+.computer-fact.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.computer-fact::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(138, 43, 226, 0.95);
+}
+
+.logo.on-cooldown {
+    opacity: 0.7;
 }
 
 .container {

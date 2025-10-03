@@ -1,0 +1,104 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cute Python Snake Character -->
+
+  <!-- Body -->
+  <rect x="30" y="50" width="60" height="40" fill="#4a9eff" />
+
+  <!-- Head -->
+  <rect x="40" y="30" width="40" height="30" fill="#4a9eff" />
+
+  <!-- Eyes -->
+  <rect x="48" y="40" width="8" height="12" fill="#1a1a2e" />
+  <rect x="64" y="40" width="8" height="12" fill="#1a1a2e" />
+
+  <!-- Eye highlights -->
+  <rect x="50" y="42" width="4" height="4" fill="#ffffff" />
+  <rect x="66" y="42" width="4" height="4" fill="#ffffff" />
+
+  <!-- Smile -->
+  <rect x="52" y="56" width="4" height="4" fill="#1a1a2e" />
+  <rect x="56" y="58" width="8" height="4" fill="#1a1a2e" />
+  <rect x="64" y="56" width="4" height="4" fill="#1a1a2e" />
+
+  <!-- Tail curl -->
+  <rect x="20" y="60" width="10" height="20" fill="#4a9eff" />
+  <rect x="10" y="70" width="10" height="10" fill="#4a9eff" />
+
+  <!-- Belly accent -->
+  <rect x="45" y="64" width="30" height="26" fill="#7ec8ff" />
+
+  <!-- Feet -->
+  <rect x="40" y="90" width="12" height="8" fill="#4a9eff" />
+  <rect x="68" y="90" width="12" height="8" fill="#4a9eff" />
+
+  <!-- Animated text on belly - "Cogito Ergo Sum" letters cycling -->
+  <text x="60" y="80" font-family="monospace" font-size="8" font-weight="bold" fill="#ffd700" text-anchor="middle">
+    <!-- C -->
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.05;0.12" dur="15s" repeatCount="indefinite" />
+      C
+    </tspan>
+    <!-- o -->
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.12;0.18;0.25" dur="15s" repeatCount="indefinite" />
+      o
+    </tspan>
+    <!-- g -->
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.25;0.31;0.38" dur="15s" repeatCount="indefinite" />
+      g
+    </tspan>
+    <!-- i -->
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.38;0.44;0.51" dur="15s" repeatCount="indefinite" />
+      i
+    </tspan>
+    <!-- t -->
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.51;0.57;0.64" dur="15s" repeatCount="indefinite" />
+      t
+    </tspan>
+    <!-- o -->
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.64;0.70;0.77" dur="15s" repeatCount="indefinite" />
+      o
+    </tspan>
+    <!-- Space pause -->
+    <!-- E -->
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.77;0.80;0.87" dur="15s" repeatCount="indefinite" />
+      E
+    </tspan>
+    <!-- r -->
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.87;0.90;0.97" dur="15s" repeatCount="indefinite" />
+      r
+    </tspan>
+    <!-- g -->
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.97;1.00;1.07" dur="15s" repeatCount="indefinite" />
+      g
+    </tspan>
+    <!-- o -->
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;1.07;1.10;1.17" dur="15s" repeatCount="indefinite" />
+      o
+    </tspan>
+    <!-- Space pause -->
+    <!-- S -->
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;1.17;1.20;1.27" dur="15s" repeatCount="indefinite" />
+      S
+    </tspan>
+    <!-- u -->
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;1.27;1.30;1.37" dur="15s" repeatCount="indefinite" />
+      u
+    </tspan>
+    <!-- m -->
+    <tspan opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;1;1;0" keyTimes="0;1.37;1.40;1.60;1.80;1.90;2.0" dur="15s" repeatCount="indefinite" />
+      m
+    </tspan>
+  </text>
+</svg>

@@ -2,38 +2,73 @@
 import { lessonRegistry, getLessonById } from './lessons/lessonRegistry.js';
 
 // Performance optimizations and imports
-let particleSystem = null;
 let performanceOptimizer = null;
 let currentLessonData = null;
+let computerFacts = [];
+let lastFactTime = 0;
+const COOLDOWN_TIME = 60000; // 1 minute in milliseconds
 
-// Create floating particles with performance optimizations
-function createParticles() {
-    // Import particle system dynamically for better initial load
-    import('./js/particles.js').then(({ ParticleSystem, getOptimalParticleCount }) => {
-        const optimalCount = getOptimalParticleCount();
-        particleSystem = new ParticleSystem('particles', { count: optimalCount });
-    }).catch(error => {
-        console.warn('Failed to load particle system:', error);
-        // Fallback to simple particle creation
-        createFallbackParticles();
-    });
+// Load computer facts
+async function loadComputerFacts() {
+    try {
+        const response = await fetch('facts.json');
+        const data = await response.json();
+        computerFacts = data.facts;
+    } catch (error) {
+        console.error('Failed to load facts:', error);
+        // Fallback facts
+        computerFacts = [
+            "🖥️ Le premier ordinateur programmable, le Z3, a été créé par Konrad Zuse en 1941.",
+            "💾 Le premier disque dur pesait une tonne et stockait seulement 5 Mo.",
+            "🐛 Le terme 'bug' vient d'un papillon de nuit trouvé dans un ordinateur en 1947."
+        ];
+    }
 }
 
-function createFallbackParticles() {
-    const particles = document.getElementById('particles');
-    const particleCount = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 
-                         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 15 : 30;
-    
-    const fragment = document.createDocumentFragment();
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 6 + 's';
-        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-        fragment.appendChild(particle);
+// Logo click functionality with silent cooldown
+function showComputerFact() {
+    const logo = document.querySelector('.logo');
+    const logoContainer = document.querySelector('.logo-container');
+    const now = Date.now();
+    const timeRemaining = COOLDOWN_TIME - (now - lastFactTime);
+
+    // Check cooldown - silently ignore clicks during cooldown
+    if (lastFactTime !== 0 && timeRemaining > 0) {
+        return;
     }
-    particles.appendChild(fragment);
+
+    // Wink animation
+    logo.style.transform = 'scaleX(0.7) scaleY(1.1)';
+    setTimeout(() => {
+        logo.style.transform = 'scale(1)';
+    }, 150);
+
+    // Get random fact
+    const randomFact = computerFacts[Math.floor(Math.random() * computerFacts.length)];
+
+    // Create fact element
+    const factElement = document.createElement('div');
+    factElement.className = 'computer-fact';
+    factElement.textContent = randomFact;
+    logoContainer.appendChild(factElement);
+
+    // Animate fact
+    setTimeout(() => factElement.classList.add('show'), 10);
+
+    // Remove fact after 6 seconds
+    setTimeout(() => {
+        factElement.classList.remove('show');
+        setTimeout(() => factElement.remove(), 300);
+    }, 6000);
+
+    // Update last click time
+    lastFactTime = now;
+
+    // Add subtle cooldown indicator to logo
+    logo.classList.add('on-cooldown');
+    setTimeout(() => {
+        logo.classList.remove('on-cooldown');
+    }, COOLDOWN_TIME);
 }
 
 // Lesson navigation functions
@@ -190,9 +225,26 @@ function initModal() {
             modalTitle.textContent = data.title;
             modalSubtitle.textContent = data.subtitle;
             modalBody.innerHTML = data.content;
-            
+
             // Re-initialize charger buttons after content is loaded
             initChargerButtons();
+
+            // Initialize Nim game if present
+            if (document.getElementById('nim-game')) {
+                // Load nim game script dynamically
+                if (!window.initNimGame) {
+                    const script = document.createElement('script');
+                    script.src = './js/nim-game.js';
+                    script.onload = () => {
+                        if (window.initNimGame) {
+                            window.initNimGame();
+                        }
+                    };
+                    document.head.appendChild(script);
+                } else {
+                    window.initNimGame();
+                }
+            }
             
             // Show modal
             modal.classList.add('active');
@@ -428,7 +480,10 @@ function toggleSolution(solutionId) {
 document.addEventListener('DOMContentLoaded', async function() {
     try {
         console.log('Application starting...');
-        
+
+        // Load computer facts
+        await loadComputerFacts();
+
         // Initialize performance optimizer first
         import('./js/performance.js').then(({ PerformanceOptimizer }) => {
             performanceOptimizer = new PerformanceOptimizer();
@@ -439,13 +494,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Use requestIdleCallback for non-critical initializations
         if ('requestIdleCallback' in window) {
             requestIdleCallback(() => {
-                createParticles();
                 setupQuizListeners();
             });
         } else {
             // Fallback for browsers without requestIdleCallback
             setTimeout(() => {
-                createParticles();
                 setupQuizListeners();
             }, 0);
         }
@@ -465,6 +518,14 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         initConsole();
         initChargerButtons();
+
+        // Setup logo click handler
+        const logo = document.querySelector('.logo');
+        if (logo) {
+            logo.style.cursor = 'pointer';
+            logo.addEventListener('click', showComputerFact);
+        }
+
         console.log('Application initialized successfully');
     } catch (error) {
         console.error('Failed to initialize application:', error);
