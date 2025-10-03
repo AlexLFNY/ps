@@ -36,7 +36,7 @@ export const lesson5Data = {
                 background: rgba(0, 0, 0, 0.2);
                 border-radius: 15px;
             ">
-                <h3 style="color: #ffd700; margin-bottom: 20px;">📹 Tutoriel vidéo</h3>
+                <h3 style="color: #ffd700; margin-bottom: 20px;">Tutoriel vidéo</h3>
                 <video controls style="
                     max-width: 100%;
                     border-radius: 10px;
