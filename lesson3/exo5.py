@@ -3,32 +3,17 @@
 # où la qualité peut être "excellent" (25%), "bon" (20%), "moyen" (15%).
 
 def calculer_pourboire_nyc(montant_addition, qualite_service):
-    """
-    Calcule le pourboire et le total à payer selon la qualité du service.
-    
-    Paramètres:
-        montant_addition (float): Montant de l'addition
-        qualite_service (str): "excellent", "bon", ou "moyen"
-    
-    Retourne:
-        str: Message avec le pourboire et le total à payer
-    """
-    # Définir les taux de pourboire
-    taux = {
-        "excellent": 0.25,  # 25%
-        "bon": 0.20,        # 20%
-        "moyen": 0.15       # 15%
-    }
-    
-    # Vérifier si la qualité de service est reconnue
-    if qualite_service not in taux:
+    if qualite_service == "excellent":
+        pourboire = montant_addition * 0.25
+    elif qualite_service == "bon":
+        pourboire = montant_addition * 0.20
+    elif qualite_service == "moyen":
+        pourboire = montant_addition * 0.15
+    else:
         return "Erreur : qualité de service non reconnue. Utilisez 'excellent', 'bon', ou 'moyen'."
-    
-    # Calculer le pourboire et le total
-    pourboire = montant_addition * taux[qualite_service]
+
     total = montant_addition + pourboire
-    
-    return f"Pourboire : {pourboire:.2f}$ - Total à payer : {total:.2f}$"
+    return f"Pourboire : {pourboire}$ - Total à payer : {total}$"
 
 # Tests de la fonction
 print("=== Tests de la fonction ===")

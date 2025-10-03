@@ -3,16 +3,6 @@
 # et retourne leur somme. Testez-la avec différents nombres.
 
 def additionner(a, b):
-    """
-    Additionne deux nombres et retourne le résultat.
-    
-    Paramètres:
-        a (float): Premier nombre
-        b (float): Deuxième nombre
-    
-    Retourne:
-        float: La somme de a et b
-    """
     return a + b
 
 # Tests de la fonction

@@ -3,15 +3,6 @@
 # selon la note sur 20.
 
 def analyser_note(note):
-    """
-    Analyse une note et retourne l'appréciation correspondante.
-    
-    Paramètre:
-        note (float): Note sur 20
-    
-    Retourne:
-        str: Appréciation selon le barème français
-    """
     if note >= 16:
         return "Excellent"
     elif note >= 14:
@@ -36,5 +27,5 @@ note_utilisateur = float(input("Entrez votre note sur 20 : "))
 appreciation = analyser_note(note_utilisateur)
 pourcentage = (note_utilisateur / 20) * 100
 
-print(f"Votre note : {note_utilisateur}/20 ({pourcentage:.1f}%)")
+print(f"Votre note : {note_utilisateur}/20 ({pourcentage}%)")
 print(f"Appréciation : {appreciation}")

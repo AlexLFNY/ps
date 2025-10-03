@@ -3,18 +3,8 @@
 # et renvoie le prix TTC avec un message formaté.
 
 def calculer_ttc(prix_ht, taux_tva=0.20):
-    """
-    Calcule le prix TTC à partir du prix hors taxe.
-    
-    Paramètres:
-        prix_ht (float): Prix hors taxe
-        taux_tva (float): Taux de TVA (par défaut 0.20 = 20%)
-    
-    Retourne:
-        str: Message formaté avec le prix TTC
-    """
     prix_ttc = prix_ht * (1 + taux_tva)
-    return f"Prix HT: {prix_ht}€ → Prix TTC: {prix_ttc:.2f}€"
+    return f"Prix HT: {prix_ht}€ → Prix TTC: {prix_ttc}€"
 
 # Tests de la fonction
 print(calculer_ttc(100))  # Avec TVA par défaut (20%)

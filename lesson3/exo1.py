@@ -3,12 +3,6 @@
 # et affiche un message de bienvenue personnalisé avec une f-string.
 
 def saluer(prenom):
-    """
-    Affiche un message de bienvenue personnalisé.
-    
-    Paramètre:
-        prenom (str): Le prénom de la personne à saluer
-    """
     print(f"Bonjour {prenom} !")
     print(f"Bienvenue dans notre programme, {prenom} !")
 
