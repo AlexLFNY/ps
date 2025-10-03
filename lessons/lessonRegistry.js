@@ -41,6 +41,16 @@ export const lessonRegistry = [
         module: () => import('./lesson4.js'),
         dataKey: 'lesson4Data',
         concepts: ['intro', 'while_basics', 'loop_anatomy', 'infinite_loop', 'interactive_menu', 'validation', 'exercises']
+    },
+    {
+        id: 5,
+        number: 5,
+        title: "Le Jeu de Nim",
+        subtitle: "Projet pratique",
+        description: "Créez votre premier jeu : le Jeu de Nim, un jeu de stratégie",
+        module: () => import('./lesson5.js'),
+        dataKey: 'lesson5Data',
+        concepts: ['game_intro', 'game_demo', 'project_structure', 'exercises']
     }
 ];
 

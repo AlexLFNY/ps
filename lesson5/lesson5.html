@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçon 5 - Le Jeu de Nim</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .lesson-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #ffd700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #ffeb3b;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        p, li {
+            color: #fff;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        .video-container {
+            margin: 30px 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        video {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .rules-box {
+            background: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid #ffd700;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .project-structure {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            color: #ffeb3b;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1>🎮 Leçon 5 - Le Jeu de Nim</h1>
+
+        <h2>📚 Qu'est-ce que le Jeu de Nim ?</h2>
+        <p>
+            Le jeu de Nim est un jeu de stratégie mathématique qui se joue à deux joueurs.
+            C'est un excellent projet pour mettre en pratique tout ce que vous avez appris en Python :
+            les variables, les boucles, les conditions et les fonctions.
+        </p>
+
+        <div class="rules-box">
+            <h3>🎯 Règles du jeu</h3>
+            <ul>
+                <li>On commence avec un tas de <strong>20 allumettes</strong></li>
+                <li>Deux joueurs jouent à tour de rôle</li>
+                <li>À chaque tour, un joueur doit retirer <strong>1, 2 ou 3 allumettes</strong></li>
+                <li><strong>Le joueur qui prend la dernière allumette a perdu !</strong></li>
+            </ul>
+        </div>
+
+        <h2>🎥 Vidéo explicative</h2>
+        <div class="video-container">
+            <video controls width="100%">
+                <source src="../video/JeuDeNim_avec_voix.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+            <p style="margin-top: 10px; font-size: 0.9em; color: rgba(255,255,255,0.7);">
+                Cette vidéo explique les règles et la stratégie du jeu de Nim
+            </p>
+        </div>
+
+        <h2>💻 Structure du projet</h2>
+        <p>
+            Nous allons commencer par créer une version simple du jeu : <strong>Ordinateur vs Joueur</strong>.
+            L'ordinateur jouera de manière "basique" (mode dummy) sans utiliser de stratégie particulière.
+        </p>
+
+        <div class="project-structure">
+            <h3>🔧 Fonctionnalités à implémenter</h3>
+            <ul>
+                <li><strong>Initialisation :</strong> Créer un tas de 20 allumettes</li>
+                <li><strong>Affichage :</strong> Montrer le nombre d'allumettes restantes à chaque tour</li>
+                <li><strong>Tour du joueur :</strong>
+                    <ul>
+                        <li>Demander combien d'allumettes retirer (1, 2 ou 3)</li>
+                        <li>Vérifier que le choix est valide</li>
+                        <li>Mettre à jour le nombre d'allumettes</li>
+                    </ul>
+                </li>
+                <li><strong>Tour de l'ordinateur :</strong>
+                    <ul>
+                        <li>Choisir aléatoirement 1, 2 ou 3 allumettes</li>
+                        <li>Vérifier que le choix ne dépasse pas le nombre restant</li>
+                        <li>Afficher le choix de l'ordinateur</li>
+                    </ul>
+                </li>
+                <li><strong>Fin de partie :</strong> Détecter quand il ne reste plus d'allumettes et annoncer le perdant</li>
+            </ul>
+        </div>
+
+        <h2>🎯 Objectifs pédagogiques</h2>
+        <p>Ce projet vous permettra de pratiquer :</p>
+        <ul>
+            <li>✅ Les <strong>boucles while</strong> pour le déroulement de la partie</li>
+            <li>✅ Les <strong>conditions if/else</strong> pour valider les choix</li>
+            <li>✅ Les <strong>fonctions</strong> pour organiser votre code</li>
+            <li>✅ La <strong>gestion des entrées utilisateur</strong> avec <code>input()</code></li>
+            <li>✅ Le module <strong>random</strong> pour le jeu de l'ordinateur</li>
+            <li>✅ La <strong>logique de jeu</strong> et l'alternance des tours</li>
+        </ul>
+
+        <h2>📝 Exercice pratique</h2>
+        <p>
+            Rendez-vous dans le fichier <code>exo1.py</code> pour commencer à coder votre jeu de Nim !
+            Vous y trouverez une structure de base pour vous guider.
+        </p>
+
+        <div style="text-align: center;">
+            <a href="../index.html" class="back-button">← Retour à l'accueil</a>
+        </div>
+    </div>
+</body>
+</html>
