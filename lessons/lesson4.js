@@ -2,6 +2,49 @@
 // Contenu éducatif pour l'apprentissage des boucles while en Python
 
 export const lesson4Data = {
+    video_tutorial: {
+        icon: 'icon-video',
+        emoji: '📹',
+        title: 'Tutoriel vidéo',
+        subtitle: 'Comprendre la boucle while en images',
+        content: `
+            <div class="section-text">
+                Regardez cette vidéo explicative pour comprendre visuellement comment fonctionne une boucle while.
+            </div>
+            <div class="video-container" style="
+                margin: 25px 0;
+                padding: 25px;
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 15px;
+            ">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">Tutoriel vidéo</h3>
+                <video controls style="
+                    max-width: 100%;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                ">
+                    <source src="video/BoucleWhile_avec_voix.mp4" type="video/mp4">
+                    <source src="video/BoucleWhile.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+            </div>
+            <div class="concept-tips" style="
+                background: linear-gradient(135deg, rgba(74, 158, 255, 0.1), rgba(138, 43, 226, 0.1));
+                padding: 20px;
+                border-radius: 12px;
+                border-left: 4px solid #4a9eff;
+                margin-top: 25px;
+            ">
+                <div style="font-weight: bold; color: #4a9eff; margin-bottom: 10px;">💡 Points clés à retenir :</div>
+                <ul style="margin: 10px 0; padding-left: 25px; line-height: 1.8;">
+                    <li>La boucle while répète tant que la condition est <strong>vraie</strong></li>
+                    <li>Il faut toujours <strong>initialiser</strong> la variable de contrôle</li>
+                    <li>N'oubliez jamais de <strong>modifier</strong> la variable dans la boucle</li>
+                    <li>Sinon, vous créez une <strong>boucle infinie</strong> !</li>
+                </ul>
+            </div>
+        `
+    },
     intro: {
         icon: 'icon-intro',
         emoji: '🔄',

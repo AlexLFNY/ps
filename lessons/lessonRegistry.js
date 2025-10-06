@@ -40,7 +40,7 @@ export const lessonRegistry = [
         description: "Maîtrisez les boucles while pour automatiser les tâches répétitives",
         module: () => import('./lesson4.js'),
         dataKey: 'lesson4Data',
-        concepts: ['intro', 'while_basics', 'loop_anatomy', 'infinite_loop', 'interactive_menu', 'validation', 'exercises']
+        concepts: ['video_tutorial', 'intro', 'while_basics', 'loop_anatomy', 'infinite_loop', 'interactive_menu', 'validation', 'exercises']
     },
     {
         id: 5,

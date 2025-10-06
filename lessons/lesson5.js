@@ -22,7 +22,7 @@ export const lesson5Data = {
             ">
                 <h3 style="color: #ffd700; margin-bottom: 15px;">🎯 Règles du jeu</h3>
                 <ul style="color: #fff; line-height: 2; margin-left: 20px;">
-                    <li>On commence avec un tas de <strong style="color: #ffeb3b;">20 allumettes</strong></li>
+                    <li>On commence avec un tas de <strong style="color: #ffeb3b;">19 allumettes</strong></li>
                     <li>Deux joueurs jouent à tour de rôle</li>
                     <li>À chaque tour, un joueur doit retirer <strong style="color: #ffeb3b;">1, 2 ou 3 allumettes</strong></li>
                     <li style="color: #ff6b6b; font-weight: bold;">⚠️ Le joueur qui prend la dernière allumette a PERDU !</li>
@@ -56,14 +56,97 @@ export const lesson5Data = {
     game_demo: {
         icon: 'icon-demo',
         emoji: '🕹️',
-        title: 'Démo Interactive',
-        subtitle: 'Essayez le jeu !',
+        title: 'Démo Interactive Console',
+        subtitle: 'Simulateur du jeu !',
         content: `
             <div class="section-text">
-                Essayez le jeu de Nim pour bien comprendre les règles avant de le programmer !
+                Cette démo simule exactement ce que vous allez coder en Python. Jouez pour bien comprendre avant de programmer !
             </div>
 
-            <div id="nim-game" style="
+            <div style="
+                background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+                border: 2px solid rgba(102, 126, 234, 0.3);
+                border-radius: 15px;
+                padding: 30px;
+                margin: 25px 0;
+            ">
+                <h3 style="color: #ffd700; margin-bottom: 20px; text-align: center;">🎮 Simulateur Console du Jeu de Nim</h3>
+
+                <!-- Console simulator -->
+                <div id="nim-console" style="
+                    background: #1e1e1e;
+                    color: #d4d4d4;
+                    font-family: 'JetBrains Mono', monospace;
+                    font-size: 0.95em;
+                    padding: 20px;
+                    border-radius: 10px;
+                    min-height: 400px;
+                    max-height: 500px;
+                    overflow-y: auto;
+                    margin-bottom: 20px;
+                    line-height: 1.6;
+                ">
+                    <div id="nim-console-output"></div>
+                </div>
+
+                <!-- Input area -->
+                <div id="nim-input-area" style="display: none; margin-bottom: 15px;">
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <input type="number" id="nim-user-input" min="1" max="3"
+                            placeholder="Entrez 1, 2 ou 3"
+                            onkeypress="if(event.key==='Enter') submitNimInput()"
+                            style="
+                            flex: 1;
+                            padding: 12px;
+                            font-size: 1em;
+                            border: 2px solid #667eea;
+                            border-radius: 8px;
+                            background: rgba(255,255,255,0.1);
+                            color: white;
+                            font-family: 'JetBrains Mono', monospace;
+                        ">
+                        <button onclick="submitNimInput()" style="
+                            background: linear-gradient(135deg, #4caf50, #66bb6a);
+                            color: white;
+                            border: none;
+                            padding: 12px 25px;
+                            font-size: 1em;
+                            font-weight: bold;
+                            border-radius: 8px;
+                            cursor: pointer;
+                        ">Valider</button>
+                    </div>
+                </div>
+
+                <!-- Start/Reset button -->
+                <div style="text-align: center;">
+                    <button onclick="startNimConsoleGame()" id="nim-start-btn" style="
+                        background: linear-gradient(135deg, #667eea, #764ba2);
+                        color: white;
+                        border: none;
+                        padding: 15px 35px;
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: transform 0.2s;
+                    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        🐍 Lancer le jeu
+                    </button>
+                </div>
+
+                <div style="margin-top: 20px; padding: 15px; background: rgba(255, 215, 0, 0.1); border-left: 4px solid #ffd700; border-radius: 8px;">
+                    <p style="margin: 0; color: #ffd700; font-weight: bold;">💡 Comment jouer :</p>
+                    <ul style="margin: 10px 0 0 20px; color: #fff; line-height: 1.6;">
+                        <li>Entrez un nombre entre 1 et 3</li>
+                        <li>Le jeu alterne entre Joueur 1 et Joueur 2</li>
+                        <li>Celui qui prend la dernière allumette a PERDU !</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="old-nim-game" style="display: none;
+
                 background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
                 border: 2px solid rgba(102, 126, 234, 0.3);
                 border-radius: 15px;
@@ -261,106 +344,111 @@ while allumettes > 0:
                 Maintenant que vous connaissez les règles et la structure, c'est à vous de coder le jeu !
             </div>
 
-            <div class="exercise-list" style="margin-top: 30px;">
-                <div class="exercise-item" style="
-                    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(139, 195, 74, 0.1));
-                    border-left: 4px solid #4caf50;
-                    padding: 25px;
-                    margin: 20px 0;
-                    border-radius: 12px;
-                ">
-                    <h3 style="color: #4caf50; margin-bottom: 15px;">
-                        <span style="background: #4caf50; color: #000; padding: 5px 12px; border-radius: 8px; font-weight: bold; margin-right: 10px;">EXO 1</span>
-                        Jeu de Nim - Ordinateur vs Joueur (mode dummy)
-                    </h3>
-                    <p style="color: #fff; line-height: 1.8; margin: 15px 0;">
-                        <strong>Objectif :</strong> Créez un jeu de Nim complet où le joueur affronte l'ordinateur qui joue aléatoirement.
-                    </p>
-                    <div style="background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 8px; margin: 15px 0;">
-                        <p style="color: #ffd700; font-weight: bold; margin-bottom: 10px;">💡 Conseils :</p>
-                        <ul style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                            <li>Utilisez <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 4px; color: #ffeb3b;">random.randint(1, 3)</code> pour le choix de l'ordinateur</li>
-                            <li>Utilisez <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 4px; color: #ffeb3b;">min()</code> pour limiter le choix aux allumettes restantes</li>
-                            <li>Pensez à valider les entrées du joueur</li>
-                            <li>Gérez les erreurs si l'utilisateur entre autre chose qu'un nombre</li>
-                        </ul>
+            <!-- Mission briefing style -->
+            <div style="
+                background: #1e1e1e;
+                border: 2px solid #4caf50;
+                border-radius: 12px;
+                padding: 30px;
+                margin: 30px 0;
+                font-family: 'JetBrains Mono', monospace;
+            ">
+                <div style="color: #4caf50; font-size: 1.3em; margin-bottom: 20px; text-align: center;">
+                    ═══════════════════════════════════════
+                    <br>MISSION : JEU DE NIM
+                    <br>═══════════════════════════════════════
+                </div>
+
+                <div style="color: #81d4fa; margin: 20px 0;">
+                    <span style="color: #ffd700;">▸</span> OBJECTIF : Créer un jeu de Nim complet (Ordinateur vs Joueur)
+                </div>
+
+                <div style="color: #ffeb3b; margin: 20px 0; font-size: 0.95em;">
+                    <div style="margin-bottom: 10px;">SPÉCIFICATIONS TECHNIQUES :</div>
+                    <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
+                        • 19 allumettes au départ<br>
+                        • Retirer 1, 2 ou 3 allumettes par tour<br>
+                        • IA : choix aléatoire (mode dummy)<br>
+                        • Celui qui prend la dernière perd
                     </div>
-                    <a href="lesson6/exo1.py" download style="
+                </div>
+
+                <div style="color: #ffab91; margin: 20px 0; font-size: 0.95em;">
+                    <div style="margin-bottom: 10px;">MODULES REQUIS :</div>
+                    <div style="color: #fff; margin-left: 20px;">
+                        <code style="color: #66bb6a;">import random</code>
+                    </div>
+                </div>
+
+                <div style="color: #ff6b6b; margin: 20px 0; font-size: 0.95em;">
+                    <div style="margin-bottom: 10px;">! VALIDATION REQUISE !</div>
+                    <div style="color: #fff; margin-left: 20px; line-height: 1.6;">
+                        • Vérifier entrée entre 1 et 3<br>
+                        • Ne pas dépasser allumettes restantes<br>
+                        • Gérer erreurs de saisie
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="lesson5/exo1.py" download style="
                         display: inline-block;
-                        margin-top: 15px;
-                        padding: 12px 25px;
+                        padding: 15px 35px;
                         background: linear-gradient(135deg, #4caf50, #66bb6a);
                         color: white;
                         text-decoration: none;
-                        border-radius: 25px;
-                        font-weight: 600;
-                        transition: transform 0.3s ease;
-                    ">📥 Télécharger exo1.py</a>
+                        border-radius: 8px;
+                        font-weight: bold;
+                        font-size: 1.1em;
+                        transition: all 0.3s ease;
+                        border: 2px solid #4caf50;
+                    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        📥 TÉLÉCHARGER LA MISSION
+                    </a>
                 </div>
+            </div>
 
-                <div class="learning-objectives" style="
-                    background: rgba(255, 215, 0, 0.1);
-                    border: 2px solid rgba(255, 215, 0, 0.3);
-                    border-radius: 12px;
-                    padding: 25px;
-                    margin: 25px 0;
-                ">
-                    <h3 style="color: #ffd700; margin-bottom: 20px;">🎯 Ce que vous allez pratiquer</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-                        <div style="background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 8px;">
-                            <div style="color: #4caf50; font-size: 1.5em; margin-bottom: 8px;">✅</div>
-                            <div style="color: #fff; font-weight: bold; margin-bottom: 5px;">Les boucles while</div>
-                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9em;">Pour le déroulement de la partie</div>
-                        </div>
-                        <div style="background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 8px;">
-                            <div style="color: #4caf50; font-size: 1.5em; margin-bottom: 8px;">✅</div>
-                            <div style="color: #fff; font-weight: bold; margin-bottom: 5px;">Les conditions</div>
-                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9em;">Pour valider les choix</div>
-                        </div>
-                        <div style="background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 8px;">
-                            <div style="color: #4caf50; font-size: 1.5em; margin-bottom: 8px;">✅</div>
-                            <div style="color: #fff; font-weight: bold; margin-bottom: 5px;">Les fonctions</div>
-                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9em;">Pour organiser votre code</div>
-                        </div>
-                        <div style="background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 8px;">
-                            <div style="color: #4caf50; font-size: 1.5em; margin-bottom: 8px;">✅</div>
-                            <div style="color: #fff; font-weight: bold; margin-bottom: 5px;">Les entrées utilisateur</div>
-                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9em;">Avec input() et validation</div>
-                        </div>
-                        <div style="background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 8px;">
-                            <div style="color: #4caf50; font-size: 1.5em; margin-bottom: 8px;">✅</div>
-                            <div style="color: #fff; font-weight: bold; margin-bottom: 5px;">Le module random</div>
-                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9em;">Pour le jeu de l'ordinateur</div>
-                        </div>
-                        <div style="background: rgba(0, 0, 0, 0.2); padding: 15px; border-radius: 8px;">
-                            <div style="color: #4caf50; font-size: 1.5em; margin-bottom: 8px;">✅</div>
-                            <div style="color: #fff; font-weight: bold; margin-bottom: 5px;">La logique de jeu</div>
-                            <div style="color: rgba(255,255,255,0.7); font-size: 0.9em;">Alternance et victoire</div>
-                        </div>
+            <!-- Quick tips -->
+            <div style="
+                background: rgba(255, 215, 0, 0.1);
+                border-left: 4px solid #ffd700;
+                padding: 20px;
+                margin: 25px 0;
+                border-radius: 8px;
+            ">
+                <div style="color: #ffd700; font-weight: bold; margin-bottom: 10px;">💡 Astuces de code :</div>
+                <div style="color: #fff; line-height: 1.8; font-size: 0.95em;">
+                    • <code style="background: rgba(0,0,0,0.3); padding: 2px 8px; border-radius: 4px; color: #ffeb3b;">random.randint(1, 3)</code> → choix aléatoire pour l'IA
+                    <br>• <code style="background: rgba(0,0,0,0.3); padding: 2px 8px; border-radius: 4px; color: #ffeb3b;">min(3, allumettes)</code> → limiter aux allumettes restantes
+                    <br>• <code style="background: rgba(0,0,0,0.3); padding: 2px 8px; border-radius: 4px; color: #ffeb3b;">while allumettes > 0:</code> → boucle de jeu
+                </div>
+            </div>
+
+            <!-- What you'll practice -->
+            <div style="
+                background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+                border: 2px solid rgba(102, 126, 234, 0.3);
+                border-radius: 12px;
+                padding: 25px;
+                margin: 25px 0;
+            ">
+                <h3 style="color: #667eea; margin-bottom: 20px; text-align: center;">🎯 Compétences pratiquées</h3>
+                <div style="display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin: 0 auto;">
+                    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 6px; display: flex; align-items: center; gap: 15px;">
+                        <div style="color: #4caf50; font-size: 1.5em;">✓</div>
+                        <div style="color: #fff;">Boucles while</div>
                     </div>
-                </div>
-
-                <div class="next-steps" style="
-                    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-                    border: 2px solid rgba(102, 126, 234, 0.3);
-                    border-radius: 12px;
-                    padding: 25px;
-                    margin: 25px 0;
-                    text-align: center;
-                ">
-                    <h3 style="color: #667eea; margin-bottom: 15px;">🚀 Pour aller plus loin...</h3>
-                    <p style="color: #fff; line-height: 1.8;">
-                        Une fois que vous aurez réussi cette version, vous pourrez améliorer le jeu :
-                    </p>
-                    <ul style="color: #fff; text-align: left; margin: 15px auto; max-width: 500px; line-height: 1.8;">
-                        <li>Mode Joueur vs Joueur</li>
-                        <li>Ordinateur avec une vraie stratégie gagnante</li>
-                        <li>Interface graphique</li>
-                        <li>Sauvegarde des scores</li>
-                    </ul>
-                    <p style="color: rgba(255,255,255,0.7); margin-top: 15px; font-style: italic;">
-                        Mais pour l'instant, concentrez-vous sur la version de base ! 🎯
-                    </p>
+                    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 6px; display: flex; align-items: center; gap: 15px;">
+                        <div style="color: #4caf50; font-size: 1.5em;">✓</div>
+                        <div style="color: #fff;">Conditions</div>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 6px; display: flex; align-items: center; gap: 15px;">
+                        <div style="color: #4caf50; font-size: 1.5em;">✓</div>
+                        <div style="color: #fff;">Validation</div>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 6px; display: flex; align-items: center; gap: 15px;">
+                        <div style="color: #4caf50; font-size: 1.5em;">✓</div>
+                        <div style="color: #fff;">Module random</div>
+                    </div>
                 </div>
             </div>
         `

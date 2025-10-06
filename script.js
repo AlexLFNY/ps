@@ -230,18 +230,18 @@ function initModal() {
             initChargerButtons();
 
             // Initialize Nim game if present
-            if (document.getElementById('nim-game')) {
+            if (document.getElementById('nim-game') || document.getElementById('nim-console')) {
                 // Load nim game script dynamically
-                if (!window.initNimGame) {
+                if (!window.initNimGame && !window.startNimConsoleGame) {
                     const script = document.createElement('script');
                     script.src = './js/nim-game.js';
                     script.onload = () => {
-                        if (window.initNimGame) {
+                        if (window.initNimGame && document.getElementById('nim-game')) {
                             window.initNimGame();
                         }
                     };
                     document.head.appendChild(script);
-                } else {
+                } else if (window.initNimGame && document.getElementById('nim-game')) {
                     window.initNimGame();
                 }
             }
@@ -1153,9 +1153,54 @@ function loadCodeIntoEditor(code) {
     loadCodeIntoConsole(code);
 }
 
+// Load Nim game code
+function loadNimCode() {
+    const nimCode = `# Jeu de Nim - Version Console
+allumettes = 19
+joueur_actuel = 1
+
+print("🎮 Bienvenue au jeu de Nim !")
+print(f"Il y a {allumettes} allumettes au départ")
+print("Le joueur qui prend la dernière allumette a PERDU !\\n")
+
+while allumettes > 0:
+    print(f"🔥 Il reste {allumettes} allumettes")
+    print(f"Tour du Joueur {joueur_actuel}")
+
+    # Demander au joueur combien retirer
+    retirer = int(input("Combien voulez-vous retirer (1, 2 ou 3) ? "))
+
+    # Vérifier que le nombre est valide
+    if retirer < 1 or retirer > 3:
+        print("❌ Erreur ! Vous devez retirer 1, 2 ou 3 allumettes")
+        continue
+
+    if retirer > allumettes:
+        print(f"❌ Erreur ! Il ne reste que {allumettes} allumettes")
+        continue
+
+    # Retirer les allumettes
+    allumettes = allumettes - retirer
+    print(f"✓ Vous avez retiré {retirer} allumette(s)\\n")
+
+    # Vérifier si le jeu est terminé
+    if allumettes == 0:
+        print(f"🎉 Le Joueur {joueur_actuel} a PERDU !")
+        print(f"🏆 Le Joueur {3 - joueur_actuel} a GAGNÉ !")
+        break
+
+    # Changer de joueur (1 -> 2 ou 2 -> 1)
+    joueur_actuel = 3 - joueur_actuel
+
+print("\\n🎮 Fin du jeu !")`;
+
+    loadCodeIntoConsole(nimCode);
+}
+
 // Make functions available globally
 window.loadCodeIntoConsole = loadCodeIntoConsole;
 window.loadCodeIntoEditor = loadCodeIntoEditor;
+window.loadNimCode = loadNimCode;
 window.showLessonSelection = showLessonSelection;
 window.showLesson = showLesson;
 window.toggleHint = toggleHint;
