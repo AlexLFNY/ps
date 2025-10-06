@@ -402,7 +402,7 @@ while allumettes > 0:
                         transition: all 0.3s ease;
                         border: 2px solid #4caf50;
                     " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                        📥 TÉLÉCHARGER LA MISSION
+                        TÉLÉCHARGER LA MISSION
                     </a>
                 </div>
             </div>
