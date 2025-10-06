@@ -331,113 +331,7 @@ print(convertir_secondes(0))"></textarea>
             <div class="output-console" id="output-ex1"></div>
         </div>
 
-        <!-- Exercise 2: Le Validateur de Mot de Passe -->
-        <div class="exercise-card">
-            <div class="exercise-header">
-                <div class="exercise-title">
-                    <span>🔒</span>
-                    <span>Le Validateur de Mot de Passe</span>
-                </div>
-                <div class="difficulty-badge difficulty-expert">Expert</div>
-            </div>
-            <div class="concepts-used">
-                <span class="concept-tag">Strings</span>
-                <span class="concept-tag">Conditions</span>
-                <span class="concept-tag">Fonctions</span>
-                <span class="concept-tag">Boucles</span>
-            </div>
-            <div class="exercise-description">
-                <p><strong>Mission :</strong> Créez une fonction <code>valider_mdp(mot_de_passe)</code> qui vérifie si un mot de passe est sécurisé.</p>
-                <p><strong>Critères de sécurité :</strong></p>
-                <ul>
-                    <li>Au moins 8 caractères</li>
-                    <li>Contient au moins une majuscule et une minuscule</li>
-                    <li>Contient au moins un chiffre</li>
-                    <li>Contient au moins un caractère spécial (!@#$%^&*)</li>
-                </ul>
-                <p><strong>Retour :</strong> La fonction retourne True si valide, False sinon. Affichez aussi le nombre de critères remplis.</p>
-            </div>
-            <div class="code-editor">
-                <textarea id="code-ex2" placeholder="# Écrivez votre solution ici...
-def valider_mdp(mot_de_passe):
-    # Votre code
-    pass
-
-# Tests
-print(valider_mdp('abc'))
-print(valider_mdp('Bonjour123!'))
-print(valider_mdp('test1234'))"></textarea>
-            </div>
-            <div class="action-buttons">
-                <button class="btn btn-run" onclick="runCode('ex2')">▶ Exécuter</button>
-                <button class="btn btn-solution" onclick="toggleHint('ex2')">💡 Indice</button>
-                <button class="btn btn-reset" onclick="resetCode('ex2')">↻ Réinitialiser</button>
-            </div>
-            <div class="hint-section" id="hint-ex2">
-                <h4>💡 Indice</h4>
-                <p>1. Utilisez len() pour vérifier la longueur</p>
-                <p>2. Parcourez chaque caractère avec une boucle for</p>
-                <p>3. Utilisez .isupper(), .islower(), .isdigit() pour vérifier les types de caractères</p>
-                <p>4. Créez des variables booléennes pour chaque critère (has_upper, has_lower, etc.)</p>
-                <p>5. Pour les caractères spéciaux : <code>if c in "!@#$%^&*"</code></p>
-            </div>
-            <div class="output-console" id="output-ex2"></div>
-        </div>
-
-        <!-- Exercise 3: Le Calculateur de Prix -->
-        <div class="exercise-card">
-            <div class="exercise-header">
-                <div class="exercise-title">
-                    <span>💰</span>
-                    <span>Le Calculateur de Prix avec Remises</span>
-                </div>
-                <div class="difficulty-badge difficulty-master">Master</div>
-            </div>
-            <div class="concepts-used">
-                <span class="concept-tag">Variables</span>
-                <span class="concept-tag">Opérations</span>
-                <span class="concept-tag">Conditions</span>
-                <span class="concept-tag">Fonctions</span>
-            </div>
-            <div class="exercise-description">
-                <p><strong>Mission :</strong> Créez une fonction <code>calculer_prix(prix_initial, quantite, code_promo)</code> qui calcule le prix final.</p>
-                <p><strong>Règles :</strong></p>
-                <ul>
-                    <li>Remise quantité : 5% si quantité ≥ 10, 10% si quantité ≥ 50, 15% si quantité ≥ 100</li>
-                    <li>Codes promo : "BIENVENUE" (-10€), "SUPER20" (-20%), "VIP" (-30%)</li>
-                    <li>Les remises s'appliquent dans l'ordre : quantité puis code promo</li>
-                    <li>Le prix ne peut jamais être négatif</li>
-                </ul>
-                <p><strong>Retour :</strong> Afficher le détail des calculs et le prix final arrondi à 2 décimales.</p>
-            </div>
-            <div class="code-editor">
-                <textarea id="code-ex3" placeholder="# Écrivez votre solution ici...
-def calculer_prix(prix_initial, quantite, code_promo=''):
-    # Votre code
-    pass
-
-# Tests
-calculer_prix(100, 5, 'BIENVENUE')
-calculer_prix(50, 15, 'SUPER20')
-calculer_prix(200, 120, 'VIP')"></textarea>
-            </div>
-            <div class="action-buttons">
-                <button class="btn btn-run" onclick="runCode('ex3')">▶ Exécuter</button>
-                <button class="btn btn-solution" onclick="toggleHint('ex3')">💡 Indice</button>
-                <button class="btn btn-reset" onclick="resetCode('ex3')">↻ Réinitialiser</button>
-            </div>
-            <div class="hint-section" id="hint-ex3">
-                <h4>💡 Indice</h4>
-                <p>1. Calculez d'abord le prix total (prix_initial * quantite)</p>
-                <p>2. Appliquez la remise quantité avec if/elif/else selon la quantité</p>
-                <p>3. Appliquez ensuite le code promo sur le prix déjà réduit</p>
-                <p>4. Utilisez max(prix, 0) pour éviter les prix négatifs</p>
-                <p>5. Utilisez round(prix, 2) pour arrondir</p>
-            </div>
-            <div class="output-console" id="output-ex3"></div>
-        </div>
-
-        <!-- Exercise 4: Le Jeu du Nombre Mystère Optimisé -->
+        <!-- Exercise 2: Le Détecteur de Nombre Parfait -->
         <div class="exercise-card">
             <div class="exercise-header">
                 <div class="exercise-title">
@@ -464,7 +358,7 @@ calculer_prix(200, 120, 'VIP')"></textarea>
                 <p><strong>Bonus :</strong> Affichez la liste des diviseurs et leur somme.</p>
             </div>
             <div class="code-editor">
-                <textarea id="code-ex4" placeholder="# Écrivez votre solution ici...
+                <textarea id="code-ex2" placeholder="# Écrivez votre solution ici...
 def est_nombre_parfait(n):
     # Votre code
     pass
@@ -476,11 +370,11 @@ print(est_nombre_parfait(12))
 print(est_nombre_parfait(496))"></textarea>
             </div>
             <div class="action-buttons">
-                <button class="btn btn-run" onclick="runCode('ex4')">▶ Exécuter</button>
-                <button class="btn btn-solution" onclick="toggleHint('ex4')">💡 Indice</button>
-                <button class="btn btn-reset" onclick="resetCode('ex4')">↻ Réinitialiser</button>
+                <button class="btn btn-run" onclick="runCode('ex2')">▶ Exécuter</button>
+                <button class="btn btn-solution" onclick="toggleHint('ex2')">💡 Indice</button>
+                <button class="btn btn-reset" onclick="resetCode('ex2')">↻ Réinitialiser</button>
             </div>
-            <div class="hint-section" id="hint-ex4">
+            <div class="hint-section" id="hint-ex2">
                 <h4>💡 Indice</h4>
                 <p>1. Créez une variable somme = 0</p>
                 <p>2. Parcourez tous les nombres de 1 à n-1 avec une boucle for</p>
@@ -488,10 +382,10 @@ print(est_nombre_parfait(496))"></textarea>
                 <p>4. Si oui, ajoutez-le à la somme</p>
                 <p>5. Comparez la somme finale avec n</p>
             </div>
-            <div class="output-console" id="output-ex4"></div>
+            <div class="output-console" id="output-ex2"></div>
         </div>
 
-        <!-- Exercise 5: Le Générateur de Motif -->
+        <!-- Exercise 3: Le Générateur de Motif -->
         <div class="exercise-card">
             <div class="exercise-header">
                 <div class="exercise-title">
@@ -531,7 +425,7 @@ pyramide(4, '#', True)
                 </pre>
             </div>
             <div class="code-editor">
-                <textarea id="code-ex5" placeholder="# Écrivez votre solution ici...
+                <textarea id="code-ex3" placeholder="# Écrivez votre solution ici...
 def pyramide(hauteur, caractere='*', inverse=False):
     # Votre code
     pass
@@ -542,11 +436,11 @@ print()
 pyramide(4, '#', True)"></textarea>
             </div>
             <div class="action-buttons">
-                <button class="btn btn-run" onclick="runCode('ex5')">▶ Exécuter</button>
-                <button class="btn btn-solution" onclick="toggleHint('ex5')">💡 Indice</button>
-                <button class="btn btn-reset" onclick="resetCode('ex5')">↻ Réinitialiser</button>
+                <button class="btn btn-run" onclick="runCode('ex3')">▶ Exécuter</button>
+                <button class="btn btn-solution" onclick="toggleHint('ex3')">💡 Indice</button>
+                <button class="btn btn-reset" onclick="resetCode('ex3')">↻ Réinitialiser</button>
             </div>
-            <div class="hint-section" id="hint-ex5">
+            <div class="hint-section" id="hint-ex3">
                 <h4>💡 Indice</h4>
                 <p>1. Pour une pyramide normale, ligne i (de 0 à hauteur-1) :</p>
                 <p>&nbsp;&nbsp;&nbsp;- Espaces : hauteur - i - 1</p>
@@ -556,7 +450,7 @@ pyramide(4, '#', True)"></textarea>
                 <p>&nbsp;&nbsp;&nbsp;- Caractères : 2 * (hauteur - i) - 1</p>
                 <p>3. Utilisez ' ' * n pour répéter des espaces et caractere * n pour les symboles</p>
             </div>
-            <div class="output-console" id="output-ex5"></div>
+            <div class="output-console" id="output-ex3"></div>
         </div>
 
     </div>
@@ -568,7 +462,7 @@ pyramide(4, '#', True)"></textarea>
 
         // Store initial code for each exercise
         document.addEventListener('DOMContentLoaded', () => {
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= 3; i++) {
                 const textarea = document.getElementById(`code-ex${i}`);
                 if (textarea) {
                     initialCode[`ex${i}`] = textarea.placeholder;
