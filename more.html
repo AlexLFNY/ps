@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercices Supplémentaires - Première Période</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .secret-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .secret-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .secret-header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .secret-header p {
+            color: #a0aec0;
+            font-size: 1.2rem;
+        }
+
+        .exercise-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .exercise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .exercise-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .exercise-title {
+            font-size: 1.5rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .difficulty-badge {
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .difficulty-expert {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .difficulty-master {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+        }
+
+        .difficulty-legend {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            color: white;
+        }
+
+        .exercise-description {
+            color: #cbd5e0;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .concepts-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .concept-tag {
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .code-editor {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .code-editor textarea {
+            width: 100%;
+            min-height: 200px;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            font-size: 1rem;
+            resize: vertical;
+            outline: none;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-run {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-solution {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-reset {
+            background: rgba(245, 87, 108, 0.2);
+            color: #f5576c;
+            border: 1px solid rgba(245, 87, 108, 0.3);
+        }
+
+        .output-console {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+            min-height: 100px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            color: #a0aec0;
+            display: none;
+        }
+
+        .output-console.show {
+            display: block;
+        }
+
+        .output-line {
+            margin-bottom: 0.5rem;
+        }
+
+        .output-error {
+            color: #f5576c;
+        }
+
+        .output-success {
+            color: #48bb78;
+        }
+
+        .hint-section {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 3px solid #667eea;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .hint-section.show {
+            display: block;
+        }
+
+        .hint-section h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .hint-section p {
+            color: #cbd5e0;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-link:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .secret-header h1 {
+                font-size: 2rem;
+            }
+
+            .exercise-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .action-buttons {
+                width: 100%;
+            }
+
+            .btn {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link" title="Retour à l'accueil">←</a>
+
+    <div class="secret-container">
+        <div class="secret-header">
+            <h1>📚 Exercices Supplémentaires</h1>
+            <p>Des défis avancés utilisant uniquement les concepts de première période</p>
+            <p style="font-size: 0.9rem; color: #718096; margin-top: 0.5rem;">
+                Variables • Opérations • Conditions • Fonctions
+            </p>
+        </div>
+
+        <!-- Exercise 1: Le Calculateur de Temps -->
+        <div class="exercise-card">
+            <div class="exercise-header">
+                <div class="exercise-title">
+                    <span>⏰</span>
+                    <span>Le Calculateur de Temps</span>
+                </div>
+                <div class="difficulty-badge difficulty-expert">Expert</div>
+            </div>
+            <div class="concepts-used">
+                <span class="concept-tag">Variables</span>
+                <span class="concept-tag">Opérations</span>
+                <span class="concept-tag">Conditions</span>
+                <span class="concept-tag">Fonctions</span>
+            </div>
+            <div class="exercise-description">
+                <p><strong>Mission :</strong> Créez une fonction <code>convertir_secondes(secondes)</code> qui convertit un nombre de secondes en un format lisible : jours, heures, minutes, secondes.</p>
+                <p><strong>Contraintes :</strong></p>
+                <ul>
+                    <li>La fonction doit retourner une chaîne formatée (ex: "2j 5h 30m 45s")</li>
+                    <li>N'affichez que les unités non nulles (pas de "0j" si 0 jours)</li>
+                    <li>Gérez le cas particulier de 0 seconde (retourner "0s")</li>
+                </ul>
+                <p><strong>Tests :</strong> 90061 secondes → "1j 1h 1m 1s" | 3665 secondes → "1h 1m 5s" | 0 seconde → "0s"</p>
+            </div>
+            <div class="code-editor">
+                <textarea id="code-ex1" placeholder="# Écrivez votre solution ici...
+def convertir_secondes(secondes):
+    # Votre code
+    pass
+
+# Tests
+print(convertir_secondes(90061))
+print(convertir_secondes(3665))
+print(convertir_secondes(0))"></textarea>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-run" onclick="runCode('ex1')">▶ Exécuter</button>
+                <button class="btn btn-solution" onclick="toggleHint('ex1')">💡 Indice</button>
+                <button class="btn btn-reset" onclick="resetCode('ex1')">↻ Réinitialiser</button>
+            </div>
+            <div class="hint-section" id="hint-ex1">
+                <h4>💡 Indice</h4>
+                <p>1. Calculez d'abord le nombre de jours (secondes // 86400)</p>
+                <p>2. Soustrayez les secondes des jours, puis calculez les heures avec le reste</p>
+                <p>3. Continuez ainsi pour les minutes et secondes</p>
+                <p>4. Construisez la chaîne progressivement avec des conditions if</p>
+            </div>
+            <div class="output-console" id="output-ex1"></div>
+        </div>
+
+        <!-- Exercise 2: Le Validateur de Mot de Passe -->
+        <div class="exercise-card">
+            <div class="exercise-header">
+                <div class="exercise-title">
+                    <span>🔒</span>
+                    <span>Le Validateur de Mot de Passe</span>
+                </div>
+                <div class="difficulty-badge difficulty-expert">Expert</div>
+            </div>
+            <div class="concepts-used">
+                <span class="concept-tag">Strings</span>
+                <span class="concept-tag">Conditions</span>
+                <span class="concept-tag">Fonctions</span>
+                <span class="concept-tag">Boucles</span>
+            </div>
+            <div class="exercise-description">
+                <p><strong>Mission :</strong> Créez une fonction <code>valider_mdp(mot_de_passe)</code> qui vérifie si un mot de passe est sécurisé.</p>
+                <p><strong>Critères de sécurité :</strong></p>
+                <ul>
+                    <li>Au moins 8 caractères</li>
+                    <li>Contient au moins une majuscule et une minuscule</li>
+                    <li>Contient au moins un chiffre</li>
+                    <li>Contient au moins un caractère spécial (!@#$%^&*)</li>
+                </ul>
+                <p><strong>Retour :</strong> La fonction retourne True si valide, False sinon. Affichez aussi le nombre de critères remplis.</p>
+            </div>
+            <div class="code-editor">
+                <textarea id="code-ex2" placeholder="# Écrivez votre solution ici...
+def valider_mdp(mot_de_passe):
+    # Votre code
+    pass
+
+# Tests
+print(valider_mdp('abc'))
+print(valider_mdp('Bonjour123!'))
+print(valider_mdp('test1234'))"></textarea>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-run" onclick="runCode('ex2')">▶ Exécuter</button>
+                <button class="btn btn-solution" onclick="toggleHint('ex2')">💡 Indice</button>
+                <button class="btn btn-reset" onclick="resetCode('ex2')">↻ Réinitialiser</button>
+            </div>
+            <div class="hint-section" id="hint-ex2">
+                <h4>💡 Indice</h4>
+                <p>1. Utilisez len() pour vérifier la longueur</p>
+                <p>2. Parcourez chaque caractère avec une boucle for</p>
+                <p>3. Utilisez .isupper(), .islower(), .isdigit() pour vérifier les types de caractères</p>
+                <p>4. Créez des variables booléennes pour chaque critère (has_upper, has_lower, etc.)</p>
+                <p>5. Pour les caractères spéciaux : <code>if c in "!@#$%^&*"</code></p>
+            </div>
+            <div class="output-console" id="output-ex2"></div>
+        </div>
+
+        <!-- Exercise 3: Le Calculateur de Prix -->
+        <div class="exercise-card">
+            <div class="exercise-header">
+                <div class="exercise-title">
+                    <span>💰</span>
+                    <span>Le Calculateur de Prix avec Remises</span>
+                </div>
+                <div class="difficulty-badge difficulty-master">Master</div>
+            </div>
+            <div class="concepts-used">
+                <span class="concept-tag">Variables</span>
+                <span class="concept-tag">Opérations</span>
+                <span class="concept-tag">Conditions</span>
+                <span class="concept-tag">Fonctions</span>
+            </div>
+            <div class="exercise-description">
+                <p><strong>Mission :</strong> Créez une fonction <code>calculer_prix(prix_initial, quantite, code_promo)</code> qui calcule le prix final.</p>
+                <p><strong>Règles :</strong></p>
+                <ul>
+                    <li>Remise quantité : 5% si quantité ≥ 10, 10% si quantité ≥ 50, 15% si quantité ≥ 100</li>
+                    <li>Codes promo : "BIENVENUE" (-10€), "SUPER20" (-20%), "VIP" (-30%)</li>
+                    <li>Les remises s'appliquent dans l'ordre : quantité puis code promo</li>
+                    <li>Le prix ne peut jamais être négatif</li>
+                </ul>
+                <p><strong>Retour :</strong> Afficher le détail des calculs et le prix final arrondi à 2 décimales.</p>
+            </div>
+            <div class="code-editor">
+                <textarea id="code-ex3" placeholder="# Écrivez votre solution ici...
+def calculer_prix(prix_initial, quantite, code_promo=''):
+    # Votre code
+    pass
+
+# Tests
+calculer_prix(100, 5, 'BIENVENUE')
+calculer_prix(50, 15, 'SUPER20')
+calculer_prix(200, 120, 'VIP')"></textarea>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-run" onclick="runCode('ex3')">▶ Exécuter</button>
+                <button class="btn btn-solution" onclick="toggleHint('ex3')">💡 Indice</button>
+                <button class="btn btn-reset" onclick="resetCode('ex3')">↻ Réinitialiser</button>
+            </div>
+            <div class="hint-section" id="hint-ex3">
+                <h4>💡 Indice</h4>
+                <p>1. Calculez d'abord le prix total (prix_initial * quantite)</p>
+                <p>2. Appliquez la remise quantité avec if/elif/else selon la quantité</p>
+                <p>3. Appliquez ensuite le code promo sur le prix déjà réduit</p>
+                <p>4. Utilisez max(prix, 0) pour éviter les prix négatifs</p>
+                <p>5. Utilisez round(prix, 2) pour arrondir</p>
+            </div>
+            <div class="output-console" id="output-ex3"></div>
+        </div>
+
+        <!-- Exercise 4: Le Jeu du Nombre Mystère Optimisé -->
+        <div class="exercise-card">
+            <div class="exercise-header">
+                <div class="exercise-title">
+                    <span>🎯</span>
+                    <span>Le Détecteur de Nombre Parfait</span>
+                </div>
+                <div class="difficulty-badge difficulty-master">Master</div>
+            </div>
+            <div class="concepts-used">
+                <span class="concept-tag">Boucles</span>
+                <span class="concept-tag">Conditions</span>
+                <span class="concept-tag">Fonctions</span>
+                <span class="concept-tag">Opérations</span>
+            </div>
+            <div class="exercise-description">
+                <p><strong>Mission :</strong> Créez une fonction <code>est_nombre_parfait(n)</code> qui détermine si un nombre est parfait.</p>
+                <p><strong>Définition :</strong> Un nombre parfait est égal à la somme de ses diviseurs propres (diviseurs inférieurs à lui-même).</p>
+                <p><strong>Exemples :</strong></p>
+                <ul>
+                    <li>6 est parfait : 1 + 2 + 3 = 6</li>
+                    <li>28 est parfait : 1 + 2 + 4 + 7 + 14 = 28</li>
+                    <li>12 n'est pas parfait : 1 + 2 + 3 + 4 + 6 = 16 ≠ 12</li>
+                </ul>
+                <p><strong>Bonus :</strong> Affichez la liste des diviseurs et leur somme.</p>
+            </div>
+            <div class="code-editor">
+                <textarea id="code-ex4" placeholder="# Écrivez votre solution ici...
+def est_nombre_parfait(n):
+    # Votre code
+    pass
+
+# Tests
+print(est_nombre_parfait(6))
+print(est_nombre_parfait(28))
+print(est_nombre_parfait(12))
+print(est_nombre_parfait(496))"></textarea>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-run" onclick="runCode('ex4')">▶ Exécuter</button>
+                <button class="btn btn-solution" onclick="toggleHint('ex4')">💡 Indice</button>
+                <button class="btn btn-reset" onclick="resetCode('ex4')">↻ Réinitialiser</button>
+            </div>
+            <div class="hint-section" id="hint-ex4">
+                <h4>💡 Indice</h4>
+                <p>1. Créez une variable somme = 0</p>
+                <p>2. Parcourez tous les nombres de 1 à n-1 avec une boucle for</p>
+                <p>3. Vérifiez si chaque nombre est un diviseur avec n % i == 0</p>
+                <p>4. Si oui, ajoutez-le à la somme</p>
+                <p>5. Comparez la somme finale avec n</p>
+            </div>
+            <div class="output-console" id="output-ex4"></div>
+        </div>
+
+        <!-- Exercise 5: Le Générateur de Motif -->
+        <div class="exercise-card">
+            <div class="exercise-header">
+                <div class="exercise-title">
+                    <span>🎨</span>
+                    <span>Le Générateur de Pyramide</span>
+                </div>
+                <div class="difficulty-badge difficulty-legend">Légende</div>
+            </div>
+            <div class="concepts-used">
+                <span class="concept-tag">Boucles imbriquées</span>
+                <span class="concept-tag">Strings</span>
+                <span class="concept-tag">Fonctions</span>
+                <span class="concept-tag">Conditions</span>
+            </div>
+            <div class="exercise-description">
+                <p><strong>Mission :</strong> Créez une fonction <code>pyramide(hauteur, caractere, inverse)</code> qui génère une pyramide.</p>
+                <p><strong>Paramètres :</strong></p>
+                <ul>
+                    <li>hauteur : nombre de lignes (int)</li>
+                    <li>caractere : caractère à utiliser (str, défaut='*')</li>
+                    <li>inverse : si True, pyramide inversée (bool, défaut=False)</li>
+                </ul>
+                <p><strong>Exemples :</strong></p>
+                <pre style="color: #cbd5e0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 5px;">
+pyramide(5, '*', False)
+    *
+   ***
+  *****
+ *******
+*********
+
+pyramide(4, '#', True)
+#######
+ #####
+  ###
+   #
+                </pre>
+            </div>
+            <div class="code-editor">
+                <textarea id="code-ex5" placeholder="# Écrivez votre solution ici...
+def pyramide(hauteur, caractere='*', inverse=False):
+    # Votre code
+    pass
+
+# Tests
+pyramide(5, '*', False)
+print()
+pyramide(4, '#', True)"></textarea>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-run" onclick="runCode('ex5')">▶ Exécuter</button>
+                <button class="btn btn-solution" onclick="toggleHint('ex5')">💡 Indice</button>
+                <button class="btn btn-reset" onclick="resetCode('ex5')">↻ Réinitialiser</button>
+            </div>
+            <div class="hint-section" id="hint-ex5">
+                <h4>💡 Indice</h4>
+                <p>1. Pour une pyramide normale, ligne i (de 0 à hauteur-1) :</p>
+                <p>&nbsp;&nbsp;&nbsp;- Espaces : hauteur - i - 1</p>
+                <p>&nbsp;&nbsp;&nbsp;- Caractères : 2 * i + 1</p>
+                <p>2. Pour une pyramide inversée, ligne i :</p>
+                <p>&nbsp;&nbsp;&nbsp;- Espaces : i</p>
+                <p>&nbsp;&nbsp;&nbsp;- Caractères : 2 * (hauteur - i) - 1</p>
+                <p>3. Utilisez ' ' * n pour répéter des espaces et caractere * n pour les symboles</p>
+            </div>
+            <div class="output-console" id="output-ex5"></div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <script>
+        let pyodideInstance = null;
+        const initialCode = {};
+
+        // Store initial code for each exercise
+        document.addEventListener('DOMContentLoaded', () => {
+            for (let i = 1; i <= 5; i++) {
+                const textarea = document.getElementById(`code-ex${i}`);
+                if (textarea) {
+                    initialCode[`ex${i}`] = textarea.placeholder;
+                }
+            }
+        });
+
+        async function initPyodide() {
+            if (!pyodideInstance) {
+                const output = document.querySelectorAll('[id^="output-"]');
+                output.forEach(el => {
+                    el.innerHTML = '<div class="output-line">⏳ Chargement de Python (Pyodide)...</div>';
+                    el.classList.add('show');
+                });
+
+                try {
+                    pyodideInstance = await loadPyodide();
+                    output.forEach(el => {
+                        el.innerHTML = '<div class="output-line output-success">✓ Python prêt!</div>';
+                    });
+
+                    setTimeout(() => {
+                        output.forEach(el => el.classList.remove('show'));
+                    }, 1500);
+                } catch (error) {
+                    output.forEach(el => {
+                        el.innerHTML = `<div class="output-line output-error">Erreur de chargement: ${error.message}</div>`;
+                    });
+                }
+            }
+            return pyodideInstance;
+        }
+
+        async function runCode(exerciseId) {
+            const codeElement = document.getElementById(`code-${exerciseId}`);
+            const outputElement = document.getElementById(`output-${exerciseId}`);
+            const code = codeElement.value || codeElement.placeholder;
+
+            outputElement.classList.add('show');
+            outputElement.innerHTML = '<div class="output-line">🚀 Exécution en cours...</div>';
+
+            try {
+                const pyodide = await initPyodide();
+
+                // Redirect stdout
+                let output = '';
+                pyodide.runPython(`
+import sys
+from io import StringIO
+sys.stdout = StringIO()
+                `);
+
+                // Execute user code
+                await pyodide.runPythonAsync(code);
+
+                // Get output
+                output = pyodide.runPython('sys.stdout.getvalue()');
+
+                if (output.trim()) {
+                    const lines = output.trim().split('\n');
+                    outputElement.innerHTML = lines.map(line =>
+                        `<div class="output-line">${escapeHtml(line)}</div>`
+                    ).join('');
+                } else {
+                    outputElement.innerHTML = '<div class="output-line output-success">✓ Code exécuté (pas de sortie)</div>';
+                }
+
+            } catch (error) {
+                let errorMsg = error.message;
+                // Simplify error messages
+                if (errorMsg.includes('line')) {
+                    const match = errorMsg.match(/line (\d+)/);
+                    if (match) {
+                        errorMsg = `Erreur ligne ${match[1]}: ${errorMsg.split('\n')[0]}`;
+                    }
+                }
+                outputElement.innerHTML = `<div class="output-line output-error">❌ ${escapeHtml(errorMsg)}</div>`;
+            }
+        }
+
+        function toggleHint(exerciseId) {
+            const hintElement = document.getElementById(`hint-${exerciseId}`);
+            hintElement.classList.toggle('show');
+        }
+
+        function resetCode(exerciseId) {
+            const codeElement = document.getElementById(`code-${exerciseId}`);
+            const outputElement = document.getElementById(`output-${exerciseId}`);
+
+            codeElement.value = '';
+            codeElement.placeholder = initialCode[exerciseId] || '';
+            outputElement.classList.remove('show');
+            outputElement.innerHTML = '';
+
+            const hintElement = document.getElementById(`hint-${exerciseId}`);
+            hintElement.classList.remove('show');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'Enter') {
+                const focused = document.activeElement;
+                if (focused && focused.tagName === 'TEXTAREA') {
+                    const exerciseId = focused.id.replace('code-', '');
+                    runCode(exerciseId);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
