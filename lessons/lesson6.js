@@ -2,49 +2,6 @@
 // Deuxième Période - Manipulation de texte en Python
 
 export const lesson6Data = {
-    video_tutorial: {
-        icon: 'icon-video',
-        emoji: '📹',
-        title: 'Tutoriel vidéo',
-        subtitle: 'Comprendre les chaînes de caractères en images',
-        content: `
-            <div class="section-text">
-                Regardez cette vidéo explicative pour comprendre visuellement comment fonctionnent les chaînes de caractères en Python.
-            </div>
-            <div class="video-container" style="
-                margin: 25px 0;
-                padding: 25px;
-                background: rgba(0, 0, 0, 0.2);
-                border-radius: 15px;
-            ">
-                <h3 style="color: #ffd700; margin-bottom: 20px;">Tutoriel vidéo</h3>
-                <video controls style="
-                    max-width: 100%;
-                    border-radius: 10px;
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-                ">
-                    <source src="video/StringsExplication_avec_voix.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la balise vidéo.
-                </video>
-            </div>
-            <div class="concept-tips" style="
-                background: linear-gradient(135deg, rgba(74, 158, 255, 0.1), rgba(138, 43, 226, 0.1));
-                padding: 20px;
-                border-radius: 12px;
-                border-left: 4px solid #4a9eff;
-                margin-top: 25px;
-            ">
-                <div style="font-weight: bold; color: #4a9eff; margin-bottom: 10px;">💡 Points clés à retenir :</div>
-                <ul style="margin: 10px 0; padding-left: 25px; line-height: 1.8;">
-                    <li>Une chaîne est du <strong>texte</strong> entre guillemets</li>
-                    <li>On accède aux caractères avec <strong>l'indexation</strong> [0]</li>
-                    <li>Le <strong>slicing</strong> permet d'extraire des portions [debut:fin]</li>
-                    <li>Utilisez <code>len()</code> pour connaître la <strong>longueur</strong></li>
-                </ul>
-            </div>
-        `
-    },
-
     intro: {
         icon: 'icon-string',
         emoji: '📝',
