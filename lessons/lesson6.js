@@ -703,6 +703,37 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                 </div>
 
                 <div style="color: #81d4fa; margin: 20px 0;">
+                    <span style="color: #ffd700;">▸ EXO 3bis :</span> Motif carré avec pattern [EXTRA DUR] 💀
+                </div>
+                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
+                    <strong style="color: #ff6b6b;">⚠️ EXERCICE TRÈS DIFFICILE</strong>
+                    <br><br>Crée un programme qui affiche ce motif de carré 9×9 avec un pattern spécifique à l'intérieur :
+                    <pre style="color: #4caf50; margin: 10px 0; font-size: 0.9em;">+ + + + + + + + +
++ . . . . . . . +
++ . + + + + + . +
++ . + . . . + . +
++ . + . + . + . +
++ . + . . . + . +
++ . + + + + + . +
++ . . . . . . . +
++ + + + + + + + +</pre>
+                    <strong>Analyse du motif :</strong>
+                    <br>• Le cadre extérieur est composé de <code>+</code>
+                    <br>• Il y a un cadre intérieur de <code>.</code> (ligne 2 et ligne 8)
+                    <br>• À l'intérieur, il y a un autre carré de <code>+</code> (lignes 3-7)
+                    <br>• Le centre contient un motif en croix avec <code>+</code> et <code>.</code>
+                    <br><br><strong>Indices :</strong>
+                    <br>• Stocke chaque ligne du motif dans une variable
+                    <br>• Utilise <code>print()</code> pour afficher ligne par ligne
+                    <br>• Ou essaye de générer le motif avec des boucles (très difficile !)
+                    <br><br><strong>Approche simple :</strong>
+                    <pre style="color: #81d4fa; margin: 10px 0;">ligne1 = "+ + + + + + + + +"
+ligne2 = "+ . . . . . . . +"
+# ... etc</pre>
+                    <strong>Approche avancée :</strong> Utilise des boucles imbriquées et des conditions pour générer automatiquement le motif en fonction de la position (ligne, colonne).
+                </div>
+
+                <div style="color: #81d4fa; margin: 20px 0;">
                     <span style="color: #ffd700;">▸ EXO 4 :</span> AlTeRnEz MiNuScUlE eT mAjUsCuLe [OBLIGATOIRE]
                 </div>
                 <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
