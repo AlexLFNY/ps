@@ -689,7 +689,7 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                     <span style="color: #ffd700;">▸ EXO 3 :</span> Carré en ASCII art (8×8)
                 </div>
                 <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Crée un programme qui affiche un carré 8×8 en utilisant le caractère octothorpe (#).
+                    Crée un programme qui affiche un carré 8×8 en utilisant le caractère dièse (#).
                     <br><br><strong>Résultat attendu :</strong>
                     <pre style="color: #4caf50; margin: 10px 0;">########
 ########
