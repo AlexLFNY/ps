@@ -1,5 +1,5 @@
 // Import the lesson registry
-import { lessonRegistry, getLessonById } from './lessons/lessonRegistry.js';
+import { lessonRegistry, getLessonById, getAllPeriods, getLessonsByPeriod } from './lessons/lessonRegistry.js';
 
 // Performance optimizations and imports
 let performanceOptimizer = null;
@@ -71,12 +71,42 @@ function showComputerFact() {
     }, COOLDOWN_TIME);
 }
 
-// Lesson navigation functions
-async function showLessonSelection() {
+// Period and lesson navigation functions
+async function showPeriodSelection() {
     const container = document.querySelector('.container');
-    
-    // Generate lesson tiles dynamically from registry
-    const lessonTilesHtml = lessonRegistry.map(lesson => `
+    const periods = getAllPeriods();
+
+    // Generate period cards
+    const periodCardsHtml = periods.map(period => `
+        <div class="period-card" onclick="showPeriodLessons(${period.id})" style="border-color: ${period.color}">
+            <div class="period-number">${period.id}</div>
+            <h2>${period.name}</h2>
+            <p class="period-description">${period.description}</p>
+            <div class="period-arrow">→</div>
+        </div>
+    `).join('');
+
+    container.innerHTML = `
+        <div class="hero">
+            <h1>Python Seconde</h1>
+            <p>Apprentissage Interactif</p>
+        </div>
+        <div class="period-selection">
+            ${periodCardsHtml}
+        </div>
+    `;
+}
+
+async function showPeriodLessons(periodId) {
+    const container = document.querySelector('.container');
+    const periods = getAllPeriods();
+    const period = periods.find(p => p.id === periodId);
+    const lessons = getLessonsByPeriod(periodId);
+
+    if (!period) return;
+
+    // Generate lesson tiles for this period
+    const lessonTilesHtml = lessons.map(lesson => `
         <div class="lesson-tile" onclick="showLesson(${lesson.id})">
             <div class="lesson-number">${lesson.number}</div>
             <div class="lesson-content">
@@ -86,16 +116,24 @@ async function showLessonSelection() {
             <div class="tile-arrow">→</div>
         </div>
     `).join('');
-    
+
     container.innerHTML = `
+        <div class="breadcrumb">
+            <button onclick="showPeriodSelection()" class="back-button">← Retour aux périodes</button>
+        </div>
         <div class="hero">
-            <h1>Python Seconde</h1>
-            <p>Choisissez votre leçon</p>
+            <h1>${period.name}</h1>
+            <p>${period.description}</p>
         </div>
         <div class="lesson-selection">
             ${lessonTilesHtml}
         </div>
     `;
+}
+
+async function showLessonSelection() {
+    // For backward compatibility, show period selection
+    showPeriodSelection();
 }
 
 async function showLesson(lessonId) {
@@ -1203,6 +1241,8 @@ window.loadCodeIntoEditor = loadCodeIntoEditor;
 window.loadNimCode = loadNimCode;
 window.showLessonSelection = showLessonSelection;
 window.showLesson = showLesson;
+window.showPeriodSelection = showPeriodSelection;
+window.showPeriodLessons = showPeriodLessons;
 window.toggleHint = toggleHint;
 window.checkVariableQuiz = checkVariableQuiz;
 window.checkTypeQuiz = checkTypeQuiz;
