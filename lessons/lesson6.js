@@ -632,5 +632,151 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                 </div>
             </div>
         `
+    },
+
+    exercises_part2: {
+        icon: 'icon-exercises',
+        emoji: '🚀',
+        title: 'Exercices Avancés',
+        subtitle: 'Partie 2 - Défis supplémentaires',
+        content: `
+            <div class="section-text">
+                Passez au niveau supérieur avec ces exercices avancés sur les chaînes de caractères !
+            </div>
+
+            <div style="
+                background: #1e1e1e;
+                border: 2px solid #f093fb;
+                border-radius: 12px;
+                padding: 30px;
+                margin: 30px 0;
+                font-family: 'JetBrains Mono', monospace;
+            ">
+                <div style="color: #f093fb; font-size: 1.3em; margin-bottom: 20px; text-align: center;">
+                    ═══════════════════════════════════════
+                    <br>EXERCICES AVANCÉS : CHAÎNES DE CARACTÈRES
+                    <br>═══════════════════════════════════════
+                </div>
+
+                <div style="color: #81d4fa; margin: 20px 0;">
+                    <span style="color: #ffd700;">▸ EXO 1 :</span> Fonction palindrome
+                </div>
+                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
+                    Écris une fonction <code>est_palindrome(mot)</code> qui vérifie si un mot est un palindrome.
+                    <br>Un palindrome est un mot qui se lit de la même façon de gauche à droite et de droite à gauche.
+                    <br><br><strong>Exemples :</strong>
+                    <br>• <code>est_palindrome("kayak")</code> → True
+                    <br>• <code>est_palindrome("radar")</code> → True
+                    <br>• <code>est_palindrome("python")</code> → False
+                    <br><br><strong>Bonus :</strong> Ignore les espaces et la casse (majuscules/minuscules)
+                    <br>• <code>est_palindrome("Elu par cette crapule")</code> → True
+                </div>
+
+                <div style="color: #81d4fa; margin: 20px 0;">
+                    <span style="color: #ffd700;">▸ EXO 2 :</span> Enlever les espaces d'une chaîne
+                </div>
+                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
+                    Écris une fonction <code>enlever_espaces(texte)</code> qui supprime tous les espaces d'une chaîne.
+                    <br><br><strong>Exemples :</strong>
+                    <br>• <code>enlever_espaces("Bonjour tout le monde")</code> → "Bonjourtoutlemonde"
+                    <br>• <code>enlever_espaces("Python  est  génial")</code> → "Pythonestgénial"
+                    <br><br><strong>Méthodes possibles :</strong>
+                    <br>• Utiliser une boucle for et construire une nouvelle chaîne
+                    <br>• Utiliser la méthode <code>.replace()</code>
+                </div>
+
+                <div style="color: #81d4fa; margin: 20px 0;">
+                    <span style="color: #ffd700;">▸ EXO 3 :</span> Carré en ASCII art (8×8)
+                </div>
+                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
+                    Crée un programme qui affiche un carré 8×8 en utilisant le caractère octothorpe (#).
+                    <br><br><strong>Résultat attendu :</strong>
+                    <pre style="color: #4caf50; margin: 10px 0;">########
+########
+########
+########
+########
+########
+########
+########</pre>
+                    <strong>Indice :</strong> Utilise une boucle qui se répète 8 fois et affiche "#" * 8
+                </div>
+
+                <div style="color: #81d4fa; margin: 20px 0;">
+                    <span style="color: #ffd700;">▸ EXO 4 :</span> AlTeRnEz MiNuScUlE eT mAjUsCuLe [OBLIGATOIRE]
+                </div>
+                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
+                    <strong style="color: #ff6b6b;">⚠️ EXERCICE OBLIGATOIRE</strong>
+                    <br><br>Écris une fonction <code>alterner_casse(texte)</code> qui alterne entre majuscules et minuscules.
+                    <br>• Les caractères aux positions paires (0, 2, 4...) doivent être en minuscules
+                    <br>• Les caractères aux positions impaires (1, 3, 5...) doivent être en majuscules
+                    <br><br><strong>Exemples :</strong>
+                    <br>• <code>alterner_casse("python")</code> → "pYtHoN"
+                    <br>• <code>alterner_casse("bonjour")</code> → "bOnJoUr"
+                    <br>• <code>alterner_casse("programmation")</code> → "pRoGrAmMaTiOn"
+                    <br><br><strong>Indices :</strong>
+                    <br>• Utilise une boucle for avec <code>enumerate()</code> pour avoir l'indice
+                    <br>• Utilise <code>.lower()</code> et <code>.upper()</code>
+                    <br>• Vérifie si l'indice est pair ou impair avec <code>%</code>
+                </div>
+
+                <div style="color: #81d4fa; margin: 20px 0;">
+                    <span style="color: #ffd700;">▸ EXO 5 :</span> Est-ce un pangramme ?
+                </div>
+                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
+                    Un <strong>pangramme</strong> est une phrase qui contient toutes les lettres de l'alphabet.
+                    <br><br>Écris une fonction <code>est_pangramme(phrase)</code> qui vérifie si une phrase est un pangramme.
+                    <br><br><strong>Exemples de pangrammes en français :</strong>
+                    <br>• "Portez ce vieux whisky au juge blond qui fume"
+                    <br>• "Voyez le brick géant que j'examine près du wharf"
+                    <br><br><strong>Indices :</strong>
+                    <br>• Crée une variable avec toutes les lettres : <code>alphabet = "abcdefghijklmnopqrstuvwxyz"</code>
+                    <br>• Convertis la phrase en minuscules avec <code>.lower()</code>
+                    <br>• Parcours chaque lettre de l'alphabet et vérifie si elle est dans la phrase
+                    <br>• Si toutes les lettres sont présentes, c'est un pangramme !
+                    <br><br><strong>Résultat attendu :</strong>
+                    <br>• <code>est_pangramme("Portez ce vieux whisky au juge blond qui fume")</code> → True
+                    <br>• <code>est_pangramme("Python est génial")</code> → False
+                </div>
+            </div>
+
+            <!-- Challenge section -->
+            <div style="
+                background: rgba(255, 107, 107, 0.1);
+                border: 2px solid #ff6b6b;
+                border-radius: 12px;
+                padding: 25px;
+                margin: 30px 0;
+            ">
+                <h3 style="color: #ff6b6b; margin-bottom: 20px;">🔥 Défi Expert</h3>
+                <div style="color: #fff; line-height: 1.8;">
+                    <strong>Combine plusieurs exercices !</strong>
+                    <br><br>Crée une fonction <code>analyser_texte(texte)</code> qui affiche :
+                    <br>• Le nombre de caractères (avec et sans espaces)
+                    <br>• Le nombre de voyelles et de consonnes
+                    <br>• Si le texte est un palindrome (en ignorant espaces et casse)
+                    <br>• Si le texte est un pangramme
+                    <br>• Le texte avec alternance de casse
+                </div>
+            </div>
+
+            <!-- Tips for part 2 -->
+            <div style="
+                background: rgba(138, 43, 226, 0.1);
+                border-left: 4px solid #f093fb;
+                padding: 20px;
+                margin: 25px 0;
+                border-radius: 8px;
+            ">
+                <div style="color: #f093fb; font-weight: bold; margin-bottom: 10px;">💡 Astuces pour la Partie 2 :</div>
+                <div style="color: #fff; line-height: 1.8; font-size: 0.95em;">
+                    • <code>enumerate(chaine)</code> donne l'indice ET le caractère
+                    <br>• <code>indice % 2 == 0</code> vérifie si un nombre est pair
+                    <br>• <code>.lower()</code> et <code>.upper()</code> changent la casse
+                    <br>• <code>.replace(" ", "")</code> enlève tous les espaces
+                    <br>• Construisez le résultat progressivement dans une variable
+                </div>
+            </div>
+        `
     }
 };

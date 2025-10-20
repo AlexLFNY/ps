@@ -74,7 +74,7 @@ export const periods = [
                 description: "Découvrez len(), slicing, et les méthodes de strings pour traiter du texte",
                 module: () => import('./lesson6.js'),
                 dataKey: 'lesson6Data',
-                concepts: ['intro', 'len_indexing', 'slicing', 'in_operator', 'for_loop', 'methods', 'exercises']
+                concepts: ['intro', 'len_indexing', 'slicing', 'in_operator', 'for_loop', 'methods', 'exercises', 'exercises_part2']
             }
             // Future lessons will be added here
         ]
