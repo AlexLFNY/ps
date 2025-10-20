@@ -680,9 +680,6 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                     <br><br><strong>Exemples :</strong>
                     <br>• <code>enlever_espaces("Bonjour tout le monde")</code> → "Bonjourtoutlemonde"
                     <br>• <code>enlever_espaces("Python  est  génial")</code> → "Pythonestgénial"
-                    <br><br><strong>Méthodes possibles :</strong>
-                    <br>• Utiliser une boucle for et construire une nouvelle chaîne
-                    <br>• Utiliser la méthode <code>.replace()</code>
                 </div>
 
                 <div style="color: #81d4fa; margin: 20px 0;">
