@@ -79,6 +79,25 @@ print(message)  # Affiche "J'ai 15 ans"</code></pre>
 message = &quot;J'ai &quot; + str(age) + &quot; ans&quot;
 print(message)\`)">🐍 Charger</button>
             </div>
+
+            <div style="
+                background: rgba(129, 212, 250, 0.1);
+                border: 2px solid #81d4fa;
+                border-radius: 12px;
+                padding: 25px;
+                margin: 30px 0;
+            ">
+                <h3 style="color: #81d4fa; margin-bottom: 15px;">✏️ Mini-Quiz : Chaînes de caractères</h3>
+                <div style="color: #fff; line-height: 1.8;">
+                    <strong>Exercice 1 :</strong> Créez une variable <code>prenom</code> avec votre prénom et une variable <code>nom</code> avec votre nom.
+                    Affichez-les ensemble séparés par un espace.
+                    <br><br>
+                    <strong>Exercice 2 :</strong> Créez une variable <code>age = 16</code>. Utilisez <code>str()</code> pour créer le message : "J'ai 16 ans".
+                    <br><br>
+                    <strong>Exercice 3 :</strong> Créez deux variables <code>ville = "Paris"</code> et <code>pays = "France"</code>.
+                    Affichez : "J'habite à Paris en France" en utilisant la concaténation.
+                </div>
+            </div>
         `
     },
 
@@ -134,6 +153,27 @@ print(chaine[0])
 print(chaine[5])
 print(chaine[-1])
 print(chaine[-2])\`)">🐍 Charger</button>
+            </div>
+
+            <div style="
+                background: rgba(129, 212, 250, 0.1);
+                border: 2px solid #81d4fa;
+                border-radius: 12px;
+                padding: 25px;
+                margin: 30px 0;
+            ">
+                <h3 style="color: #81d4fa; margin-bottom: 15px;">✏️ Mini-Quiz : Longueur et Indexation</h3>
+                <div style="color: #fff; line-height: 1.8;">
+                    <strong>Exercice 1 :</strong> Créez la variable <code>mot = "INFORMATIQUE"</code>.
+                    Affichez sa longueur avec <code>len()</code>.
+                    <br><br>
+                    <strong>Exercice 2 :</strong> Avec le même mot, affichez :
+                    <br>• Le premier caractère
+                    <br>• Le dernier caractère (avec un indice négatif)
+                    <br>• Le caractère à l'indice 5
+                    <br><br>
+                    <strong>Exercice 3 :</strong> Pour la chaîne <code>prenom = "Alexandre"</code>, affichez l'avant-dernier caractère.
+                </div>
             </div>
         `
     },
@@ -219,6 +259,27 @@ print(alphabet[:10])
 print(alphabet[-10:])
 print(alphabet[5:15:2])\`)">🐍 Charger</button>
             </div>
+
+            <div style="
+                background: rgba(129, 212, 250, 0.1);
+                border: 2px solid #81d4fa;
+                border-radius: 12px;
+                padding: 25px;
+                margin: 30px 0;
+            ">
+                <h3 style="color: #81d4fa; margin-bottom: 15px;">✏️ Mini-Quiz : Découpage (Slicing)</h3>
+                <div style="color: #fff; line-height: 1.8;">
+                    <strong>Exercice 1 :</strong> Créez la variable <code>phrase = "Python est génial"</code>.
+                    Utilisez le slicing pour extraire :
+                    <br>• Le mot "Python" (indices 0 à 5)
+                    <br>• Le mot "génial" (du 11ème caractère jusqu'à la fin)
+                    <br>• Les 5 premiers caractères
+                    <br><br>
+                    <strong>Exercice 2 :</strong> Avec <code>mot = "ORDINATEUR"</code>, inversez le mot en utilisant <code>[::-1]</code>.
+                    <br><br>
+                    <strong>Exercice 3 :</strong> Pour <code>alphabet = "ABCDEFGHIJ"</code>, extrayez une lettre sur deux en utilisant le pas de 2.
+                </div>
+            </div>
         `
     },
 
@@ -263,6 +324,25 @@ if &quot;@&quot; in email:
     print(&quot;L'email semble valide&quot;)
 else:
     print(&quot;L'email n'est pas valide&quot;)\`)">🐍 Charger</button>
+            </div>
+
+            <div style="
+                background: rgba(129, 212, 250, 0.1);
+                border: 2px solid #81d4fa;
+                border-radius: 12px;
+                padding: 25px;
+                margin: 30px 0;
+            ">
+                <h3 style="color: #81d4fa; margin-bottom: 15px;">✏️ Mini-Quiz : L'opérateur in</h3>
+                <div style="color: #fff; line-height: 1.8;">
+                    <strong>Exercice 1 :</strong> Créez <code>texte = "J'adore programmer en Python"</code>.
+                    Vérifiez si le mot "Python" est présent dans le texte et affichez le résultat.
+                    <br><br>
+                    <strong>Exercice 2 :</strong> Créez <code>url = "https://www.python.org"</code>.
+                    Écrivez une condition qui affiche "Connexion sécurisée" si "https" est dans l'URL, sinon "Connexion non sécurisée".
+                    <br><br>
+                    <strong>Exercice 3 :</strong> Pour <code>phrase = "Bonjour tout le monde"</code>, vérifiez si "au revoir" est présent.
+                </div>
             </div>
         `
     },
@@ -356,6 +436,25 @@ print(resultat)\`)">🐍 Charger</button>
                         <br>2. À chaque tour, on ajoute la lettre suivie d'un tiret
                         <br>3. À la fin, <code>resultat[:-1]</code> enlève le dernier caractère (le tiret en trop)
                     </div>
+                </div>
+            </div>
+
+            <div style="
+                background: rgba(129, 212, 250, 0.1);
+                border: 2px solid #81d4fa;
+                border-radius: 12px;
+                padding: 25px;
+                margin: 30px 0;
+            ">
+                <h3 style="color: #81d4fa; margin-bottom: 15px;">✏️ Mini-Quiz : Parcourir avec for</h3>
+                <div style="color: #fff; line-height: 1.8;">
+                    <strong>Exercice 1 :</strong> Créez <code>mot = "HELLO"</code>.
+                    Utilisez une boucle <code>for</code> pour afficher chaque lettre sur une nouvelle ligne.
+                    <br><br>
+                    <strong>Exercice 2 :</strong> Pour <code>prenom = "MARIE"</code>, créez un programme qui affiche chaque lettre séparée par un espace.
+                    Utilisez une variable <code>resultat</code> pour construire la chaîne progressivement.
+                    <br><br>
+                    <strong>Exercice 3 :</strong> Comptez le nombre de fois que la lettre "o" apparaît dans <code>phrase = "Bonjour tout le monde"</code> en utilisant une boucle for.
                 </div>
             </div>
         `
@@ -460,6 +559,32 @@ print(nouveau)
 
 texte = &quot;ha ha ha&quot;
 print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
+            </div>
+
+            <div style="
+                background: rgba(129, 212, 250, 0.1);
+                border: 2px solid #81d4fa;
+                border-radius: 12px;
+                padding: 25px;
+                margin: 30px 0;
+            ">
+                <h3 style="color: #81d4fa; margin-bottom: 15px;">✏️ Mini-Quiz : Méthodes de strings</h3>
+                <div style="color: #fff; line-height: 1.8;">
+                    <strong>Exercice 1 :</strong> Créez <code>texte = "python est génial"</code>.
+                    Utilisez les méthodes pour afficher :
+                    <br>• Le texte en MAJUSCULES
+                    <br>• Le texte avec une majuscule au début de chaque mot
+                    <br>• Le texte entièrement en minuscules
+                    <br><br>
+                    <strong>Exercice 2 :</strong> Pour <code>phrase = "J'adore coder en Python et Python est super"</code>,
+                    comptez combien de fois le mot "Python" apparaît.
+                    <br><br>
+                    <strong>Exercice 3 :</strong> Créez <code>message = "   Bonjour   "</code>.
+                    Utilisez une méthode pour enlever les espaces au début et à la fin.
+                    <br><br>
+                    <strong>Exercice 4 :</strong> Pour <code>texte = "J'aime les chats"</code>,
+                    remplacez "chats" par "chiens" et affichez le résultat.
+                </div>
             </div>
         `
     },
