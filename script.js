@@ -267,6 +267,9 @@ function initModal() {
             // Re-initialize charger buttons after content is loaded
             initChargerButtons();
 
+            // Re-initialize quiz listeners after content is loaded
+            setupQuizListeners();
+
             // Initialize Nim game if present
             if (document.getElementById('nim-game') || document.getElementById('nim-console')) {
                 // Load nim game script dynamically
