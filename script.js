@@ -77,14 +77,23 @@ async function showPeriodSelection() {
     const periods = getAllPeriods();
 
     // Generate period cards
-    const periodCardsHtml = periods.map(period => `
-        <div class="period-card" onclick="showPeriodLessons(${period.id})" style="border-color: ${period.color}">
+    const periodCardsHtml = periods.map(period => {
+        // Convert hex color to RGB for use in rgba()
+        const hex = period.color.replace('#', '');
+        const r = parseInt(hex.substring(0, 2), 16);
+        const g = parseInt(hex.substring(2, 4), 16);
+        const b = parseInt(hex.substring(4, 6), 16);
+
+        return `
+        <div class="period-card" onclick="showPeriodLessons(${period.id})"
+             style="--period-color: ${period.color}; --period-color-rgb: ${r}, ${g}, ${b};">
             <div class="period-number">${period.id}</div>
             <h2>${period.name}</h2>
             <p class="period-description">${period.description}</p>
             <div class="period-arrow">→</div>
         </div>
-    `).join('');
+    `;
+    }).join('');
 
     container.innerHTML = `
         <div class="hero">
