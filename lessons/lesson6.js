@@ -737,7 +737,38 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                 </div>
 
                 <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 6 :</span> Motif carré complexe [EXTRA DUR] 💀
+                    <span style="color: #ffd700;">▸ EXO 6 :</span> Détecteur de langue 🌍
+                </div>
+                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
+                    Crée un programme qui détecte si un texte est en <strong>français</strong> ou en <strong>anglais</strong> en analysant la fréquence d'apparition de certaines lettres.
+                    <br><br><strong>🔍 Fait linguistique :</strong>
+                    <br>• En français, la lettre <strong>'e'</strong> est très fréquente (environ 15-17% des lettres)
+                    <br>• En anglais, la lettre <strong>'e'</strong> est aussi fréquente mais moins (environ 12-13%)
+                    <br>• En français, les lettres <strong>'à', 'é', 'è', 'ê'</strong> sont courantes
+                    <br>• En anglais, la lettre <strong>'w'</strong> est plus fréquente qu'en français
+                    <br><br><strong>📝 Ta mission :</strong>
+                    <br>Écris une fonction <code>detecter_langue(texte)</code> qui retourne "français" ou "anglais"
+                    <br><br><strong>💡 Stratégie suggérée :</strong>
+                    <br>1. Convertis le texte en minuscules avec <code>.lower()</code>
+                    <br>2. Compte le nombre total de lettres (sans espaces ni ponctuation)
+                    <br>3. Compte combien de fois apparaissent les lettres caractéristiques :
+                    <br>&nbsp;&nbsp;&nbsp;• Pour le français : 'é', 'è', 'à', 'ê', 'ç' (accents)
+                    <br>&nbsp;&nbsp;&nbsp;• Pour l'anglais : 'w', 'th' (digramme)
+                    <br>4. Si tu trouves des accents français → c'est du français
+                    <br>5. Sinon, compare la fréquence du 'w' (si > 2% du texte → probablement anglais)
+                    <br><br><strong>Exemples de test :</strong>
+                    <br>• <code>detecter_langue("Bonjour, comment allez-vous aujourd'hui ?")</code> → "français"
+                    <br>• <code>detecter_langue("Hello, how are you today?")</code> → "anglais"
+                    <br>• <code>detecter_langue("C'est une très belle journée ensoleillée")</code> → "français"
+                    <br>• <code>detecter_langue("The weather is wonderful today")</code> → "anglais"
+                    <br><br><strong>🚀 Bonus pour les experts :</strong>
+                    <br>• Ajoute la détection de l'espagnol (cherche 'ñ', '¿', '¡')
+                    <br>• Calcule la fréquence exacte du 'e' et compare avec les statistiques
+                    <br>• Affiche un pourcentage de confiance (ex: "français à 87%")
+                </div>
+
+                <div style="color: #81d4fa; margin: 20px 0;">
+                    <span style="color: #ffd700;">▸ EXO 7 :</span> Motif carré complexe [EXTRA DUR] 💀
                 </div>
                 <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
                     <strong style="color: #ff6b6b;">⚠️ EXERCICE TRÈS DIFFICILE - AUCUN INDICE</strong>
@@ -770,6 +801,7 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                     <br>• Le nombre de voyelles et de consonnes
                     <br>• Si le texte est un palindrome (en ignorant espaces et casse)
                     <br>• Si le texte est un pangramme
+                    <br>• La langue détectée (français ou anglais)
                     <br>• Le texte avec alternance de casse
                 </div>
             </div>
