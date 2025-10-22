@@ -785,6 +785,131 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                 </div>
             </div>
 
+            <!-- Projects section -->
+            <div style="
+                background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(138, 43, 226, 0.15));
+                border: 2px solid #ffd700;
+                border-radius: 15px;
+                padding: 35px;
+                margin: 40px 0;
+            ">
+                <h2 style="color: #ffd700; margin-bottom: 25px; text-align: center; font-size: 1.5em;">
+                    🎯 PROJETS PRATIQUES
+                </h2>
+
+                <div style="color: #81d4fa; margin: 30px 0; font-size: 1.2em;">
+                    <span style="color: #ffd700;">🎵 PROJET 1 :</span> Analyseur de Paroles d'Artiste
+                </div>
+
+                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
+                    <strong style="color: #4caf50;">📖 Description du projet :</strong>
+                    <br>Choisis ton artiste musical préféré et analyse ses paroles de chansons ! Tu vas découvrir son style d'écriture, ses mots favoris, et créer des statistiques fascinantes.
+
+                    <br><br><strong style="color: #f093fb;">🎯 Objectif :</strong>
+                    <br>Créer un programme qui analyse les paroles de plusieurs chansons d'un artiste et génère un rapport statistique complet.
+
+                    <br><br><strong style="color: #81d4fa;">📊 Analyses à réaliser :</strong>
+                    <br><br><strong>Niveau 1 - Statistiques de base :</strong>
+                    <br>• Nombre total de caractères (avec <code>len()</code>)
+                    <br>• Nombre total de mots (compte les espaces + 1)
+                    <br>• Nombre de lignes (compte les <code>'\n'</code>)
+                    <br>• Longueur moyenne des mots
+
+                    <br><br><strong>Niveau 2 - Recherche de mots-clés :</strong>
+                    <br>• Compter combien de fois "amour" apparaît (utilise <code>.count()</code>)
+                    <br>• Compter d'autres mots importants : "vie", "cœur", "temps", "monde"
+                    <br>• Vérifier si certains mots sont présents (utilise <code>in</code>)
+                    <br>• Trouver le mot le plus long (parcours avec une boucle)
+
+                    <br><br><strong>Niveau 3 - Analyses avancées :</strong>
+                    <br>• Détecter la langue (cherche 'é', 'è', 'à' pour français, 'w' pour anglais)
+                    <br>• Comparer 2 chansons : laquelle a le plus de mots ?
+                    <br>• Calculer le pourcentage d'un mot dans le texte
+                    <br>• Trouver toutes les voyelles et les compter
+
+                    <br><br><strong style="color: #4caf50;">💡 Approche simple (sans listes) :</strong>
+                    <pre style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin: 15px 0; color: #81d4fa;">
+# Étape 1 : Stocker les paroles d'UNE chanson
+paroles = """
+Première ligne de la chanson
+Deuxième ligne de la chanson
+Troisième ligne de la chanson
+"""
+
+# Étape 2 : Nettoyer le texte
+paroles_propres = paroles.lower()
+paroles_propres = paroles_propres.replace(".", "")
+paroles_propres = paroles_propres.replace(",", "")
+paroles_propres = paroles_propres.replace("!", "")
+paroles_propres = paroles_propres.replace("?", "")
+
+# Étape 3 : Compter les mots
+nombre_espaces = 0
+for caractere in paroles_propres:
+    if caractere == " ":
+        nombre_espaces = nombre_espaces + 1
+nombre_mots = nombre_espaces + 1
+
+# Étape 4 : Chercher un mot spécifique
+mot_recherche = "amour"
+compteur = 0
+# Utilise .count() pour compter !
+compteur = paroles_propres.count(mot_recherche)
+
+print(f"Nombre de mots : {nombre_mots}")
+print(f"Le mot '{mot_recherche}' apparaît {compteur} fois")</pre>
+
+                    <br><strong style="color: #ff6b6b;">⚠️ Conseils pratiques :</strong>
+                    <br>• Utilise <code>.lower()</code> pour uniformiser (éviter "Le" ≠ "le")
+                    <br>• Supprime la ponctuation : <code>.replace(".", "").replace(",", "")</code>
+                    <br>• Compte les espaces pour trouver le nombre de mots
+                    <br>• Utilise <code>.count("mot")</code> pour compter un mot spécifique
+                    <br>• Pour comparer 2 chansons, copie-colle ton code 2 fois avec chanson1 et chanson2
+
+                    <br><strong style="color: #ffd700;">🚀 Extensions possibles :</strong>
+                    <br>• Créer une fonction qui trouve les rimes
+                    <br>• Comparer 2 artistes côte à côte
+                    <br>• Détecter les thèmes récurrents (tristesse, joie, amour)
+                    <br>• Analyser l'évolution du vocabulaire entre albums
+                    <br>• Générer une phrase aléatoire dans le style de l'artiste
+
+                    <br><br><strong style="color: #4caf50;">✅ Exemples d'artistes à analyser :</strong>
+                    <br>• Rap français : Orelsan, Nekfeu, PNL, Stromae
+                    <br>• Pop française : Angèle, Pomme, Clara Luciani
+                    <br>• Classiques : Jacques Brel, Georges Brassens
+                    <br>• International : Taylor Swift, Ed Sheeran, Billie Eilish
+
+                    <br><br><div style="background: rgba(255, 215, 0, 0.2); padding: 20px; border-radius: 10px; border-left: 4px solid #ffd700;">
+                        <strong style="color: #ffd700;">💎 Exemple de résultat :</strong>
+                        <pre style="color: #4caf50; margin: 10px 0;">
+=== ANALYSE DE "PAPAOUTAI" - STROMAE ===
+
+📊 Statistiques :
+  • Nombre total de caractères : 1456
+  • Nombre de mots : 287
+  • Longueur moyenne des mots : 5.07 lettres
+
+🔍 Recherche de mots-clés :
+  • "papa" : 8 occurrences
+  • "où" : 12 occurrences
+  • "toi" : 6 occurrences
+  • "vie" : 3 occurrences
+
+🌍 Langue détectée : Français
+  (accents trouvés : é, è, à)
+
+📝 Mot le plus long : "responsabilités" (16 lettres)</pre>
+                    </div>
+
+                    <br><br><strong style="color: #81d4fa;">🎓 Ce que tu vas apprendre :</strong>
+                    <br>• Manipuler de grandes chaînes de caractères (paroles complètes)
+                    <br>• Nettoyer et normaliser du texte (ponctuation, casse)
+                    <br>• Compter des occurrences avec des boucles
+                    <br>• Utiliser la méthode <code>.count()</code> efficacement
+                    <br>• Présenter des données de manière claire
+                </div>
+            </div>
+
             <!-- Challenge section -->
             <div style="
                 background: rgba(255, 107, 107, 0.1);
