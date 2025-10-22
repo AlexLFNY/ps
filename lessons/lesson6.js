@@ -505,7 +505,7 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                 </div>
                 <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
                     Écris un programme qui compte combien de fois la lettre "a" apparaît dans une phrase.
-                    <br>Exemple : <code>phrase = "La banane est jaune"</code> → Affiche 5
+                    <br>Exemple : <code>phrase = "La banane parfaitement jaune"</code> → Affiche 6
                 </div>
 
                 <div style="color: #81d4fa; margin: 20px 0;">
