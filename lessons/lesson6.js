@@ -741,21 +741,45 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                 </div>
                 <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
                     Crée un programme qui détecte si un texte est en <strong>français</strong> ou en <strong>anglais</strong> en analysant la fréquence d'apparition de certaines lettres.
-                    <br><br><strong>🔍 Fait linguistique :</strong>
-                    <br>• En français, la lettre <strong>'e'</strong> est très fréquente (environ 15-17% des lettres)
-                    <br>• En anglais, la lettre <strong>'e'</strong> est aussi fréquente mais moins (environ 12-13%)
-                    <br>• En français, les lettres <strong>'à', 'é', 'è', 'ê'</strong> sont courantes
-                    <br>• En anglais, la lettre <strong>'w'</strong> est plus fréquente qu'en français
+
+                    <br><br><div style="background: rgba(74, 158, 255, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid #4a9eff;">
+                        <strong style="color: #4a9eff;">📊 Fréquence d'apparition des lettres</strong>
+                        <br><br>Chaque langue a ses propres statistiques !
+                        <a href="https://fr.wikipedia.org/wiki/Fr%C3%A9quence_d%27apparition_des_lettres"
+                           target="_blank"
+                           style="color: #ffd700; text-decoration: underline;">
+                            📖 Voir l'article complet sur Wikipédia
+                        </a>
+
+                        <br><br><strong>Top 10 des lettres en français :</strong> (corpus Wikipédia)
+                        <br><span style="font-family: monospace; color: #4caf50;">
+                        1. e = 12.10%  │  2. a = 7.11%   │  3. i = 6.59%   │  4. s = 6.51%   │  5. n = 6.39%
+                        <br>6. r = 6.07%   │  7. t = 5.92%   │  8. o = 5.02%   │  9. l = 4.96%   │ 10. u = 4.49%
+                        </span>
+
+                        <br><br><strong>Top 10 des lettres en anglais :</strong>
+                        <br><span style="font-family: monospace; color: #81d4fa;">
+                        1. e = 12.70%  │  2. t = 9.06%   │  3. a = 8.17%   │  4. o = 7.51%   │  5. i = 6.97%
+                        <br>6. n = 6.75%   │  7. s = 6.33%   │  8. h = 6.09%   │  9. r = 5.99%   │ 10. d = 4.25%
+                        </span>
+
+                        <br><br><strong style="color: #ffd700;">🔍 Indices clés :</strong>
+                        <br>• <strong>Français :</strong> accents (é=1.94%, è=0.31%, à=0.31%), w rare (0.17%)
+                        <br>• <strong>Anglais :</strong> 'w' plus fréquent (~2.36%), pas d'accents, 'h' très présent (6.09%)
+                    </div>
+
                     <br><br><strong>📝 Ta mission :</strong>
                     <br>Écris une fonction <code>detecter_langue(texte)</code> qui retourne "français" ou "anglais"
                     <br><br><strong>💡 Stratégie suggérée :</strong>
                     <br>1. Convertis le texte en minuscules avec <code>.lower()</code>
-                    <br>2. Compte le nombre total de lettres (sans espaces ni ponctuation)
-                    <br>3. Compte combien de fois apparaissent les lettres caractéristiques :
-                    <br>&nbsp;&nbsp;&nbsp;• Pour le français : 'é', 'è', 'à', 'ê', 'ç' (accents)
-                    <br>&nbsp;&nbsp;&nbsp;• Pour l'anglais : 'w', 'th' (digramme)
-                    <br>4. Si tu trouves des accents français → c'est du français
-                    <br>5. Sinon, compare la fréquence du 'w' (si > 2% du texte → probablement anglais)
+                    <br>2. Compte le nombre total de lettres avec <code>len()</code>
+                    <br>3. <strong>Méthode simple :</strong> Cherche les accents français
+                    <br>&nbsp;&nbsp;&nbsp;• Si tu trouves 'é', 'è', 'à', 'ê', 'ç' → c'est du français
+                    <br>&nbsp;&nbsp;&nbsp;• Sinon, c'est probablement de l'anglais
+                    <br>4. <strong>Méthode avancée :</strong> Compare les fréquences (utilise <code>.count()</code>)
+                    <br>&nbsp;&nbsp;&nbsp;• Compte le 'w' : si > 1.5% du texte → anglais, si < 0.5% → français
+                    <br>&nbsp;&nbsp;&nbsp;• Compte le 'h' : si > 5% → anglais, si < 2% → français
+                    <br>5. <strong>Pour les experts :</strong> Calcule un "score de langue" basé sur plusieurs lettres
                     <br><br><strong>Exemples de test :</strong>
                     <br>• <code>detecter_langue("Bonjour, comment allez-vous aujourd'hui ?")</code> → "français"
                     <br>• <code>detecter_langue("Hello, how are you today?")</code> → "anglais"
