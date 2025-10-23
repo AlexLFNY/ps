@@ -796,7 +796,11 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                 </div>
                 <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
                     <strong style="color: #ff6b6b;">⚠️ EXERCICE TRÈS DIFFICILE - AUCUN INDICE</strong>
-                    <br><br>Reproduis exactement ce motif :
+
+                    <br><br><strong>📝 Consigne :</strong>
+                    <br>Demande à l'utilisateur la taille du côté du carré (un nombre impair), puis génère ce motif de cadres imbriqués.
+
+                    <br><br><strong>Exemple pour n = 9 :</strong>
                     <pre style="color: #4caf50; margin: 10px 0; font-size: 0.9em;">+ + + + + + + + +
 + . . . . . . . +
 + . + + + + + . +
@@ -806,6 +810,24 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
 + . + + + + + . +
 + . . . . . . . +
 + + + + + + + + +</pre>
+
+                    <strong>Exemple pour n = 5 :</strong>
+                    <pre style="color: #4caf50; margin: 10px 0; font-size: 0.9em;">+ + + + +
++ . . . +
++ . + . +
++ . . . +
++ + + + +</pre>
+
+                    <strong>Exemple pour n = 7 :</strong>
+                    <pre style="color: #4caf50; margin: 10px 0; font-size: 0.9em;">+ + + + + + +
++ . . . . . +
++ . + + + . +
++ . + . + . +
++ . + + + . +
++ . . . . . +
++ + + + + + +</pre>
+
+                    <br><strong style="color: #ff6b6b;">Défi :</strong> Ton programme doit fonctionner pour n'importe quelle taille impaire (5, 7, 9, 11, 13...).
                 </div>
             </div>
 
