@@ -473,92 +473,537 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
             <div class="section-text">
                 Entraînez-vous avec ces exercices sur les chaînes de caractères !
             </div>
+            <div class="exercises-grid">
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Moyen</div>
+                    <div class="exercise-title">Extraire avec le slicing</div>
+                    <div class="exercise-desc">
+                        Soit la chaîne : <code>phrase = "Bienvenue en Python"</code><br>
+                        Écris le code pour extraire et afficher différentes parties de cette chaîne en utilisant le slicing.
+                    </div>
 
-            <div style="
-                background: #1e1e1e;
-                border: 2px solid #4caf50;
-                border-radius: 12px;
-                padding: 30px;
-                margin: 30px 0;
-                font-family: 'JetBrains Mono', monospace;
-            ">
-                <div style="color: #4caf50; font-size: 1.3em; margin-bottom: 20px; text-align: center;">
-                    ═══════════════════════════════════════
-                    <br>EXERCICES : LES CHAÎNES DE CARACTÈRES
-                    <br>═══════════════════════════════════════
-                </div>
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Trouver les indices pour extraire le mot "Bienvenue"</li>
+                            <li>Trouver les indices pour extraire le mot "Python"</li>
+                            <li>Extraire les 3 premiers caractères</li>
+                            <li>Extraire les 3 derniers caractères</li>
+                        </ol>
+                    </div>
 
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 1 :</span> Extraire avec le slicing
-                </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Soit la chaîne : <code>phrase = "Bienvenue en Python"</code>
-                    <br>Écris le code pour extraire et afficher :
-                    <br>• Le mot "Bienvenue"
-                    <br>• Le mot "Python"
-                    <br>• Les 3 premiers caractères
-                    <br>• Les 3 derniers caractères
-                </div>
-
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 2 :</span> Compter le nombre de "a"
-                </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Écris un programme qui compte combien de fois la lettre "a" apparaît dans une phrase.
-                    <br>Exemple : <code>phrase = "La banane parfaitement jaune"</code> → Affiche 6
-                </div>
-
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 3 :</span> Compter les voyelles
-                </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Écris un programme qui compte le nombre total de voyelles (a, e, i, o, u) dans une phrase.
-                    <br>Exemple : <code>phrase = "Bonjour tout le monde"</code> → Affiche 8
-                </div>
-
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 4 :</span> Inverser une chaîne
-                </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Écris un programme qui inverse une chaîne de caractères.
-                    <br>Exemple : <code>mot = "PYTHON"</code> → Affiche "NOHTYP"
-                </div>
-
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 5 :</span> Premier et dernier
-                </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Soit la chaîne : <code>ville = "Paris"</code>
-                    <br>Afficher :
-                    <br>• La première lettre
-                    <br>• La dernière lettre
-                    <br>• Le résultat de la concaténation des deux
-                    <br>Résultat attendu : <code>Première lettre : P</code>, <code>Dernière lettre : s</code>, <code>Combinaison : Ps</code>
-                </div>
-
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 6 :</span> Afficher avec des espaces
-                </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Écris un programme qui affiche ton prénom avec des espaces entre chaque lettre.
-                    <br>Exemple : "MARIE" → "M A R I E"
-                </div>
-
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 7 :</span> Extraire le milieu
-                </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Soit la chaîne : <code>mot = "ORDINATEUR"</code>
-                    <br>Extrait les 4 caractères du milieu (de l'indice 3 à 6 inclus).
-                    <br>Résultat attendu : INAT
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6p_1')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6p_1" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Le slicing utilise <code>[début:fin]</code>. Pour les premiers caractères, omettez le début : <code>[:3]</code>. Pour les derniers, utilisez des indices négatifs : <code>[-3:]</code>.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        phrase = "Bienvenue en Python"<br>
+                        >>> print(phrase[...])  # Trouver les bons indices<br>
+                        Bienvenue<br>
+                        >>> print(phrase[...])  # Trouver les bons indices<br>
+                        Python<br>
+                        >>> print(phrase[...])  # Trouver les bons indices<br>
+                        Bie<br>
+                        >>> print(phrase[...])  # Trouver les bons indices<br>
+                        hon
+                    </div>
                 </div>
 
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 8 :</span> Vérifier un mot de passe
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Moyen</div>
+                    <div class="exercise-title">Compter le nombre de "a"</div>
+                    <div class="exercise-desc">
+                        Écris un programme qui compte combien de fois la lettre "a" apparaît dans une phrase donnée. Tu dois coder la logique toi-même avec une boucle.
+                    </div>
+
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Créer une variable <code>phrase = "La banane parfaitement jaune"</code></li>
+                            <li>Créer un compteur initialisé à 0</li>
+                            <li>Parcourir chaque caractère avec <code>for lettre in phrase:</code></li>
+                            <li>Si le caractère est "a", incrémenter le compteur</li>
+                            <li>Afficher le résultat</li>
+                        </ol>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6p_2')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6p_2" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Créez un compteur <code>nb_a = 0</code>, puis utilisez <code>for lettre in phrase:</code> et <code>if lettre == "a":</code> pour incrémenter le compteur.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        phrase = "La banane parfaitement jaune"<br>
+                        >>> # Votre code ici<br>
+                        Le nombre de 'a' est : 6
+                    </div>
                 </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Écris un programme qui vérifie si un mot de passe contient le caractère "@" ET a au moins 8 caractères.
-                    <br>Exemple : <code>mot_de_passe = "Secure@123"</code> → Affiche "Mot de passe valide"
+
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Moyen</div>
+                    <div class="exercise-title">Compter les voyelles</div>
+                    <div class="exercise-desc">
+                        Écris un programme qui compte le nombre total de voyelles (a, e, i, o, u) dans une phrase.
+                    </div>
+
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Créer une variable <code>phrase = "Bonjour tout le monde"</code></li>
+                            <li>Créer un compteur initialisé à 0</li>
+                            <li>Parcourir chaque lettre avec <code>for lettre in phrase:</code></li>
+                            <li>Si la lettre est une voyelle, incrémenter le compteur</li>
+                        </ol>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6p_3')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6p_3" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Utilisez <code>if lettre in "aeiouAEIOU":</code> pour vérifier si c'est une voyelle.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        phrase = "Bonjour tout le monde"<br>
+                        >>> # Votre code ici<br>
+                        Le nombre de voyelles est : 8
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Moyen</div>
+                    <div class="exercise-title">Inverser une chaîne</div>
+                    <div class="exercise-desc">
+                        Écris un programme qui inverse une chaîne de caractères. Tu dois coder la logique toi-même avec une boucle.
+                    </div>
+
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Créer une variable <code>mot = "PYTHON"</code></li>
+                            <li>Créer une variable vide pour stocker le résultat</li>
+                            <li>Parcourir le mot à l'envers avec une boucle</li>
+                            <li>Construire le mot inversé caractère par caractère</li>
+                            <li>Afficher le résultat</li>
+                        </ol>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6p_4')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6p_4" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Créez <code>mot_inverse = ""</code>, puis utilisez <code>for lettre in mot:</code> et ajoutez chaque lettre au début avec <code>mot_inverse = lettre + mot_inverse</code>.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        mot = "PYTHON"<br>
+                        >>> # Votre code ici<br>
+                        NOHTYP
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Facile</div>
+                    <div class="exercise-title">Premier et dernier</div>
+                    <div class="exercise-desc">
+                        Soit la chaîne <code>ville = "Paris"</code>. Affiche la première lettre, la dernière lettre, et leur concaténation.
+                    </div>
+
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Créer la variable <code>ville = "Paris"</code></li>
+                            <li>Afficher la première lettre</li>
+                            <li>Afficher la dernière lettre</li>
+                            <li>Afficher la combinaison des deux lettres</li>
+                        </ol>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6p_5')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6p_5" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> L'indice <code>0</code> donne le premier caractère, <code>-1</code> donne le dernier. Utilisez <code>+</code> pour concaténer.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        ville = "Paris"<br>
+                        >>> # Votre code ici<br>
+                        Première lettre : P<br>
+                        Dernière lettre : s<br>
+                        Combinaison : Ps
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Moyen</div>
+                    <div class="exercise-title">Afficher avec des espaces</div>
+                    <div class="exercise-desc">
+                        Écris un programme qui affiche un prénom avec des espaces entre chaque lettre. Tu dois coder la logique toi-même avec une boucle.
+                    </div>
+
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Créer une variable <code>prenom = "MARIE"</code></li>
+                            <li>Créer une variable vide pour le résultat</li>
+                            <li>Utiliser une boucle pour parcourir chaque lettre</li>
+                            <li>Ajouter chaque lettre suivie d'un espace au résultat</li>
+                            <li>Afficher le résultat (en supprimant l'espace final si besoin)</li>
+                        </ol>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6p_6')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6p_6" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Créez <code>resultat = ""</code>, puis dans la boucle : <code>resultat += lettre + " "</code>. Utilisez <code>.strip()</code> pour enlever l'espace final.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        prenom = "MARIE"<br>
+                        >>> # Votre code ici<br>
+                        M A R I E
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Moyen</div>
+                    <div class="exercise-title">Extraire le milieu</div>
+                    <div class="exercise-desc">
+                        Soit la chaîne <code>mot = "ORDINATEUR"</code>. Extrait les 4 caractères du milieu (de l'indice 3 à 6 inclus).
+                    </div>
+
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Créer la variable <code>mot = "ORDINATEUR"</code></li>
+                            <li>Trouver les bons indices pour extraire de l'indice 3 à 6 inclus</li>
+                            <li>Utiliser le slicing pour extraire cette portion</li>
+                            <li>Afficher le résultat</li>
+                        </ol>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6p_7')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6p_7" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> L'indice de fin dans le slicing est exclusif. Pour obtenir jusqu'à l'indice 6 inclus, il faut mettre 7 comme fin.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        mot = "ORDINATEUR"<br>
+                        >>> print(mot[...])  # Trouver les bons indices<br>
+                        INAT
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Moyen</div>
+                    <div class="exercise-title">Vérifier un mot de passe</div>
+                    <div class="exercise-desc">
+                        Écris un programme qui vérifie si un mot de passe contient le caractère "@" ET a au moins 8 caractères.
+                    </div>
+
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Créer une variable <code>mot_de_passe = "Secure@123"</code></li>
+                            <li>Vérifier si "@" est présent dans le mot de passe</li>
+                            <li>Vérifier que le mot de passe a au moins 8 caractères</li>
+                            <li>Afficher "Mot de passe valide" si les deux conditions sont vraies</li>
+                        </ol>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6p_8')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6p_8" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Utilisez <code>in</code> pour vérifier la présence du caractère, <code>len()</code> pour la longueur, et <code>and</code> pour combiner les conditions.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        mot_de_passe = "Secure@123"<br>
+                        >>> # Votre code ici<br>
+                        Mot de passe valide
+                    </div>
                 </div>
             </div>
 
@@ -570,7 +1015,7 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                 padding: 25px;
                 margin: 30px 0;
             ">
-                <h3 style="color: #667eea; margin-bottom: 20px;">📊 Résumé des Actions</h3>
+                <h3 style="color: #667eea; margin-bottom: 20px;">Résumé des Actions</h3>
                 <table style="width: 100%; color: #fff; border-collapse: collapse;">
                     <thead>
                         <tr style="border-bottom: 2px solid #667eea;">
@@ -622,7 +1067,7 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                 margin: 25px 0;
                 border-radius: 8px;
             ">
-                <div style="color: #ffd700; font-weight: bold; margin-bottom: 10px;">💡 Astuces :</div>
+                <div style="color: #ffd700; font-weight: bold; margin-bottom: 10px;">Astuces :</div>
                 <div style="color: #fff; line-height: 1.8; font-size: 0.95em;">
                     • Utilisez <code>len()</code> pour connaître la longueur
                     <br>• <code>[::-1]</code> inverse une chaîne
@@ -643,213 +1088,501 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
             <div class="section-text">
                 Passez au niveau supérieur avec ces exercices avancés sur les chaînes de caractères !
             </div>
-
-            <div style="
-                background: #1e1e1e;
-                border: 2px solid #f093fb;
-                border-radius: 12px;
-                padding: 30px;
-                margin: 30px 0;
-                font-family: 'JetBrains Mono', monospace;
-            ">
-                <div style="color: #f093fb; font-size: 1.3em; margin-bottom: 20px; text-align: center;">
-                    ═══════════════════════════════════════
-                    <br>EXERCICES AVANCÉS : CHAÎNES DE CARACTÈRES
-                    <br>═══════════════════════════════════════
-                </div>
-
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 1 :</span> Fonction palindrome
-                </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Écris une fonction <code>est_palindrome(mot)</code> qui vérifie si un mot est un palindrome.
-                    <br>Un palindrome est un mot qui se lit de la même façon de gauche à droite et de droite à gauche.
-                    <br><br><strong>Exemples :</strong>
-                    <br>• <code>est_palindrome("kayak")</code> → True
-                    <br>• <code>est_palindrome("radar")</code> → True
-                    <br>• <code>est_palindrome("python")</code> → False
-                    <br><br><strong>Bonus :</strong> Ignore les espaces et la casse (majuscules/minuscules)
-                    <br>• <code>est_palindrome("Elu par cette crapule")</code> → True
-                </div>
-
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 2 :</span> Enlever les espaces d'une chaîne
-                </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Écris une fonction <code>enlever_espaces(texte)</code> qui supprime tous les espaces d'une chaîne.
-                    <br><br><strong>Exemples :</strong>
-                    <br>• <code>enlever_espaces("Bonjour tout le monde")</code> → "Bonjourtoutlemonde"
-                    <br>• <code>enlever_espaces("Python  est  génial")</code> → "Pythonestgénial"
-                </div>
-
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 3 :</span> Carré en ASCII art (8×8)
-                </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Crée un programme qui affiche un carré 8×8 en utilisant le caractère dièse (#).
-                    <br><br><strong>Résultat attendu :</strong>
-                    <pre style="color: #4caf50; margin: 10px 0;">########
-########
-########
-########
-########
-########
-########
-########</pre>
-                    <strong>Indice :</strong> Utilise une boucle qui se répète 8 fois et affiche "#" * 8
-                </div>
-
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 4 :</span> AlTeRnEz MiNuScUlE eT mAjUsCuLe [OBLIGATOIRE]
-                </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    <strong style="color: #ff6b6b;">⚠️ EXERCICE OBLIGATOIRE</strong>
-                    <br><br>Écris une fonction <code>alterner_casse(texte)</code> qui alterne entre majuscules et minuscules.
-                    <br>• Les caractères aux positions paires (0, 2, 4...) doivent être en minuscules
-                    <br>• Les caractères aux positions impaires (1, 3, 5...) doivent être en majuscules
-                    <br><br><strong>Exemples :</strong>
-                    <br>• <code>alterner_casse("python")</code> → "pYtHoN"
-                    <br>• <code>alterner_casse("bonjour")</code> → "bOnJoUr"
-                    <br>• <code>alterner_casse("programmation")</code> → "pRoGrAmMaTiOn"
-                    <br><br><strong>Indices :</strong>
-                    <br>• Utilise une boucle for avec <code>enumerate()</code> pour avoir l'indice
-                    <br>• Utilise <code>.lower()</code> et <code>.upper()</code>
-                    <br>• Vérifie si l'indice est pair ou impair avec <code>%</code>
-                </div>
-
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 5 :</span> Est-ce un pangramme ?
-                </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Un <strong>pangramme</strong> est une phrase qui contient toutes les lettres de l'alphabet.
-                    <br><br>Écris une fonction <code>est_pangramme(phrase)</code> qui vérifie si une phrase est un pangramme.
-                    <br><br><strong>Exemples de pangrammes en français :</strong>
-                    <br>• "Portez ce vieux whisky au juge blond qui fume"
-                    <br>• "Voyez le brick géant que j'examine près du wharf"
-                    <br><br><strong>Indices :</strong>
-                    <br>• Crée une variable avec toutes les lettres : <code>alphabet = "abcdefghijklmnopqrstuvwxyz"</code>
-                    <br>• Convertis la phrase en minuscules avec <code>.lower()</code>
-                    <br>• Parcours chaque lettre de l'alphabet et vérifie si elle est dans la phrase
-                    <br>• Si toutes les lettres sont présentes, c'est un pangramme !
-                    <br><br><strong>Résultat attendu :</strong>
-                    <br>• <code>est_pangramme("Portez ce vieux whisky au juge blond qui fume")</code> → True
-                    <br>• <code>est_pangramme("Python est génial")</code> → False
-                </div>
-
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 6 :</span> Détecteur de langue 🌍
-                </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    Crée un programme qui détecte si un texte est en <strong>français</strong> ou en <strong>anglais</strong> en analysant la fréquence d'apparition de certaines lettres.
-
-                    <br><br><div style="background: rgba(74, 158, 255, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid #4a9eff;">
-                        <strong style="color: #4a9eff;">📊 Fréquence d'apparition des lettres</strong>
-                        <br><br>Chaque langue a ses propres statistiques !
-                        <a href="https://fr.wikipedia.org/wiki/Fr%C3%A9quence_d%27apparition_des_lettres"
-                           target="_blank"
-                           style="color: #ffd700; text-decoration: underline;">
-                            📖 Voir l'article complet sur Wikipédia
-                        </a>
-
-                        <br><br><strong>Fréquences comparées :</strong>
-                        <br><table style="font-family: monospace; font-size: 0.9em; margin: 10px 0;">
-                            <tr style="color: #ffd700;">
-                                <td style="padding: 5px;"><strong>Lettre</strong></td>
-                                <td style="padding: 5px;"><strong>Anglais</strong></td>
-                                <td style="padding: 5px;"><strong>Français</strong></td>
-                            </tr>
-                            <tr style="color: #4caf50;">
-                                <td style="padding: 3px;">e</td>
-                                <td style="padding: 3px;">12.70%</td>
-                                <td style="padding: 3px;">14.72%</td>
-                            </tr>
-                            <tr style="color: #81d4fa;">
-                                <td style="padding: 3px;">a</td>
-                                <td style="padding: 3px;">8.17%</td>
-                                <td style="padding: 3px;">7.64%</td>
-                            </tr>
-                            <tr style="color: #4caf50;">
-                                <td style="padding: 3px;">t</td>
-                                <td style="padding: 3px;">9.06%</td>
-                                <td style="padding: 3px;">7.24%</td>
-                            </tr>
-                            <tr style="color: #81d4fa;">
-                                <td style="padding: 3px;">s</td>
-                                <td style="padding: 3px;">6.33%</td>
-                                <td style="padding: 3px;">7.94%</td>
-                            </tr>
-                            <tr style="color: #ff6b6b;">
-                                <td style="padding: 3px;"><strong>w</strong></td>
-                                <td style="padding: 3px;"><strong>2.36%</strong></td>
-                                <td style="padding: 3px;"><strong>0.11%</strong></td>
-                            </tr>
-                        </table>
-
-                        <br><strong style="color: #ffd700;">🔍 Indices clés :</strong>
-                        <br>• <strong>Français :</strong> e très fréquent (14.72%), accents (é, è, à, ê, ç), w très rare (0.11%)
-                        <br>• <strong>Anglais :</strong> t très fréquent (9.06%), w courant (2.36%), pas d'accents
+            <div class="exercises-grid">
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Avancé</div>
+                    <div class="exercise-title">Fonction palindrome</div>
+                    <div class="exercise-desc">
+                        Écris une fonction <code>est_palindrome(mot)</code> qui vérifie si un mot est un palindrome. Un palindrome est un mot qui se lit de la même façon de gauche à droite et de droite à gauche.
                     </div>
 
-                    <br><br><strong>📝 Ta mission :</strong>
-                    <br>Écris une fonction <code>detecter_langue(texte)</code> qui retourne "français" ou "anglais"
-                    <br><br><strong>💡 Stratégie suggérée :</strong>
-                    <br>1. Convertis le texte en minuscules avec <code>.lower()</code>
-                    <br>2. Compte le nombre total de lettres avec <code>len()</code>
-                    <br>3. <strong>Méthode simple :</strong> Cherche les accents français
-                    <br>&nbsp;&nbsp;&nbsp;• Si tu trouves 'é', 'è', 'à', 'ê', 'ç' → c'est du français
-                    <br>&nbsp;&nbsp;&nbsp;• Sinon, c'est probablement de l'anglais
-                    <br>4. <strong>Méthode avancée :</strong> Compare les fréquences (utilise <code>.count()</code>)
-                    <br>&nbsp;&nbsp;&nbsp;• Compte le 'w' : si > 1.5% du texte → anglais, si < 0.5% → français
-                    <br>&nbsp;&nbsp;&nbsp;• Compte le 'h' : si > 5% → anglais, si < 2% → français
-                    <br>5. <strong>Pour les experts :</strong> Calcule un "score de langue" basé sur plusieurs lettres
-                    <br><br><strong>Exemples de test :</strong>
-                    <br>• <code>detecter_langue("Bonjour, comment allez-vous aujourd'hui ?")</code> → "français"
-                    <br>• <code>detecter_langue("Hello, how are you today?")</code> → "anglais"
-                    <br>• <code>detecter_langue("C'est une très belle journée ensoleillée")</code> → "français"
-                    <br>• <code>detecter_langue("The weather is wonderful today")</code> → "anglais"
-                    <br><br><strong>🚀 Bonus pour les experts :</strong>
-                    <br>• Ajoute la détection de l'espagnol (cherche 'ñ', '¿', '¡')
-                    <br>• Calcule la fréquence exacte du 'e' et compare avec les statistiques
-                    <br>• Affiche un pourcentage de confiance (ex: "français à 87%")
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Créer une fonction qui prend un mot en paramètre</li>
+                            <li>Inverser le mot avec <code>mot[::-1]</code></li>
+                            <li>Comparer le mot original avec le mot inversé</li>
+                            <li>Retourner True si identiques, False sinon</li>
+                        </ol>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6_1')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6_1" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Utilisez <code>mot[::-1]</code> pour inverser. Pour le bonus, utilisez <code>.lower().replace(" ", "")</code> pour normaliser avant la comparaison.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        >>> est_palindrome("kayak")<br>
+                        True<br>
+                        >>> est_palindrome("radar")<br>
+                        True<br>
+                        >>> est_palindrome("python")<br>
+                        False<br>
+                        >>> est_palindrome("Elu par cette crapule")  # Bonus<br>
+                        True
+                    </div>
                 </div>
 
-                <div style="color: #81d4fa; margin: 20px 0;">
-                    <span style="color: #ffd700;">▸ EXO 7 :</span> Motif carré complexe [EXTRA DUR] 💀
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Facile</div>
+                    <div class="exercise-title">Enlever les espaces d'une chaîne</div>
+                    <div class="exercise-desc">
+                        Écris une fonction <code>enlever_espaces(texte)</code> qui supprime tous les espaces d'une chaîne de caractères.
+                    </div>
+
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Créer une fonction avec un paramètre <code>texte</code></li>
+                            <li>Construire une nouvelle chaîne sans espaces</li>
+                            <li>Utiliser une boucle <code>for</code> pour parcourir chaque caractère</li>
+                            <li>Ajouter le caractère seulement si ce n'est pas un espace</li>
+                        </ol>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6_2')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6_2" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Créez une variable vide <code>resultat = ""</code> puis parcourez avec <code>for caractere in texte:</code>. Si <code>caractere != " "</code>, ajoutez-le au résultat.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        >>> enlever_espaces("Bonjour tout le monde")<br>
+                        'Bonjourtoutlemonde'<br>
+                        >>> enlever_espaces("Python  est  génial")<br>
+                        'Pythonestgénial'
+                    </div>
                 </div>
-                <div style="color: #fff; margin-left: 20px; line-height: 1.8;">
-                    <strong style="color: #ff6b6b;">⚠️ EXERCICE TRÈS DIFFICILE - AUCUN INDICE</strong>
 
-                    <br><br><strong>📝 Consigne :</strong>
-                    <br>Demande à l'utilisateur la taille du côté du carré (un nombre impair), puis génère ce motif de cadres imbriqués.
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Facile</div>
+                    <div class="exercise-title">Carré en ASCII art (8×8)</div>
+                    <div class="exercise-desc">
+                        Crée un programme qui affiche un carré 8×8 en utilisant le caractère dièse (#).
+                    </div>
 
-                    <br><br><strong>Exemple pour n = 9 :</strong>
-                    <pre style="color: #4caf50; margin: 10px 0; font-size: 0.9em;">+ + + + + + + + +
-+ . . . . . . . +
-+ . + + + + + . +
-+ . + . . . + . +
-+ . + . + . + . +
-+ . + . . . + . +
-+ . + + + + + . +
-+ . . . . . . . +
-+ + + + + + + + +</pre>
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Créer une boucle <code>for</code> qui se répète 8 fois</li>
+                            <li>À chaque itération, afficher une ligne de 8 dièses</li>
+                            <li>Utiliser <code>print("#" * 8)</code> pour créer une ligne</li>
+                        </ol>
+                    </div>
 
-                    <strong>Exemple pour n = 5 :</strong>
-                    <pre style="color: #4caf50; margin: 10px 0; font-size: 0.9em;">+ + + + +
-+ . . . +
-+ . + . +
-+ . . . +
-+ + + + +</pre>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6_3')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6_3" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Utilisez <code>for i in range(8):</code> puis <code>print("#" * 8)</code> à l'intérieur de la boucle.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        ########<br>
+                        ########<br>
+                        ########<br>
+                        ########<br>
+                        ########<br>
+                        ########<br>
+                        ########<br>
+                        ########
+                    </div>
+                </div>
 
-                    <strong>Exemple pour n = 7 :</strong>
-                    <pre style="color: #4caf50; margin: 10px 0; font-size: 0.9em;">+ + + + + + +
-+ . . . . . +
-+ . + + + . +
-+ . + . + . +
-+ . + + + . +
-+ . . . . . +
-+ + + + + + +</pre>
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Moyen</div>
+                    <div class="exercise-title">AlTeRnEz MiNuScUlE eT mAjUsCuLe</div>
+                    <div class="exercise-desc">
+                        <strong style="color: #ff6b6b;">EXERCICE OBLIGATOIRE</strong><br><br>
+                        Écris une fonction <code>alterner_casse(texte)</code> qui alterne entre majuscules et minuscules. Les caractères aux positions paires (0, 2, 4...) doivent être en minuscules, et les caractères aux positions impaires (1, 3, 5...) doivent être en majuscules.
+                    </div>
 
-                    <br><strong style="color: #ff6b6b;">Défi :</strong> Ton programme doit fonctionner pour n'importe quelle taille impaire (5, 7, 9, 11, 13...).
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Créer une variable vide pour stocker le résultat</li>
+                            <li>Utiliser <code>enumerate(texte)</code> pour obtenir l'indice et le caractère</li>
+                            <li>Vérifier si l'indice est pair (<code>indice % 2 == 0</code>) ou impair</li>
+                            <li>Appliquer <code>.lower()</code> pour les indices pairs, <code>.upper()</code> pour les impairs</li>
+                        </ol>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6_4')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6_4" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Utilisez <code>for indice, caractere in enumerate(texte):</code> puis testez <code>if indice % 2 == 0:</code> pour appliquer la bonne transformation.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        >>> alterner_casse("python")<br>
+                        'pYtHoN'<br>
+                        >>> alterner_casse("bonjour")<br>
+                        'bOnJoUr'<br>
+                        >>> alterner_casse("programmation")<br>
+                        'pRoGrAmMaTiOn'
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Avancé</div>
+                    <div class="exercise-title">Est-ce un pangramme ?</div>
+                    <div class="exercise-desc">
+                        Un <strong>pangramme</strong> est une phrase qui contient toutes les lettres de l'alphabet. Écris une fonction <code>est_pangramme(phrase)</code> qui vérifie si une phrase est un pangramme.
+                    </div>
+
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Créer une variable <code>alphabet = "abcdefghijklmnopqrstuvwxyz"</code></li>
+                            <li>Convertir la phrase en minuscules avec <code>.lower()</code></li>
+                            <li>Parcourir chaque lettre de l'alphabet</li>
+                            <li>Vérifier si chaque lettre est présente dans la phrase avec <code>in</code></li>
+                        </ol>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6_5')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6_5" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Parcourez l'alphabet avec <code>for lettre in alphabet:</code> et retournez False dès qu'une lettre n'est pas dans la phrase. Si toutes sont présentes, retournez True.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        >>> est_pangramme("Portez ce vieux whisky au juge blond qui fume")<br>
+                        True<br>
+                        >>> est_pangramme("Voyez le brick géant que j'examine près du wharf")<br>
+                        True<br>
+                        >>> est_pangramme("Python est génial")<br>
+                        False
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Expert</div>
+                    <div class="exercise-title">Détecteur de langue</div>
+                    <div class="exercise-desc">
+                        Crée une fonction <code>detecter_langue(texte)</code> qui détecte si un texte est en <strong>français</strong> ou en <strong>anglais</strong> en analysant la fréquence d'apparition de certaines lettres.
+                        <br><br>
+                        <div style="background: rgba(74, 158, 255, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid #4a9eff; margin-top: 10px;">
+                            <strong style="color: #4a9eff;">Fréquence d'apparition</strong><br>
+                            <a href="https://fr.wikipedia.org/wiki/Fr%C3%A9quence_d%27apparition_des_lettres" target="_blank" style="color: #ffd700; text-decoration: underline;">Voir sur Wikipédia</a>
+                            <br><br>
+                            <table style="font-family: monospace; font-size: 0.85em;">
+                                <tr style="color: #ffd700;">
+                                    <td style="padding: 3px;"><strong>Lettre</strong></td>
+                                    <td style="padding: 3px;"><strong>Anglais</strong></td>
+                                    <td style="padding: 3px;"><strong>Français</strong></td>
+                                </tr>
+                                <tr style="color: #4caf50;">
+                                    <td>e</td><td>12.70%</td><td>14.72%</td>
+                                </tr>
+                                <tr style="color: #ff6b6b;">
+                                    <td><strong>w</strong></td><td><strong>2.36%</strong></td><td><strong>0.11%</strong></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Convertir le texte en minuscules</li>
+                            <li><strong>Méthode simple :</strong> Chercher les accents français (é, è, à, ê, ç)</li>
+                            <li><strong>Méthode avancée :</strong> Calculer la fréquence du 'w' avec <code>.count()</code></li>
+                            <li>Retourner "français" ou "anglais" selon les critères détectés</li>
+                        </ol>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button class="hint-button" onclick="toggleHint('hint6_6')" style="
+                            background: rgba(255, 215, 0, 0.2);
+                            border: 2px solid rgba(255, 215, 0, 0.4);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: #ffd700;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            " onmouseover="this.style.background='rgba(255,215,0,0.3)'" onmouseout="this.style.background='rgba(255,215,0,0.2)'">
+                            💡 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div id="hint6_6" class="hint-content" style="
+                        display: none;
+                        background: rgba(255, 215, 0, 0.1);
+                        border: 2px solid rgba(255, 215, 0, 0.3);
+                        border-radius: 12px;
+                        padding: 15px;
+                        margin-top: 15px;
+                        color: #ffd700;
+                        font-style: italic;
+                    ">
+                        🔍 <strong>Indice :</strong> Pour la méthode simple, utilisez <code>if 'é' in texte or 'è' in texte:</code>. Pour la méthode avancée, calculez <code>freq_w = (texte.count('w') / len(texte)) * 100</code>.
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution :</strong><br>
+                        >>> detecter_langue("Bonjour, comment allez-vous aujourd'hui ?")<br>
+                        'français'<br>
+                        >>> detecter_langue("Hello, how are you today?")<br>
+                        'anglais'<br>
+                        >>> detecter_langue("C'est une très belle journée ensoleillée")<br>
+                        'français'
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="exercise-difficulty">Expert</div>
+                    <div class="exercise-title">Motif carré complexe</div>
+                    <div class="exercise-desc">
+                        <strong style="color: #ff6b6b;">EXERCICE TRÈS DIFFICILE - AUCUN INDICE</strong><br><br>
+                        Demande à l'utilisateur la taille du côté du carré (un nombre impair), puis génère un motif de cadres imbriqués avec les caractères + et . (point).
+                    </div>
+
+                    <div class="exercise-steps">
+                        <strong>Ce qu'il faut faire :</strong>
+                        <ol>
+                            <li>Demander la taille du carré (nombre impair : 5, 7, 9, 11...)</li>
+                            <li>Générer le motif avec des cadres imbriqués</li>
+                            <li>Utiliser le caractère + pour les bordures des cadres</li>
+                            <li>Utiliser le caractère . (point) pour l'intérieur</li>
+                        </ol>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Aucun indice pour cet exercice">
+                            🔒 Indice
+                        </button>
+                        <button style="
+                            background: rgba(76, 175, 80, 0.1);
+                            border: 2px solid rgba(76, 175, 80, 0.3);
+                            border-radius: 8px;
+                            padding: 8px 16px;
+                            color: rgba(76, 175, 80, 0.6);
+                            cursor: not-allowed;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            opacity: 0.7;
+                        " title="Solution verrouillée">
+                            🔒 Solution
+                        </button>
+                    </div>
+                    <div class="console-output" style="margin-top: 15px;">
+                        <strong>$ Exemple d'exécution (n = 5) :</strong><br>
+                        Entrez la taille du carré (nombre impair) : 5<br>
+                        + + + + +<br>
+                        + . . . +<br>
+                        + . + . +<br>
+                        + . . . +<br>
+                        + + + + +<br>
+                        <br>
+                        <strong>$ Exemple d'exécution (n = 7) :</strong><br>
+                        Entrez la taille du carré (nombre impair) : 7<br>
+                        + + + + + + +<br>
+                        + . . . . . +<br>
+                        + . + + + . +<br>
+                        + . + . + . +<br>
+                        + . + + + . +<br>
+                        + . . . . . +<br>
+                        + + + + + + +
+                    </div>
                 </div>
             </div>
 
@@ -861,7 +1594,7 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                 padding: 25px;
                 margin: 30px 0;
             ">
-                <h3 style="color: #ff6b6b; margin-bottom: 20px;">🔥 Défi Expert</h3>
+                <h3 style="color: #ff6b6b; margin-bottom: 20px;">Défi Expert</h3>
                 <div style="color: #fff; line-height: 1.8;">
                     <strong>Combine plusieurs exercices !</strong>
                     <br><br>Crée une fonction <code>analyser_texte(texte)</code> qui affiche :
@@ -882,7 +1615,7 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                 margin: 25px 0;
                 border-radius: 8px;
             ">
-                <div style="color: #f093fb; font-weight: bold; margin-bottom: 10px;">💡 Astuces pour la Partie 2 :</div>
+                <div style="color: #f093fb; font-weight: bold; margin-bottom: 10px;">Astuces pour la Partie 2 :</div>
                 <div style="color: #fff; line-height: 1.8; font-size: 0.95em;">
                     • <code>enumerate(chaine)</code> donne l'indice ET le caractère
                     <br>• <code>indice % 2 == 0</code> vérifie si un nombre est pair
