@@ -751,21 +751,43 @@ print(texte.replace(&quot;ha&quot;, &quot;hi&quot;))\`)">🐍 Charger</button>
                             📖 Voir l'article complet sur Wikipédia
                         </a>
 
-                        <br><br><strong>Top 10 des lettres en français :</strong> (corpus Wikipédia)
-                        <br><span style="font-family: monospace; color: #4caf50;">
-                        1. e = 12.10%  │  2. a = 7.11%   │  3. i = 6.59%   │  4. s = 6.51%   │  5. n = 6.39%
-                        <br>6. r = 6.07%   │  7. t = 5.92%   │  8. o = 5.02%   │  9. l = 4.96%   │ 10. u = 4.49%
-                        </span>
+                        <br><br><strong>Fréquences comparées :</strong>
+                        <br><table style="font-family: monospace; font-size: 0.9em; margin: 10px 0;">
+                            <tr style="color: #ffd700;">
+                                <td style="padding: 5px;"><strong>Lettre</strong></td>
+                                <td style="padding: 5px;"><strong>Anglais</strong></td>
+                                <td style="padding: 5px;"><strong>Français</strong></td>
+                            </tr>
+                            <tr style="color: #4caf50;">
+                                <td style="padding: 3px;">e</td>
+                                <td style="padding: 3px;">12.70%</td>
+                                <td style="padding: 3px;">14.72%</td>
+                            </tr>
+                            <tr style="color: #81d4fa;">
+                                <td style="padding: 3px;">a</td>
+                                <td style="padding: 3px;">8.17%</td>
+                                <td style="padding: 3px;">7.64%</td>
+                            </tr>
+                            <tr style="color: #4caf50;">
+                                <td style="padding: 3px;">t</td>
+                                <td style="padding: 3px;">9.06%</td>
+                                <td style="padding: 3px;">7.24%</td>
+                            </tr>
+                            <tr style="color: #81d4fa;">
+                                <td style="padding: 3px;">s</td>
+                                <td style="padding: 3px;">6.33%</td>
+                                <td style="padding: 3px;">7.94%</td>
+                            </tr>
+                            <tr style="color: #ff6b6b;">
+                                <td style="padding: 3px;"><strong>w</strong></td>
+                                <td style="padding: 3px;"><strong>2.36%</strong></td>
+                                <td style="padding: 3px;"><strong>0.11%</strong></td>
+                            </tr>
+                        </table>
 
-                        <br><br><strong>Top 10 des lettres en anglais :</strong>
-                        <br><span style="font-family: monospace; color: #81d4fa;">
-                        1. e = 12.70%  │  2. t = 9.06%   │  3. a = 8.17%   │  4. o = 7.51%   │  5. i = 6.97%
-                        <br>6. n = 6.75%   │  7. s = 6.33%   │  8. h = 6.09%   │  9. r = 5.99%   │ 10. d = 4.25%
-                        </span>
-
-                        <br><br><strong style="color: #ffd700;">🔍 Indices clés :</strong>
-                        <br>• <strong>Français :</strong> accents (é=1.94%, è=0.31%, à=0.31%), w rare (0.17%)
-                        <br>• <strong>Anglais :</strong> 'w' plus fréquent (~2.36%), pas d'accents, 'h' très présent (6.09%)
+                        <br><strong style="color: #ffd700;">🔍 Indices clés :</strong>
+                        <br>• <strong>Français :</strong> e très fréquent (14.72%), accents (é, è, à, ê, ç), w très rare (0.11%)
+                        <br>• <strong>Anglais :</strong> t très fréquent (9.06%), w courant (2.36%), pas d'accents
                     </div>
 
                     <br><br><strong>📝 Ta mission :</strong>
