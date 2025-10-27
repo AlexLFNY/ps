@@ -75,6 +75,36 @@ export const periods = [
                 module: () => import('./lesson6.js'),
                 dataKey: 'lesson6Data',
                 concepts: ['intro', 'len_indexing', 'slicing', 'in_operator', 'for_loop', 'methods', 'exercises', 'exercises_part2']
+            },
+            {
+                id: 7,
+                number: 2,
+                title: "Le Chiffrement de César",
+                subtitle: "Cryptographie simple",
+                description: "Apprenez à chiffrer et déchiffrer des messages avec le code de César",
+                module: () => import('./lesson7.js'),
+                dataKey: 'lesson7Data',
+                concepts: ['intro', 'helper_functions', 'exercises']
+            },
+            {
+                id: 8,
+                number: 3,
+                title: "Le Chiffrement de Vigenère",
+                subtitle: "Le chiffre indéchiffrable",
+                description: "Maîtrisez le code qui a résisté pendant 300 ans avec une clé répétitive",
+                module: () => import('./lesson8.js'),
+                dataKey: 'lesson8Data',
+                concepts: ['intro', 'implementation', 'exercises']
+            },
+            {
+                id: 9,
+                number: 4,
+                title: "Analyse de Fréquence",
+                subtitle: "Détecter les langues et casser les codes",
+                description: "Analysez les fréquences de lettres pour détecter les langues et casser César automatiquement",
+                module: () => import('./lesson9.js'),
+                dataKey: 'lesson9Data',
+                concepts: ['intro', 'counting', 'exercises']
             }
             // Future lessons will be added here
         ]
