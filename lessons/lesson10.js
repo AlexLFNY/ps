@@ -484,43 +484,6 @@ for i in range(len(tentative)):
             </div>
 
             <div class="code-example">
-                <h3 style="color: #ffd700;">Exemple pas à pas</h3>
-                <div class="section-text">
-                    Appliquons l'algorithme avec mot_secret = <code>"ALLEE"</code> et tentative = <code>"ELLES"</code>
-                </div>
-                <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 12px; margin-top: 15px;">
-                    <strong style="color: #4a9eff;">Initialisation :</strong><br>
-                    résultat = [' ', ' ', ' ', ' ', ' ']<br>
-                    disponibles = ['A', 'L', 'L', 'E', 'E']<br>
-                    <br>
-                    <strong style="color: #4caf50;">Premier passage (VERT) :</strong><br>
-                    i=0 : E ≠ A → rien<br>
-                    i=1 : L = L → résultat[1] = 'VERT', disponibles = ['A', 'L', 'E', 'E']<br>
-                    i=2 : L = L → résultat[2] = 'VERT', disponibles = ['A', 'E', 'E']<br>
-                    i=3 : E = E → résultat[3] = 'VERT', disponibles = ['A', 'E']<br>
-                    i=4 : S ≠ E → rien<br>
-                    <br>
-                    Résultat après 1er passage : [' ', 'VERT', 'VERT', 'VERT', ' ']<br>
-                    <br>
-                    <strong style="color: #ffd700;">Deuxième passage (JAUNE/GRIS) :</strong><br>
-                    i=0 : déjà traité ? Non. E dans ['A', 'E'] ? Oui<br>
-                          → résultat[0] = 'JAUNE', disponibles = ['A']<br>
-                    i=1 : déjà traité ? Oui (VERT) → ignorer<br>
-                    i=2 : déjà traité ? Oui (VERT) → ignorer<br>
-                    i=3 : déjà traité ? Oui (VERT) → ignorer<br>
-                    i=4 : déjà traité ? Non. S dans ['A'] ? Non<br>
-                          → résultat[4] = 'GRIS'<br>
-                    <br>
-                    <strong style="color: #fff;">Résultat final :</strong><br>
-                    <span style="background: #ffd700; color: white; padding: 2px 6px; font-weight: bold;"> E </span>
-                    <span style="background: #4caf50; color: white; padding: 2px 6px; font-weight: bold;"> L </span>
-                    <span style="background: #4caf50; color: white; padding: 2px 6px; font-weight: bold;"> L </span>
-                    <span style="background: #4caf50; color: white; padding: 2px 6px; font-weight: bold;"> E </span>
-                    <span style="background: #666; color: white; padding: 2px 6px; font-weight: bold;"> S </span>
-                </div>
-            </div>
-
-            <div class="code-example">
                 <h3 style="color: #ffd700;">Différence avec notre version simple</h3>
                 <div class="section-text">
                     <strong>Notre version simple :</strong>

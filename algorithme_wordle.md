@@ -66,57 +66,6 @@ L'algorithme du vrai Wordle est plus complexe que notre version simple. Il doit 
 
 ---
 
-## Exemple pas à pas
-
-Appliquons l'algorithme avec mot_secret = `"ALLEE"` et tentative = `"ELLES"`
-
-### Initialisation :
-
-```
-résultat = [' ', ' ', ' ', ' ', ' ']
-disponibles = ['A', 'L', 'L', 'E', 'E']
-```
-
-### Premier passage (VERT) :
-
-```
-i=0 : E ≠ A → rien
-i=1 : L = L → résultat[1] = 'VERT', disponibles = ['A', 'L', 'E', 'E']
-i=2 : L = L → résultat[2] = 'VERT', disponibles = ['A', 'E', 'E']
-i=3 : E = E → résultat[3] = 'VERT', disponibles = ['A', 'E']
-i=4 : S ≠ E → rien
-```
-
-**Résultat après 1er passage :** `[' ', 'VERT', 'VERT', 'VERT', ' ']`
-
-### Deuxième passage (JAUNE/GRIS) :
-
-```
-i=0 : déjà traité ? Non. E dans ['A', 'E'] ? Oui
-      → résultat[0] = 'JAUNE', disponibles = ['A']
-
-i=1 : déjà traité ? Oui (VERT) → ignorer
-
-i=2 : déjà traité ? Oui (VERT) → ignorer
-
-i=3 : déjà traité ? Oui (VERT) → ignorer
-
-i=4 : déjà traité ? Non. S dans ['A'] ? Non
-      → résultat[4] = 'GRIS'
-```
-
-### Résultat final :
-
-```
-E : JAUNE (présent mais mal placé)
-L : VERT (bonne position)
-L : VERT (bonne position)
-E : VERT (bonne position)
-S : GRIS (absent)
-```
-
----
-
 ## Implémentation en Python
 
 ```python
