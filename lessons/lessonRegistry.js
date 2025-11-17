@@ -105,6 +105,16 @@ export const periods = [
                 module: () => import('./lesson9.js'),
                 dataKey: 'lesson9Data',
                 concepts: ['intro', 'counting', 'exercises']
+            },
+            {
+                id: 10,
+                number: 5,
+                title: "Mini Wordle en Python",
+                subtitle: "Un jeu de devinettes de mots",
+                description: "Créez votre propre version du jeu Wordle en utilisant les chaînes de caractères",
+                module: () => import('./lesson10.js'),
+                dataKey: 'lesson10Data',
+                concepts: ['intro', 'color_functions', 'concepts', 'algorithm', 'exercises']
             }
             // Future lessons will be added here
         ]
