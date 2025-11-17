@@ -425,11 +425,11 @@ for i in range(len(tentative)):
             ">
                 <div style="color: #4a9eff; font-weight: bold; margin-bottom: 15px;">Problème des lettres répétées</div>
                 <div class="section-text">
-                    Exemple : Mot secret = <code>ALLEE</code>, Tentative = <code>ELLES</code>
+                    Exemple : Mot secret = <code>BELLE</code>, Tentative = <code>ELEVE</code>
                     <br><br>
-                    Le premier <strong>E</strong> de ELLES est à la bonne position (position 3)<br>
-                    Le second <strong>E</strong> de ELLES est présent mais mal placé (il y a un E en position 4 dans ALLEE)<br>
-                    Le troisième <strong>E</strong> de ELLES n'existe plus dans ALLEE (les 2 E ont déjà été utilisés)<br>
+                    Le premier <strong>E</strong> de ELEVE (position 0) est présent mais mal placé → JAUNE<br>
+                    Le deuxième <strong>E</strong> de ELEVE (position 2) n'a plus de correspondance → GRIS<br>
+                    Le troisième <strong>E</strong> de ELEVE (position 4) est à la bonne position → VERT<br>
                     <br>
                     <strong>Règle :</strong> Chaque lettre du mot secret ne peut être "consommée" qu'une seule fois.
                 </div>

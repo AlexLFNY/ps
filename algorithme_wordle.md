@@ -8,11 +8,11 @@ L'algorithme du vrai Wordle est plus complexe que notre version simple. Il doit 
 
 ## Problème des lettres répétées
 
-**Exemple :** Mot secret = `ALLEE`, Tentative = `ELLES`
+**Exemple :** Mot secret = `BELLE`, Tentative = `ELEVE`
 
-- Le premier **E** de ELLES est à la bonne position (position 3)
-- Le second **E** de ELLES est présent mais mal placé (il y a un E en position 4 dans ALLEE)
-- Le troisième **E** de ELLES n'existe plus dans ALLEE (les 2 E ont déjà été utilisés)
+- Le premier **E** de ELEVE (position 0) est présent mais mal placé → JAUNE
+- Le deuxième **E** de ELEVE (position 2) n'a plus de correspondance → GRIS
+- Le troisième **E** de ELEVE (position 4) est à la bonne position → VERT
 
 **Règle :** Chaque lettre du mot secret ne peut être "consommée" qu'une seule fois.
 
