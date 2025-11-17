@@ -282,7 +282,7 @@ print()\`)">Charger</button>
     concepts: {
         icon: 'icon-concepts',
         emoji: '',
-        title: 'Concepts Clés',
+        title: 'Wordle Facile',
         subtitle: 'Les outils nécessaires',
         content: `
             <div class="section-text">
@@ -495,18 +495,17 @@ for i in range(len(tentative)):
                     <br>
                     <strong style="color: #4caf50;">Premier passage (VERT) :</strong><br>
                     i=0 : E ≠ A → rien<br>
-                    i=1 : L ≠ L → rien<br>
-                    i=2 : L = L → résultat[2] = 'VERT', disponibles = ['A', 'L', 'E', 'E']<br>
-                    i=3 : E = E → résultat[3] = 'VERT', disponibles = ['A', 'L', 'E']<br>
+                    i=1 : L = L → résultat[1] = 'VERT', disponibles = ['A', 'L', 'E', 'E']<br>
+                    i=2 : L = L → résultat[2] = 'VERT', disponibles = ['A', 'E', 'E']<br>
+                    i=3 : E = E → résultat[3] = 'VERT', disponibles = ['A', 'E']<br>
                     i=4 : S ≠ E → rien<br>
                     <br>
-                    Résultat après 1er passage : [' ', ' ', 'VERT', 'VERT', ' ']<br>
+                    Résultat après 1er passage : [' ', 'VERT', 'VERT', 'VERT', ' ']<br>
                     <br>
                     <strong style="color: #ffd700;">Deuxième passage (JAUNE/GRIS) :</strong><br>
-                    i=0 : déjà traité ? Non. E dans ['A', 'L', 'E'] ? Oui<br>
-                          → résultat[0] = 'JAUNE', disponibles = ['A', 'L']<br>
-                    i=1 : déjà traité ? Non. L dans ['A', 'L'] ? Oui<br>
-                          → résultat[1] = 'JAUNE', disponibles = ['A']<br>
+                    i=0 : déjà traité ? Non. E dans ['A', 'E'] ? Oui<br>
+                          → résultat[0] = 'JAUNE', disponibles = ['A']<br>
+                    i=1 : déjà traité ? Oui (VERT) → ignorer<br>
                     i=2 : déjà traité ? Oui (VERT) → ignorer<br>
                     i=3 : déjà traité ? Oui (VERT) → ignorer<br>
                     i=4 : déjà traité ? Non. S dans ['A'] ? Non<br>
@@ -514,7 +513,7 @@ for i in range(len(tentative)):
                     <br>
                     <strong style="color: #fff;">Résultat final :</strong><br>
                     <span style="background: #ffd700; color: white; padding: 2px 6px; font-weight: bold;"> E </span>
-                    <span style="background: #ffd700; color: white; padding: 2px 6px; font-weight: bold;"> L </span>
+                    <span style="background: #4caf50; color: white; padding: 2px 6px; font-weight: bold;"> L </span>
                     <span style="background: #4caf50; color: white; padding: 2px 6px; font-weight: bold;"> L </span>
                     <span style="background: #4caf50; color: white; padding: 2px 6px; font-weight: bold;"> E </span>
                     <span style="background: #666; color: white; padding: 2px 6px; font-weight: bold;"> S </span>
