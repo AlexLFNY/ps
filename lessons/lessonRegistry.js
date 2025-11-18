@@ -115,6 +115,16 @@ export const periods = [
                 module: () => import('./lesson10.js'),
                 dataKey: 'lesson10Data',
                 concepts: ['intro', 'color_functions', 'concepts', 'algorithm', 'exercises']
+            },
+            {
+                id: 11,
+                number: 6,
+                title: "Les Listes",
+                subtitle: "Collections modifiables",
+                description: "Découvrez les listes : création, accès, modification, suppression et itération",
+                module: () => import('./lesson11.js'),
+                dataKey: 'lesson11Data',
+                concepts: ['intro', 'creation', 'access', 'append', 'modification', 'suppression', 'iteration', 'exercises']
             }
             // Future lessons will be added here
         ]
