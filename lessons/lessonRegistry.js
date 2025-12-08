@@ -128,6 +128,25 @@ export const periods = [
             }
             // Future lessons will be added here
         ]
+    },
+    {
+        id: 3,
+        name: "Troisième Période",
+        description: "Programmation graphique et jeux vidéo",
+        color: "#ff6b6b",
+        lessons: [
+            {
+                id: 12,
+                number: 1,
+                title: "Introduction à Pyxel",
+                subtitle: "Créer des jeux rétro",
+                description: "Découvrez Pyxel : installation, premier programme, formes, et interactivité",
+                module: () => import('./lesson12.js'),
+                dataKey: 'lesson12Data',
+                concepts: ['video_tutorial', 'documentation', 'architecture', 'installation', 'dessiner', 'interactivite', 'bouncing_point', 'exercises']
+            }
+            // Future graphics lessons will be added here
+        ]
     }
 ];
 
